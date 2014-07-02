@@ -1,0 +1,49 @@
+.. code-block:: javascript
+
+ {
+    "__v" : 1,
+    "_id" : ObjectId("536bbe290635cc730c130f87"),
+    "appId" : ObjectId("5359faae8243bf3d6b3079ae"),
+    "commentCount" : 0,
+    "content" : "This issue is on Ray's \"short-term features list\" and it would probably come \"it in the next couple of weeks.\"",
+    "createdOn" : ISODate("2014-05-08T17:26:01.962Z"),
+    "decision" : {
+        "status" : "open"
+    },
+    "inlineComments" : [],
+    "problem" : {
+        "_id" : ObjectId("5369e4140635cc730c130f27"),
+        "title" : "Speakup needs to allow formatting text",
+        "content" : "Currently longer posts turn into impenetrable walls of text. It'd be nice to have some method of having paragraphs.",
+        "open" : false,
+        "createdOn" : ISODate("2014-05-07T07:43:16.964Z"),
+        "updatedOn" : ISODate("2014-05-07T07:43:16.964Z"),
+        "user" : {
+            "_id" : ObjectId("5369c8670635cc730c130f16"),
+            "fullName" : "olli-pekka.valtonen",
+            "picture" : "https://res.cloudinary.com/speakup/image/upload/c_fill,h_180,w_180/qmdqkq0vnq5icg7hgpol"
+        }
+    },
+    "solutionCount" : 0,
+    "subscribers" : [
+        {
+            "_id" : ObjectId("535a96fb8243bf3d6b3079df")
+        }
+    ],
+    "title" : "I have already sent an email to Ray regarding this:",
+    "type" : "solution",
+    "updatedOn" : ISODate("2014-05-08T17:26:01.962Z"),
+    "user" : {
+        "_id" : ObjectId("535a96fb8243bf3d6b3079df"),
+        "fullName" : "Alfred Lam",
+        "picture" : "https://res.cloudinary.com/speakup/image/upload/c_fill,h_180,w_180/l3aug7djhre7dtkooa7s"
+    },
+    "voteCount" : 1,
+    "voteValue" : 1,
+    "votes" : [
+        {
+            "_id" : ObjectId("535a96fb8243bf3d6b3079df"),
+            "value" : 1
+        }
+    ]
+ }

@@ -18,4 +18,5 @@ Table of contents:
    endpoints
    auth
    accounts/index
+   users/index
    posts/index

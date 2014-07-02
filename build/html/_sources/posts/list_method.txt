@@ -9,24 +9,33 @@ Definition:
 Query string parameters:
 
 .. list-table::
+  :widths: 10 30 10
+  :header-rows: 1
 
   * - Name
     - Description
+    - Default
 
   * - ``sort``
-    - Sort order for posts list. Can be ``popular`` or ``newest``. Default is ``popular``
+    - Sort order for the posts list. Can be ``popular`` or ``newest``.
+    - ``popular``
 
   * - ``types``
-    - Comma separated list of :ref:`Post types <post_object>`. If not specified -- return all types of post.
+    - Comma separated list of the :ref:`Post types <post_object>`.
+    - return all types of posts
 
   * - ``decision``
-    - Query posts by decision, valid values are: open, amended, denied, approved. If specified ``types`` will be ``idea`` and ``solution``. Default: none.
+    - Query posts by decision, valid values are: open, amended, denied, approved.
+      If specified ``types`` will be ``idea`` and ``solution``.
+    - none
 
   * - ``page``
-    - Page number to return. Default is 1.
+    - Page number to return.
+    - 1
 
   * - ``limit``
-    - Number of records to return. Default is 15.
+    - Number of records to return.
+    - 15
 
 Example requests:
 

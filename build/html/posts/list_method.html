@@ -55,27 +55,37 @@
 <p>Query string parameters:</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="50%" />
-<col width="50%" />
+<col width="20%" />
+<col width="60%" />
+<col width="20%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Name</td>
-<td>Description</td>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Default</th>
 </tr>
+</thead>
+<tbody valign="top">
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">sort</span></tt></td>
-<td>Sort order for posts list. Can be <tt class="docutils literal"><span class="pre">popular</span></tt> or <tt class="docutils literal"><span class="pre">newest</span></tt>. Default is <tt class="docutils literal"><span class="pre">popular</span></tt></td>
+<td>Sort order for the posts list. Can be <tt class="docutils literal"><span class="pre">popular</span></tt> or <tt class="docutils literal"><span class="pre">newest</span></tt>.</td>
+<td><tt class="docutils literal"><span class="pre">popular</span></tt></td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">types</span></tt></td>
-<td>Comma separated list of <a class="reference internal" href="post_object.html#post-object"><em>Post types</em></a>. If not specified &#8211; return all types of post.</td>
+<td>Comma separated list of the <a class="reference internal" href="post_object.html#post-object"><em>Post types</em></a>.</td>
+<td>return all types of posts</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">decision</span></tt></td>
-<td>Query posts by decision, valid values are: open, amended, denied, approved. If specified <tt class="docutils literal"><span class="pre">types</span></tt> will be <tt class="docutils literal"><span class="pre">idea</span></tt> and <tt class="docutils literal"><span class="pre">solution</span></tt>. Default: none.</td>
+<td>Query posts by decision, valid values are: open, amended, denied, approved.
+If specified <tt class="docutils literal"><span class="pre">types</span></tt> will be <tt class="docutils literal"><span class="pre">idea</span></tt> and <tt class="docutils literal"><span class="pre">solution</span></tt>.</td>
+<td>none</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">page</span></tt></td>
-<td>Page number to return. Default is 1.</td>
+<td>Page number to return.</td>
+<td>1</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">limit</span></tt></td>
-<td>Number of records to return. Default is 15.</td>
+<td>Number of records to return.</td>
+<td>15</td>
 </tr>
 </tbody>
 </table>

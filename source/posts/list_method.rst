@@ -19,6 +19,10 @@ Query string parameters:
   * - ``types``
     - Comma separated list of :ref:`Post types <post_object>`. If not specified -- return all types of post.
 
+  * - ``decision``
+    - Query posts by decision, valid values are: open, amended, denied, approved. If specified ``types`` will be
+    ``idea`` and ``solution``. Default: none.
+
   * - ``page``
     - Page number to return. Default is 1.
 

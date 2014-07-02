@@ -83,4 +83,4 @@ Example response:
         "denied": 0,
         "open": 2
     }
-}
+ }

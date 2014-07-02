@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The User object &mdash; Speakup 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="Users" href="index.html" />
+    <link rel="next" title="Posts" href="../posts/index.html" />
+    <link rel="prev" title="Retrieve current user" href="api.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../posts/index.html" title="Posts"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="Retrieve current user"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Users</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-user-object">
+<span id="user-object"></span><h1>The <tt class="docutils literal"><span class="pre">User</span></tt> object<a class="headerlink" href="#the-user-object" title="Permalink to this headline">¶</a></h1>
+<p>Each user belong to particular Application.
+User can have different bio, title, roles etc in different applications he belong to.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">_id</span></tt></td>
+<td>The id of the Account object</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">appId</span></tt></td>
+<td>Id of application to which user belong</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">accountId</span></tt></td>
+<td>Id of <a class="reference internal" href="../accounts/account_object.html#account-object"><em>User Account</em></a>.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">picture</span></tt></td>
+<td>Url to the user picture</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">fullName</span></tt></td>
+<td>full name of the user</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">email</span></tt></td>
+<td>Email address of the user</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">bio</span></tt></td>
+<td>Bio of user</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">userName</span></tt></td>
+<td>Internal user name, used for mentions.</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">settings</span></tt></td>
+<td>Notifications settings</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">title</span></tt></td>
+<td>User title</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">roles</span></tt></td>
+<td>Array of user <a class="reference internal" href="#user-roles"><em>roles</em></a>.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">createdOn</span></tt></td>
+<td>Date when user was created (signed up)</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="example-of-user-object">
+<h2>Example of user object<a class="headerlink" href="#example-of-user-object" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="s2">&quot;53aaa7181f0d592c49b7833c&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;appId&quot;</span> <span class="o">:</span> <span class="s2">&quot;53aaa7181f0d592c49b7833a&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;accountId&quot;</span> <span class="o">:</span> <span class="s2">&quot;53aaa7181f0d592c49b7833b&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;picture&quot;</span> <span class="o">:</span> <span class="s2">&quot;https://getspeakup.com/assets/images/profile-image.png&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fullName&quot;</span> <span class="o">:</span> <span class="s2">&quot;Andrew Orsich&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;email&quot;</span> <span class="o">:</span> <span class="s2">&quot;andrew@paralect.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;bio&quot;</span> <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;userName&quot;</span> <span class="o">:</span> <span class="s2">&quot;andrew.orsich&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;settings&quot;</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;notifications&quot;</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;email&quot;</span> <span class="o">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;notifyOn&quot;</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;ownPostNewComment&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="s2">&quot;ownPostNewSolution&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="s2">&quot;newIdea&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="s2">&quot;newProblem&quot;</span> <span class="o">:</span> <span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;title&quot;</span> <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roles&quot;</span> <span class="o">:</span> <span class="p">[</span>
+        <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;decisionMaker&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;createdOn&quot;</span> <span class="o">:</span> <span class="s2">&quot;2014-06-25T10:40:24.817Z&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="user-roles">
+<span id="id1"></span><h2>User roles<a class="headerlink" href="#user-roles" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ol class="arabic simple">
+<li>admin - can send invites, update billing information</li>
+<li>decisionMaker - can make decisions and see dashboard</li>
+</ol>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+    <a href="/docs/index.html"><img src="/docs/_static/logo-white-landing.png" /></a>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">The <tt class="docutils literal"><span class="pre">User</span></tt> object</a><ul>
+<li><a class="reference internal" href="#example-of-user-object">Example of user object</a></li>
+<li><a class="reference internal" href="#user-roles">User roles</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="api.html"
+                        title="previous chapter">Retrieve current user</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../posts/index.html"
+                        title="next chapter">Posts</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../posts/index.html" title="Posts"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="Retrieve current user"
+             >previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Users</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2014, Speakup.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

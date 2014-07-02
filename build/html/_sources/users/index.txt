@@ -1,11 +1,13 @@
 ===========
-Posts
+Users
 ===========
+
+
 
 .. toctree::
    :titlesonly:
 
 
-   ../posts/post_object
-   ../posts/api
+   ../users/api
+   ../users/user_object
 

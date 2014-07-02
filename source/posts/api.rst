@@ -1,6 +1,6 @@
 
 List all posts
-=================
+==============
 
 Definition:
 
@@ -59,3 +59,28 @@ Example response:
   }
 
 :ref:`PostObject <post_object>`.
+
+Get posts stats
+===============
+
+Return count of open, approved, amended, denied posts
+
+Example requests:
+
+.. code-block:: bash
+
+   http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts/stats \
+    Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+
+Example response:
+
+.. code-block:: javascript
+
+ {
+    "postMetrics": {
+        "amended": 0,
+        "approved": 4,
+        "denied": 0,
+        "open": 2
+    }
+ }

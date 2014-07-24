@@ -20,3 +20,6 @@ Table of contents:
    accounts/index
    users/index
    posts/index
+   applications/index
+
+

@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Retrieve current application &mdash; Speakup 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="Applications" href="index.html" />
+    <link rel="next" title="The Application object" href="application_object.html" />
+    <link rel="prev" title="Applications" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="application_object.html" title="The Application object"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Applications"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Applications</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="retrieve-current-application">
+<h1>Retrieve current application<a class="headerlink" href="#retrieve-current-application" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/application/current</span></tt></p>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53c7f8b2c924fa53a7a9f4ce/application/current <span class="se">\</span>
+  Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+</pre></div>
+</div>
+<p>Example response:</p>
+<p><a class="reference internal" href="application_object.html#application-object"><em>Application object</em></a>.</p>
+</div>
+<div class="section" id="get-application-statistic">
+<h1>Get application statistic<a class="headerlink" href="#get-application-statistic" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/application/statistic</span></tt></p>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http GET http://localhost:8080/api/v1/53c7f8b2c924fa53a7a9f4ce/application/statistic <span class="se">\</span>
+   Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+</pre></div>
+</div>
+<p>Example response</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;companyName&quot;</span><span class="o">:</span> <span class="s2">&quot;Your company&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;usersCount&quot;</span><span class="o">:</span> <span class="mi">21</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-plans">
+<h1>Get plans<a class="headerlink" href="#get-plans" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/application/plans</span></tt></p>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http GET http://localhost:8080/api/v1/53c7f8b2c924fa53a7a9f4ce/application/plans <span class="se">\</span>
+   Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+</pre></div>
+</div>
+<p>Example response</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;amount&quot;</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+        <span class="s2">&quot;maxUsersCount&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">&quot;planId&quot;</span><span class="o">:</span> <span class="s2">&quot;6_user_month&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;metered&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+    <a href="/docs/index.html"><img src="/docs/_static/logo-white-landing.png" /></a>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Retrieve current application</a></li>
+<li><a class="reference internal" href="#get-application-statistic">Get application statistic</a></li>
+<li><a class="reference internal" href="#get-plans">Get plans</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Applications</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="application_object.html"
+                        title="next chapter">The <tt class="docutils literal"><span class="pre">Application</span></tt> object</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="application_object.html" title="The Application object"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Applications"
+             >previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Applications</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2014, Speakup.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Posts &mdash; Speakup 0.0.1 documentation</title>
+    <title>Retrieve current application &mdash; Speakup 0.0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -24,9 +24,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
-    <link rel="next" title="The Post object" href="post_object.html" />
-    <link rel="prev" title="The User object" href="../users/user_object.html" /> 
+    <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -35,12 +33,6 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="post_object.html" title="The Post object"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="../users/user_object.html" title="The User object"
-             accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -50,18 +42,17 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="posts">
-<h1>Posts<a class="headerlink" href="#posts" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="post_object.html">The <tt class="docutils literal"><span class="pre">Post</span></tt> object</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">List all posts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html#get-posts-stats">Get posts stats</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html#get-post-by-id">Get post by id</a></li>
-</ul>
+  <div class="section" id="retrieve-current-application">
+<h1>Retrieve current application<a class="headerlink" href="#retrieve-current-application" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/application/current</span></tt></p>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53c7f8b2c924fa53a7a9f4ce/application/current <span class="se">\</span>
+  Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+</pre></div>
 </div>
+<p>Example response:</p>
+<p><a class="reference internal" href="application_object.html#application-object"><em>Application object</em></a>.</p>
 </div>
 
 
@@ -72,12 +63,6 @@
         <div class="sphinxsidebarwrapper">
     <a href="/docs/index.html"><img src="/docs/_static/logo-white-landing.png" /></a>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="../users/user_object.html"
-                        title="previous chapter">The <tt class="docutils literal"><span class="pre">User</span></tt> object</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="post_object.html"
-                        title="next chapter">The <tt class="docutils literal"><span class="pre">Post</span></tt> object</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -102,12 +87,6 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="post_object.html" title="The Post object"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="../users/user_object.html" title="The User object"
-             >previous</a> |</li>
         <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>

@@ -79,11 +79,16 @@
 If specified <tt class="docutils literal"><span class="pre">types</span></tt> will be <tt class="docutils literal"><span class="pre">idea</span></tt> and <tt class="docutils literal"><span class="pre">solution</span></tt>.</td>
 <td>none</td>
 </tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">page</span></tt></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">parentId</span></tt></td>
+<td>Filter by parent post id, if specified valid <tt class="docutils literal"><span class="pre">types</span></tt> only <tt class="docutils literal"><span class="pre">solution</span></tt> and <tt class="docutils literal"><span class="pre">comment</span></tt>,
+because <tt class="docutils literal"><span class="pre">problem</span></tt> and <tt class="docutils literal"><span class="pre">idea</span></tt> does not have parents</td>
+<td>none</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">page</span></tt></td>
 <td>Page number to return.</td>
 <td>1</td>
 </tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">limit</span></tt></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">limit</span></tt></td>
 <td>Number of records to return.</td>
 <td>15</td>
 </tr>
@@ -111,6 +116,8 @@ http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts?sort<span 
 <div class="section" id="get-posts-stats">
 <h1>Get posts stats<a class="headerlink" href="#get-posts-stats" title="Permalink to this headline">¶</a></h1>
 <p>Return count of open, approved, amended, denied posts</p>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/posts/stats</span></tt></p>
 <p>Example requests:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts/stats <span class="se">\</span>
  Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
@@ -128,6 +135,19 @@ http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts?sort<span 
 </pre></div>
 </div>
 </div>
+<div class="section" id="get-post-by-id">
+<h1>Get post by id<a class="headerlink" href="#get-post-by-id" title="Permalink to this headline">¶</a></h1>
+<p>Return <a class="reference internal" href="post_object.html#post-object"><em>post</em></a> by id</p>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/posts/:id</span></tt></p>
+<p>Example requests:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts/53aaa7191f0d592c49b7833e <span class="se">\</span>
+ Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+</pre></div>
+</div>
+<p>Example response:</p>
+<p>return <a class="reference internal" href="post_object.html#post-object"><em>Post Object</em></a>.</p>
+</div>
 
 
           </div>
@@ -141,6 +161,7 @@ http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts?sort<span 
   <ul>
 <li><a class="reference internal" href="#">List all posts</a></li>
 <li><a class="reference internal" href="#get-posts-stats">Get posts stats</a></li>
+<li><a class="reference internal" href="#get-post-by-id">Get post by id</a></li>
 </ul>
 
   <h4>Previous topic</h4>

@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The Application object &mdash; Speakup 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="Applications" href="index.html" />
+    <link rel="prev" title="Retrieve current application" href="api.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="api.html" title="Retrieve current application"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Applications</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-application-object">
+<span id="application-object"></span><h1>The <tt class="docutils literal"><span class="pre">Application</span></tt> object<a class="headerlink" href="#the-application-object" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Field</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">_id</span></tt></td>
+<td>The id of the Application object</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">appUrl</span></tt></td>
+<td>The base SpeakUp url</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">createdOn</span></tt></td>
+<td>Date when application was created</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">email</span></tt></td>
+<td>E-mail of application owner</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">emailDomain</span></tt></td>
+<td>Application domain</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">maxInvitesCount</span></tt></td>
+<td>Maximum number of possible invitations for current application according to selected plan (as string)</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">name</span></tt></td>
+<td>Name of current application (company)</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">ownerAccountId</span></tt></td>
+<td>Id of application owner</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">selectedPlan</span></tt></td>
+<td>Selected plan for application</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">status</span></tt></td>
+<td>Application status (can take the next values: &#8220;noManager&#8221;, &#8220;onTrial&#8221;, &#8220;trialEnded&#8221;, &#8220;subscribed&#8221;, &#8220;cancelled&#8221;)</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">stripe</span></tt></td>
+<td>todo</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">subDomain</span></tt></td>
+<td>Application subdomain</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">trialStartedOn</span></tt></td>
+<td>Date when trial version was started</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="example-of-an-application-object">
+<span id="example-application-object"></span><h2>Example of an application object<a class="headerlink" href="#example-of-an-application-object" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;__v&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;_id&quot;</span><span class="o">:</span> <span class="s2">&quot;53c7f8b2c924fa53a7a9f4ce&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;appUrl&quot;</span><span class="o">:</span> <span class="s2">&quot;https://getspeakup.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;createdOn&quot;</span><span class="o">:</span> <span class="s2">&quot;2014-07-17T16:24:18.907Z&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="s2">&quot;demo@yourcompany.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;emailDomain&quot;</span><span class="o">:</span> <span class="s2">&quot;yourcompany.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;maxInvitesCount&quot;</span><span class="o">:</span> <span class="s2">&quot;Infinity&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Your company&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ownerAccountId&quot;</span><span class="o">:</span> <span class="s2">&quot;53c7f8b2c924fa53a7a9f4cf&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;selectedPlan&quot;</span><span class="o">:</span> <span class="s2">&quot;trial&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="s2">&quot;onTrial&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;stripe&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;customerId&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">&quot;subscriptionId&quot;</span><span class="o">:</span> <span class="kc">null</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;subDomain&quot;</span><span class="o">:</span> <span class="s2">&quot;yourcompany&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;trialStartedOn&quot;</span><span class="o">:</span> <span class="s2">&quot;2014-07-18T16:01:24.881Z&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+    <a href="/docs/index.html"><img src="/docs/_static/logo-white-landing.png" /></a>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">The <tt class="docutils literal"><span class="pre">Application</span></tt> object</a><ul>
+<li><a class="reference internal" href="#example-of-an-application-object">Example of an application object</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="api.html"
+                        title="previous chapter">Retrieve current application</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="api.html" title="Retrieve current application"
+             >previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Applications</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2014, Speakup.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

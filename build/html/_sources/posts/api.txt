@@ -29,6 +29,11 @@ Query string parameters:
       If specified ``types`` will be ``idea`` and ``solution``.
     - none
 
+  * - ``parentId``
+    - Filter by parent post id, if specified valid ``types`` only ``solution`` and ``comment``,
+      because ``problem`` and ``idea`` does not have parents
+    - none
+
   * - ``page``
     - Page number to return.
     - 1
@@ -65,6 +70,10 @@ Get posts stats
 
 Return count of open, approved, amended, denied posts
 
+Definition:
+
+``GET https://getspeakup.com/api/v1/:appId/posts/stats``
+
 Example requests:
 
 .. code-block:: bash
@@ -84,3 +93,23 @@ Example response:
         "open": 2
     }
  }
+
+Get post by id
+==============
+
+Return :ref:`post <post_object>` by id
+
+Definition:
+
+``GET https://getspeakup.com/api/v1/:appId/posts/:id``
+
+Example requests:
+
+.. code-block:: bash
+
+   http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts/53aaa7191f0d592c49b7833e \
+    Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+
+Example response:
+
+return :ref:`Post Object <post_object>`.

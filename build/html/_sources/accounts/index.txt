@@ -8,6 +8,6 @@ Accounts
    :titlesonly:
 
 
-   ../accounts/get_current_account
+   ../accounts/api
    ../accounts/account_object
 

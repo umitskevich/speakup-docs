@@ -12,7 +12,7 @@ The ``Application`` object
     - The id of the Application object
 
   * - ``appUrl``
-    - The base SpeakUp url
+    - A `vanity url <http://en.wikipedia.org/wiki/Vanity_domain>`_ of application
 
   * - ``createdOn``
     - Date when application was created
@@ -23,30 +23,23 @@ The ``Application`` object
   * - ``emailDomain``
     - Application domain
 
-  * - ``maxInvitesCount``
-    - Maximum number of possible invitations for current application according to selected plan (as string)
-
   * - ``name``
     - Name of current application (company)
 
   * - ``ownerAccountId``
-    - Id of application owner
+    - Id of application owner account
 
   * - ``selectedPlan``
     - Selected plan for application
 
   * - ``status``
-    - Application status (can take the next values: "noManager", "onTrial", "trialEnded", "subscribed", "cancelled")
-
-  * - ``stripe``
-    - todo
+    - Application status (can take the next values: "noManager", "subscribed", "cancelled")
 
   * - ``subDomain``
     - Application subdomain
 
-  * - ``trialStartedOn``
-    - Date when trial version was started
-
+  * - ``usersCount``
+    - The number of active users of application
 
 
 
@@ -58,24 +51,19 @@ Example of an application object
 .. code-block:: javascript
 
   {
-      "__v": 0,
       "_id": "53c7f8b2c924fa53a7a9f4ce",
-      "appUrl": "https://getspeakup.com",
+      "appUrl": "http://getspeakup.com",
       "createdOn": "2014-07-17T16:24:18.907Z",
       "email": "demo@yourcompany.com",
       "emailDomain": "yourcompany.com",
-      "maxInvitesCount": "Infinity",
-      "name": "Your company",
+      "name": "Your company name",
       "ownerAccountId": "53c7f8b2c924fa53a7a9f4cf",
-      "selectedPlan": "trial",
-      "status": "onTrial",
-      "stripe": {
-          "customerId": null,
-          "subscriptionId": null
-      },
+      "selectedPlan": "6_user_month",
+      "status": "subscribed",
       "subDomain": "yourcompany",
-      "trialStartedOn": "2014-07-18T16:01:24.881Z"
+      "usersCount": 21
   }
+
 
 
 

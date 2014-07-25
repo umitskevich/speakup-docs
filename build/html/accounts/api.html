@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Retrieve current application &mdash; Speakup 0.0.1 documentation</title>
+    <title>Retrieve current account &mdash; Speakup 0.0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
-    <link rel="up" title="Applications" href="index.html" />
-    <link rel="next" title="The Application object" href="application_object.html" />
-    <link rel="prev" title="Applications" href="index.html" /> 
+    <link rel="up" title="Accounts" href="index.html" />
+    <link rel="next" title="The Account object" href="account_object.html" />
+    <link rel="prev" title="Accounts" href="index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -37,13 +37,13 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="application_object.html" title="The Application object"
+          <a href="account_object.html" title="The Account object"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Applications"
+          <a href="index.html" title="Accounts"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">Applications</a> &raquo;</li> 
+          <li><a href="index.html" accesskey="U">Accounts</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -52,49 +52,44 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="retrieve-current-application">
-<h1>Retrieve current application<a class="headerlink" href="#retrieve-current-application" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="retrieve-current-account">
+<h1>Retrieve current account<a class="headerlink" href="#retrieve-current-account" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/application/current</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>GET https://getspeakup.com/api/v1/accounts/current
+</pre></div>
+</div>
 <p>Example request:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53c7f8b2c924fa53a7a9f4ce/application/current <span class="se">\</span>
-     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/accounts/current <span class="se">\</span>
+  Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 </pre></div>
 </div>
 <p>Example response:</p>
-<p><a class="reference internal" href="application_object.html#application-object"><em>Application object</em></a>.</p>
+<p><em class="xref std std-ref">Account object</em>.</p>
 </div>
-<div class="section" id="update-application-company-name">
-<h1>Update application (company) name<a class="headerlink" href="#update-application-company-name" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="change-active-application">
+<h1>Change active application<a class="headerlink" href="#change-active-application" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/:appId/application/updateCompanyName <span class="se">\</span>
-     <span class="nv">companyName</span><span class="o">=</span>new_demo_name
+<div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/accounts/changeActiveApp <span class="se">\</span>
+     <span class="nv">appId</span><span class="o">=</span><span class="s2">&quot;appId_to_login&quot;</span>
 </pre></div>
 </div>
 <dl class="docutils">
 <dt>Body parameters:</dt>
 <dd><ol class="first last arabic simple">
-<li>companyName - New name for application</li>
+<li>appId - Id of application that user would like to login</li>
 </ol>
 </dd>
 </dl>
 <p>Example request:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/53c7f8b2c924fa53a7a9f4ce/application/updateCompanyName <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/accounts/changeActiveApp <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
-     <span class="nv">companyName</span><span class="o">=</span><span class="s2">&quot;New demo name&quot;</span>
+     <span class="nv">appId</span><span class="o">=</span><span class="s2">&quot;53d2c3515c15b4a7bda023fe&quot;</span>
 </pre></div>
 </div>
 <p>Successful response:</p>
 <p>If all above steps were done correctly you should see response like this:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
-   <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="s2">&quot;200 OK&quot;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>Unsuccessful response:</p>
-<p>If error occurs on server side response should be like this</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
-   <span class="p">{</span> <span class="nx">status</span><span class="o">:</span> <span class="s1">&#39;500 ERROR&#39;</span><span class="p">,</span> <span class="nx">error</span><span class="o">:</span> <span class="p">{}</span> <span class="p">}</span>
+  <span class="s2">&quot;redirect&quot;</span><span class="o">:</span> <span class="s2">&quot;https://getspeakup.com&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -110,16 +105,16 @@
 
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Retrieve current application</a></li>
-<li><a class="reference internal" href="#update-application-company-name">Update application (company) name</a></li>
+<li><a class="reference internal" href="#">Retrieve current account</a></li>
+<li><a class="reference internal" href="#change-active-application">Change active application</a></li>
 </ul>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
-                        title="previous chapter">Applications</a></p>
+                        title="previous chapter">Accounts</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="application_object.html"
-                        title="next chapter">The <tt class="docutils literal"><span class="pre">Application</span></tt> object</a></p>
+  <p class="topless"><a href="account_object.html"
+                        title="next chapter">The <tt class="docutils literal"><span class="pre">Account</span></tt> object</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -145,13 +140,13 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="application_object.html" title="The Application object"
+          <a href="account_object.html" title="The Account object"
              >next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Applications"
+          <a href="index.html" title="Accounts"
              >previous</a> |</li>
         <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
-          <li><a href="index.html" >Applications</a> &raquo;</li> 
+          <li><a href="index.html" >Accounts</a> &raquo;</li> 
       </ul>
     </div>
 

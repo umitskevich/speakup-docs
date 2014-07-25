@@ -62,7 +62,7 @@
 </pre></div>
 </div>
 <p>Example response:</p>
-<p><a class="reference internal" href="../accounts/account_object.html#account-object"><em>User object</em></a>.</p>
+<p><a class="reference internal" href="user_object.html#user-object"><em>User object</em></a>.</p>
 </div>
 <div class="section" id="retrieve-user-by-id">
 <h1>Retrieve user by id<a class="headerlink" href="#retrieve-user-by-id" title="Permalink to this headline">¶</a></h1>
@@ -74,7 +74,30 @@
 </pre></div>
 </div>
 <p>Example response:</p>
-<p><a class="reference internal" href="../accounts/account_object.html#account-object"><em>User object</em></a>.</p>
+<p><a class="reference internal" href="user_object.html#user-object"><em>User object</em></a>.</p>
+</div>
+<div class="section" id="update-decision-maker">
+<h1>Update decision maker<a class="headerlink" href="#update-decision-maker" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/:appId/users/updateDecisionMaker <span class="se">\</span>
+     <span class="nv">id</span><span class="o">=</span>demo_decision_maker_id
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Body parameters:</dt>
+<dd><ol class="first last arabic simple">
+<li>id - Id of user that will be updated as Decision Maker</li>
+</ol>
+</dd>
+</dl>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/updateDecisionMaker <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
+     <span class="nv">id</span><span class="o">=</span><span class="s2">&quot;53d2ba3dd9f854b7bb77cc98&quot;</span>
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly you should get response as   <cite>HTTP/1.1 204 No Content</cite></p>
 </div>
 
 
@@ -89,6 +112,7 @@
   <ul>
 <li><a class="reference internal" href="#">Retrieve current user</a></li>
 <li><a class="reference internal" href="#retrieve-user-by-id">Retrieve user by id</a></li>
+<li><a class="reference internal" href="#update-decision-maker">Update decision maker</a></li>
 </ul>
 
   <h4>Previous topic</h4>

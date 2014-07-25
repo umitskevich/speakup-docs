@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>&lt;no title&gt; &mdash; Speakup 0.0.1 documentation</title>
+    <title>Get all plans &mdash; Speakup 0.0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -24,7 +24,9 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" /> 
+    <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="Plans" href="index.html" />
+    <link rel="prev" title="Plans" href="index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -33,7 +35,11 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="index.html" title="Plans"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Plans</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -42,7 +48,31 @@
         <div class="bodywrapper">
           <div class="body">
             
-  
+  <div class="section" id="get-all-plans">
+<h1>Get all plans<a class="headerlink" href="#get-all-plans" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<div class="highlight-bash"><div class="highlight"><pre>GET https://getspeakup.com/api/v1/plans/all
+</pre></div>
+</div>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/plans/all <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly you should see response like this:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">[</span>
+  <span class="p">{</span>
+      <span class="s2">&quot;amount&quot;</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+      <span class="s2">&quot;maxUsersCount&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">&quot;planId&quot;</span><span class="o">:</span> <span class="s2">&quot;6_user_month&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;metered&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+
 
           </div>
         </div>
@@ -51,6 +81,9 @@
         <div class="sphinxsidebarwrapper">
     <a href="/docs/index.html"><img src="/docs/_static/logo-white-landing.png" /></a>
 
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Plans</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -75,7 +108,11 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
-        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="index.html" title="Plans"
+             >previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Plans</a> &raquo;</li> 
       </ul>
     </div>
 

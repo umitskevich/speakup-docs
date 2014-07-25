@@ -21,5 +21,6 @@ Table of contents:
    users/index
    posts/index
    applications/index
+   plans/index
 
 

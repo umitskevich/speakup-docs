@@ -15,7 +15,7 @@ User can have different bio, title, roles etc in different applications he belon
     - Description
 
   * - ``_id``
-    - The id of the Account object
+    - The id of the User object
 
   * - ``appId``
     - Id of application to which user belong

@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The Account object &mdash; Speakup 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Speakup 0.0.1 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="index.html">Speakup 0.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-account-object">
+<span id="account-object"></span><h1>The <tt class="docutils literal"><span class="pre">Account</span></tt> object<a class="headerlink" href="#the-account-object" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Field</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">_id</span></tt></td>
+<td>The id of the Account object</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">activeAppId</span></tt></td>
+<td>Active application Id on the web site. Third parties can use it to initially set user active application.</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">apps</span></tt></td>
+<td>Array of applications account belong to. <tt class="docutils literal"><span class="pre">_id</span></tt> - applicationId, <tt class="docutils literal"><span class="pre">name</span></tt> - application name.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">createdOn</span></tt></td>
+<td>Date when account was created (sign up date)</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">email</span></tt></td>
+<td>Email address of the account</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">fullName</span></tt></td>
+<td>full name of the account</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="example-of-an-account-object">
+<span id="example-account-object"></span><h2>Example of an account object<a class="headerlink" href="#example-of-an-account-object" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="s2">&quot;535565a95ca75754723fe8e3&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;activeAppId&quot;</span> <span class="o">:</span> <span class="nx">ObjectId</span><span class="p">(</span><span class="s2">&quot;5354bf975ca75754723fe8b6&quot;</span><span class="p">),</span>
+  <span class="s2">&quot;apps&quot;</span> <span class="o">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="s2">&quot;5354bf975ca75754723fe8b6&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;name&quot;</span> <span class="o">:</span> <span class="s2">&quot;SpeakUp Test Account&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="s2">&quot;5354bf975ca75754723fe8b6&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;name&quot;</span> <span class="o">:</span> <span class="s2">&quot;Personal Account&quot;</span>
+      <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;createdOn&quot;</span> <span class="o">:</span> <span class="s2">&quot;2014-05-17T12:27:33.103Z&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;email&quot;</span> <span class="o">:</span> <span class="s2">&quot;demo@getspeakup.com&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;fullName&quot;</span> <span class="o">:</span> <span class="s2">&quot;Demo Account&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+    <a href="/docs/index.html"><img src="/docs/_static/logo-white-landing.png" /></a>
+
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">The <tt class="docutils literal"><span class="pre">Account</span></tt> object</a><ul>
+<li><a class="reference internal" href="#example-of-an-account-object">Example of an account object</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="index.html">Speakup 0.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2014, Speakup.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

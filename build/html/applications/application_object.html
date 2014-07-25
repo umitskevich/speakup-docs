@@ -63,7 +63,7 @@
 <td>The id of the Application object</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">appUrl</span></tt></td>
-<td>The base SpeakUp url</td>
+<td>A <a class="reference external" href="http://en.wikipedia.org/wiki/Vanity_domain">vanity url</a> of application</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">createdOn</span></tt></td>
 <td>Date when application was created</td>
@@ -74,52 +74,40 @@
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">emailDomain</span></tt></td>
 <td>Application domain</td>
 </tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">maxInvitesCount</span></tt></td>
-<td>Maximum number of possible invitations for current application according to selected plan (as string)</td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">name</span></tt></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">name</span></tt></td>
 <td>Name of current application (company)</td>
 </tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">ownerAccountId</span></tt></td>
-<td>Id of application owner</td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">ownerAccountId</span></tt></td>
+<td>Id of application owner account</td>
 </tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">selectedPlan</span></tt></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">selectedPlan</span></tt></td>
 <td>Selected plan for application</td>
 </tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">status</span></tt></td>
-<td>Application status (can take the next values: &#8220;noManager&#8221;, &#8220;onTrial&#8221;, &#8220;trialEnded&#8221;, &#8220;subscribed&#8221;, &#8220;cancelled&#8221;)</td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">stripe</span></tt></td>
-<td>todo</td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">status</span></tt></td>
+<td>Application status (can take the next values: &#8220;noManager&#8221;, &#8220;subscribed&#8221;, &#8220;cancelled&#8221;)</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">subDomain</span></tt></td>
 <td>Application subdomain</td>
 </tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">trialStartedOn</span></tt></td>
-<td>Date when trial version was started</td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">usersCount</span></tt></td>
+<td>The number of active users of application</td>
 </tr>
 </tbody>
 </table>
 <div class="section" id="example-of-an-application-object">
 <span id="example-application-object"></span><h2>Example of an application object<a class="headerlink" href="#example-of-an-application-object" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
-    <span class="s2">&quot;__v&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
     <span class="s2">&quot;_id&quot;</span><span class="o">:</span> <span class="s2">&quot;53c7f8b2c924fa53a7a9f4ce&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;appUrl&quot;</span><span class="o">:</span> <span class="s2">&quot;https://getspeakup.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;appUrl&quot;</span><span class="o">:</span> <span class="s2">&quot;http://getspeakup.com&quot;</span><span class="p">,</span>
     <span class="s2">&quot;createdOn&quot;</span><span class="o">:</span> <span class="s2">&quot;2014-07-17T16:24:18.907Z&quot;</span><span class="p">,</span>
     <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="s2">&quot;demo@yourcompany.com&quot;</span><span class="p">,</span>
     <span class="s2">&quot;emailDomain&quot;</span><span class="o">:</span> <span class="s2">&quot;yourcompany.com&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;maxInvitesCount&quot;</span><span class="o">:</span> <span class="s2">&quot;Infinity&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Your company&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Your company name&quot;</span><span class="p">,</span>
     <span class="s2">&quot;ownerAccountId&quot;</span><span class="o">:</span> <span class="s2">&quot;53c7f8b2c924fa53a7a9f4cf&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;selectedPlan&quot;</span><span class="o">:</span> <span class="s2">&quot;trial&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="s2">&quot;onTrial&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;stripe&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;customerId&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="s2">&quot;subscriptionId&quot;</span><span class="o">:</span> <span class="kc">null</span>
-    <span class="p">},</span>
+    <span class="s2">&quot;selectedPlan&quot;</span><span class="o">:</span> <span class="s2">&quot;6_user_month&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="s2">&quot;subscribed&quot;</span><span class="p">,</span>
     <span class="s2">&quot;subDomain&quot;</span><span class="o">:</span> <span class="s2">&quot;yourcompany&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;trialStartedOn&quot;</span><span class="o">:</span> <span class="s2">&quot;2014-07-18T16:01:24.881Z&quot;</span>
+    <span class="s2">&quot;usersCount&quot;</span><span class="o">:</span> <span class="mi">21</span>
 <span class="p">}</span>
 </pre></div>
 </div>

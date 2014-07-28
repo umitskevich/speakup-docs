@@ -55,7 +55,9 @@
   <div class="section" id="retrieve-current-user">
 <h1>Retrieve current user<a class="headerlink" href="#retrieve-current-user" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/users/current</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>GET https://getspeakup.com/api/v1/:appId/users/current
+</pre></div>
+</div>
 <p>Example request:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/current <span class="se">\</span>
   Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
@@ -67,7 +69,9 @@
 <div class="section" id="retrieve-user-by-id">
 <h1>Retrieve user by id<a class="headerlink" href="#retrieve-user-by-id" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/users/:id</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>GET https://getspeakup.com/api/v1/:appId/users/:id
+</pre></div>
+</div>
 <p>Example request:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/53aaa7181f0d592c49b7833c <span class="se">\</span>
   Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
@@ -80,7 +84,7 @@
 <h1>Update decision maker<a class="headerlink" href="#update-decision-maker" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
 <div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/:appId/users/updateDecisionMaker <span class="se">\</span>
-     <span class="nv">id</span><span class="o">=</span>demo_decision_maker_id
+     <span class="nv">id</span><span class="o">=</span>decision_maker_id
 </pre></div>
 </div>
 <dl class="docutils">
@@ -97,7 +101,36 @@
 </pre></div>
 </div>
 <p>Successful response:</p>
-<p>If all above steps were done correctly you should get response as   <cite>HTTP/1.1 204 No Content</cite></p>
+<p>If all above steps were done correctly you should get response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 204 No Content
+</pre></div>
+</div>
+</div>
+<div class="section" id="upgrade-to-manager-fails">
+<h1>Upgrade to manager (fails)<a class="headerlink" href="#upgrade-to-manager-fails" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/:appId/users/upgradeToManager <span class="se">\</span>
+     <span class="nv">token</span><span class="o">=</span>credit_card_number
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Body parameters:</dt>
+<dd><ol class="first last arabic simple">
+<li>token - Credit card number</li>
+</ol>
+</dd>
+</dl>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/upgradeToManager <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
+     <span class="nv">token</span><span class="o">=</span><span class="s2">&quot;4242424242424242&quot;</span>
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly you should get response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
+</pre></div>
+</div>
 </div>
 
 
@@ -113,6 +146,7 @@
 <li><a class="reference internal" href="#">Retrieve current user</a></li>
 <li><a class="reference internal" href="#retrieve-user-by-id">Retrieve user by id</a></li>
 <li><a class="reference internal" href="#update-decision-maker">Update decision maker</a></li>
+<li><a class="reference internal" href="#upgrade-to-manager-fails">Upgrade to manager (fails)</a></li>
 </ul>
 
   <h4>Previous topic</h4>

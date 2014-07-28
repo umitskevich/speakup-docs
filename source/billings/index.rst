@@ -1,10 +1,10 @@
 ===========
-Plans
+Billings
 ===========
 
 .. toctree::
    :titlesonly:
 
 
-   ../plans/api
+   ../billings/api
 

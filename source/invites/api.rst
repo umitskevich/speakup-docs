@@ -1,5 +1,5 @@
 Get by Id
-====================
+===================
 
 Definition:
 
@@ -19,6 +19,38 @@ Example request:
 Example response:
 
 :ref:`Invite object <invite_object>`.
+
+
+
+Get invitation list
+===================
+
+Definition:
+
+.. code-block:: bash
+
+   GET https://getspeakup.com/api/v1/:appId/invites
+
+
+Example request:
+
+.. code-block:: bash
+
+  http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/invites \
+       Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+
+
+Example response:
+
+.. code-block:: bash
+
+   HTTP/1.1 200 OK
+
+.. code-block:: javascript
+
+   [InviteObject] * // see definition below
+
+`*` - Array of :ref:`Invite objects <invite_object>`.
 
 
 Send invitations
@@ -76,8 +108,8 @@ Definition:
 
 .. code-block:: bash
 
-   POST https://getspeakup.com/api/v1/:appId/invites/deleteInvites \
-        ids:=[first_id, second_id]
+   DELETE https://getspeakup.com/api/v1/:appId/invites/deleteInvites \
+          ids:=[first_id, second_id]
 
 Body parameters:
    1. ids - Id list of invitations for deleting
@@ -87,7 +119,7 @@ Example request:
 
 .. code-block:: bash
 
-  http POST https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/invites/deleteInvites \
+  http DELETE https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/invites/deleteInvites \
        Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 \
        ids:='["53d661fefdbd65721f48906a", "53d661fefdbd65721f48906c"]'
 

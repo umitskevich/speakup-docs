@@ -41,6 +41,9 @@ User can have different bio, title, roles etc in different applications he belon
   * - ``settings``
     - Notifications settings
 
+  * - ``statistic``
+    - User statistic according to his posts
+
   * - ``title``
     - User title
 
@@ -74,6 +77,12 @@ Example of user object
               "newIdea" : true,
               "newProblem" : true
           }
+      },
+      "statistic": {
+              "comments": 2,
+              "ideas": 1,
+              "problems": 0,
+              "solutions": 1
       },
       "title" : "",
       "roles" : [

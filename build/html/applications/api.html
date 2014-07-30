@@ -55,9 +55,11 @@
   <div class="section" id="retrieve-current-application">
 <h1>Retrieve current application<a class="headerlink" href="#retrieve-current-application" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/application/current</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>GET https://getspeakup.com/api/v1/application/:appId
+</pre></div>
+</div>
 <p>Example request:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53c7f8b2c924fa53a7a9f4ce/application/current <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/application/53aaa7181f0d592c49b7833a <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 </pre></div>
 </div>
@@ -67,8 +69,8 @@
 <div class="section" id="update-application-company-name">
 <h1>Update application (company) name<a class="headerlink" href="#update-application-company-name" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/:appId/application/updateCompanyName <span class="se">\</span>
-     <span class="nv">companyName</span><span class="o">=</span>new_demo_name
+<div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/application/:appId/updateCompanyName <span class="se">\</span>
+     <span class="nv">companyName</span><span class="o">=</span>new_name
 </pre></div>
 </div>
 <dl class="docutils">
@@ -79,22 +81,29 @@
 </dd>
 </dl>
 <p>Example request:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/53c7f8b2c924fa53a7a9f4ce/application/updateCompanyName <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/application/53aaa7181f0d592c49b7833a/updateCompanyName <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
      <span class="nv">companyName</span><span class="o">=</span><span class="s2">&quot;New demo name&quot;</span>
 </pre></div>
 </div>
 <p>Successful response:</p>
 <p>If all above steps were done correctly you should see response like this:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
-   <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="s2">&quot;200 OK&quot;</span>
-<span class="p">}</span>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
 </pre></div>
 </div>
 <p>Unsuccessful response:</p>
-<p>If error occurs on server side response should be like this</p>
+<p>If new name was invalid you should see response with errors:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 400 Bad Request
+</pre></div>
+</div>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
-   <span class="p">{</span> <span class="nx">status</span><span class="o">:</span> <span class="s1">&#39;500 ERROR&#39;</span><span class="p">,</span> <span class="nx">error</span><span class="o">:</span> <span class="p">{}</span> <span class="p">}</span>
+    <span class="s2">&quot;errors&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;msg&quot;</span><span class="o">:</span> <span class="s2">&quot;The company name is required and should be 2 - 30 characters&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;param&quot;</span><span class="o">:</span> <span class="s2">&quot;companyName&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>

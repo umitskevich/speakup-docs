@@ -20,6 +20,55 @@ Example response:
 :ref:`Account object <account_object>`.
 
 
+Change password
+========================
+
+Definition:
+
+.. code-block:: bash
+
+   POST https://getspeakup.com/api/v1/accounts/changePassword \
+        newPassword=new_password \
+        existingPassword=old_password
+
+Example request:
+
+.. code-block:: bash
+
+   http POST https://getspeakup.com/api/v1/accounts/changePassword \
+        Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 \
+        newPassword="qwerty" \
+        existingPassword="123456"
+
+Successful response:
+
+If all above steps were done correctly you should see response like this:
+
+.. code-block:: bash
+
+   HTTP/1.1 204 No Content
+
+If there were errors in password validation response will be like this:
+
+.. code-block:: bash
+
+   HTTP/1.1 400 Bad Request
+
+
+.. code-block:: javascript
+
+   {
+       "errors": [
+           {
+               "msg": "Invalid current password",
+               "param": "existingPassword"
+           }
+       ]
+   }
+
+
+
+
 Change active application
 =========================
 
@@ -28,7 +77,7 @@ Definition:
 .. code-block:: bash
 
    POST https://getspeakup.com/api/v1/accounts/changeActiveApp \
-        appId="appId_to_login"
+        appId=appId_to_login
 
 Body parameters:
    1. appId - Id of application that user would like to login
@@ -44,6 +93,10 @@ Example request:
 Successful response:
 
 If all above steps were done correctly you should see response like this:
+
+.. code-block:: bash
+
+   HTTP/1.1 200 OK
 
 .. code-block:: javascript
 

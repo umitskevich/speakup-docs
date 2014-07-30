@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The Invite object &mdash; Speakup 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="Invites" href="index.html" />
+    <link rel="next" title="Billings" href="../billings/index.html" />
+    <link rel="prev" title="Get by Id" href="api.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../billings/index.html" title="Billings"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="Get by Id"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Invites</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-invite-object">
+<span id="invite-object"></span><h1>The <tt class="docutils literal"><span class="pre">Invite</span></tt> object<a class="headerlink" href="#the-invite-object" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Field</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">_id</span></tt></td>
+<td>The id of the Invite object</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">appId</span></tt></td>
+<td>Id of application that invitation belongs to</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">createdOn</span></tt></td>
+<td>Date when invite entity was created</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">email</span></tt></td>
+<td>Email of person that was invited to application</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">inviterId</span></tt></td>
+<td>Id of user that sent invitation</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">token</span></tt></td>
+<td>Token for invite entity</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="example-of-an-invite-object">
+<span id="example-invite-object"></span><h2>Example of an invite object<a class="headerlink" href="#example-of-an-invite-object" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;_id&quot;</span><span class="o">:</span> <span class="s2">&quot;53d66c7e15aca6cc1f457f35&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;appId&quot;</span><span class="o">:</span> <span class="s2">&quot;53aaa7181f0d592c49b7833a&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;createdOn&quot;</span><span class="o">:</span> <span class="s2">&quot;2014-07-28T14:47:16.641Z&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="s2">&quot;sandra@yourcompany.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;inviterId&quot;</span><span class="o">:</span> <span class="s2">&quot;53d2646ac8f9d5169fb03206&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;token&quot;</span><span class="o">:</span> <span class="s2">&quot;228fb7ada78c6b390d54d67142099487714419e6a478a32eee7efe36210f5f5a79cd30002ca061c65c4508120363da9e&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+    <a href="/docs/index.html"><img src="/docs/_static/logo-white-landing.png" /></a>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">The <tt class="docutils literal"><span class="pre">Invite</span></tt> object</a><ul>
+<li><a class="reference internal" href="#example-of-an-invite-object">Example of an invite object</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="api.html"
+                        title="previous chapter">Get by Id</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../billings/index.html"
+                        title="next chapter">Billings</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../billings/index.html" title="Billings"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="Get by Id"
+             >previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Invites</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2014, Speakup.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

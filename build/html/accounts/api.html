@@ -66,11 +66,46 @@
 <p>Example response:</p>
 <p><em class="xref std std-ref">Account object</em>.</p>
 </div>
+<div class="section" id="change-password">
+<h1>Change password<a class="headerlink" href="#change-password" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/accounts/changePassword <span class="se">\</span>
+     <span class="nv">newPassword</span><span class="o">=</span>new_password <span class="se">\</span>
+     <span class="nv">existingPassword</span><span class="o">=</span>old_password
+</pre></div>
+</div>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/accounts/changePassword <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
+     <span class="nv">newPassword</span><span class="o">=</span><span class="s2">&quot;qwerty&quot;</span> <span class="se">\</span>
+     <span class="nv">existingPassword</span><span class="o">=</span><span class="s2">&quot;123456&quot;</span>
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly you should see response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 204 No Content
+</pre></div>
+</div>
+<p>If there were errors in password validation response will be like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 400 Bad Request
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;errors&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;msg&quot;</span><span class="o">:</span> <span class="s2">&quot;Invalid current password&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;param&quot;</span><span class="o">:</span> <span class="s2">&quot;existingPassword&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="change-active-application">
 <h1>Change active application<a class="headerlink" href="#change-active-application" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
 <div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/accounts/changeActiveApp <span class="se">\</span>
-     <span class="nv">appId</span><span class="o">=</span><span class="s2">&quot;appId_to_login&quot;</span>
+     <span class="nv">appId</span><span class="o">=</span>appId_to_login
 </pre></div>
 </div>
 <dl class="docutils">
@@ -88,6 +123,9 @@
 </div>
 <p>Successful response:</p>
 <p>If all above steps were done correctly you should see response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
+</pre></div>
+</div>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
   <span class="s2">&quot;redirect&quot;</span><span class="o">:</span> <span class="s2">&quot;https://getspeakup.com&quot;</span>
 <span class="p">}</span>
@@ -106,6 +144,7 @@
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Retrieve current account</a></li>
+<li><a class="reference internal" href="#change-password">Change password</a></li>
 <li><a class="reference internal" href="#change-active-application">Change active application</a></li>
 </ul>
 

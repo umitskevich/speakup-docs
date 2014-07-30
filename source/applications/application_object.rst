@@ -52,7 +52,7 @@ Example of an application object
 
   {
       "_id": "53c7f8b2c924fa53a7a9f4ce",
-      "appUrl": "http://getspeakup.com",
+      "appUrl": "http://yourcompany.getspeakup.com",
       "createdOn": "2014-07-17T16:24:18.907Z",
       "email": "demo@yourcompany.com",
       "emailDomain": "yourcompany.com",

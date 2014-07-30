@@ -164,6 +164,152 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="save-user-settings">
+<h1>Save user settings<a class="headerlink" href="#save-user-settings" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/:appId/users/saveSettings <span class="se">\</span>
+     <span class="nv">email</span><span class="o">=</span>new_email <span class="se">\</span>
+     <span class="nv">fullName</span><span class="o">=</span>full_name <span class="se">\</span>
+     <span class="nv">title</span><span class="o">=</span>job_title <span class="se">\</span>
+     <span class="nv">bio</span><span class="o">=</span>user_info <span class="se">\</span>
+     settings:<span class="o">=</span>json_notification_settings <span class="se">\</span>
+     <span class="nv">picture</span><span class="o">=</span>picture_href <span class="se">\</span>
+     <span class="nv">picturePublicId</span><span class="o">=</span>picture_public_id
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Body parameters:</dt>
+<dd><ol class="first last arabic">
+<li><p class="first">email - New user email.</p>
+</li>
+<li><p class="first">fullName - New user full name.</p>
+</li>
+<li><p class="first">title - User&#8217;s job title.</p>
+</li>
+<li><p class="first">bio - Information about user.</p>
+</li>
+<li><p class="first">settings - Notification settings. This is json object that has the next schema:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">settings</span><span class="o">:</span> <span class="p">{</span>
+   <span class="nx">notifications</span><span class="o">:</span> <span class="p">{</span>
+     <span class="nx">email</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span> <span class="k">default</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}</span>
+   <span class="p">},</span>
+   <span class="nx">notifyOn</span><span class="o">:</span> <span class="p">{</span>
+     <span class="nx">newProblem</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span> <span class="k">default</span><span class="o">:</span> <span class="kc">true</span> <span class="p">},</span>
+     <span class="nx">newIdea</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span> <span class="k">default</span><span class="o">:</span> <span class="kc">true</span> <span class="p">},</span>
+     <span class="nx">ownPostNewSolution</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span> <span class="k">default</span><span class="o">:</span> <span class="kc">true</span> <span class="p">},</span>
+     <span class="nx">ownPostNewComment</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span> <span class="k">default</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}</span>
+   <span class="p">},</span>
+   <span class="nx">sort</span><span class="o">:</span> <span class="p">{</span>
+     <span class="nx">home</span><span class="o">:</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span> <span class="k">default</span><span class="o">:</span> <span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="kr">enum</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="s1">&#39;newest&#39;</span><span class="p">]},</span>
+     <span class="nx">profile</span><span class="o">:</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span> <span class="k">default</span><span class="o">:</span> <span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="kr">enum</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="s1">&#39;newest&#39;</span><span class="p">]},</span>
+     <span class="nx">dashboard</span><span class="o">:</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span> <span class="k">default</span><span class="o">:</span> <span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="kr">enum</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="s1">&#39;newest&#39;</span><span class="p">]},</span>
+     <span class="s1">&#39;post-details&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span> <span class="k">default</span><span class="o">:</span> <span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="kr">enum</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="s1">&#39;newest&#39;</span><span class="p">]}</span>
+   <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">User&#8217;s picture address.</p>
+</li>
+<li><p class="first">Picture public Id.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/saveSettings <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
+     <span class="nv">email</span><span class="o">=</span><span class="s2">&quot;new_email@yourcompany.com&quot;</span> <span class="se">\</span>
+     <span class="nv">fullName</span><span class="o">=</span><span class="s2">&quot;John Doe&quot;</span> <span class="se">\</span>
+     <span class="nv">title</span><span class="o">=</span><span class="s2">&quot;Node.js developer&quot;</span> <span class="se">\</span>
+     <span class="nv">bio</span><span class="o">=</span><span class="s2">&quot;Here is information about user&quot;</span> <span class="se">\</span>
+     settings:<span class="o">=</span><span class="s1">&#39;{ &quot;notifications&quot;: { &quot;email&quot;: true }, &quot;notifyOn&quot;: { &quot;newProblem&quot;: false, &quot;newIdea&quot;: true, &quot;ownPostNewSolution&quot;: true, &quot;ownPostNewComment&quot;: false }, &quot;sort&quot;: { &quot;home&quot;: &quot;popular&quot;, &quot;profile&quot;: &quot;popular&quot;, &quot;dashboard&quot;: &quot;newest&quot;, &quot;post-details&quot;: &quot;newest&quot; } }&#39;</span> <span class="se">\</span>
+     <span class="nv">picture</span><span class="o">=</span><span class="s2">&quot;http://res.cloudinary.com/7adf6ngw/image/upload/sample.jpg&quot;</span> <span class="se">\</span>
+     <span class="nv">picturePublicId</span><span class="o">=</span><span class="s2">&quot;123456&quot;</span>
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly you should get response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 204 No Content
+</pre></div>
+</div>
+<p>If there were errors in settings validation response will be like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 400 Bad Request
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;errors&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;msg&quot;</span><span class="o">:</span> <span class="s2">&quot;It looks like email address is not valid.&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;param&quot;</span><span class="o">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;me5@notyourcompany&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;msg&quot;</span><span class="o">:</span> <span class="s2">&quot;Email is not company email&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;param&quot;</span><span class="o">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;me5@notyourcompany&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="change-picture">
+<h1>Change picture<a class="headerlink" href="#change-picture" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/:appId/users/changePicture <span class="se">\</span>
+     file@~/path_to_image
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Body parameters:</dt>
+<dd><ol class="first last arabic simple">
+<li>file - Uploading image.</li>
+</ol>
+</dd>
+</dl>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http -f POST https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/changePicture <span class="se">\</span>
+      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
+      file@~/images/your_avatar.jpg
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly you should get response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;height&quot;</span><span class="o">:</span> <span class="mi">273</span><span class="p">,</span>
+    <span class="s2">&quot;thumbnailUrl&quot;</span><span class="o">:</span> <span class="s2">&quot;https://res.cloudinary.com/speakup/image/upload/c_fill,g_face,h_180,w_180/kiezh3uksp6zw1ombzwb&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;http://res.cloudinary.com/speakup/image/upload/v1406727634/kiezh3uksp6zw1ombzwb.jpg&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;width&quot;</span><span class="o">:</span> <span class="mi">184</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="remove-picture">
+<h1>Remove picture<a class="headerlink" href="#remove-picture" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<div class="highlight-bash"><div class="highlight"><pre>DELETE https://getspeakup.com/api/v1/:appId/users/removePicture
+</pre></div>
+</div>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http DELETE https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/removePicture <span class="se">\</span>
+             Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly response should be like this (contains path to default image):</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;picture&quot;</span><span class="o">:</span> <span class="s2">&quot;http://getspeakup.com/assets/images/2-frontend/profile-image.svg&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 
 
           </div>
@@ -180,6 +326,9 @@
 <li><a class="reference internal" href="#get-user-list">Get user list</a></li>
 <li><a class="reference internal" href="#update-decision-maker">Update decision maker</a></li>
 <li><a class="reference internal" href="#upgrade-to-manager">Upgrade to manager</a></li>
+<li><a class="reference internal" href="#save-user-settings">Save user settings</a></li>
+<li><a class="reference internal" href="#change-picture">Change picture</a></li>
+<li><a class="reference internal" href="#remove-picture">Remove picture</a></li>
 </ul>
 
   <h4>Previous topic</h4>

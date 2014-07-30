@@ -144,3 +144,183 @@ If all above steps were done correctly you should get response like this:
 .. code-block:: bash
 
    HTTP/1.1 200 OK
+
+
+
+
+Save user settings
+====================
+
+Definition:
+
+.. code-block:: bash
+
+   POST https://getspeakup.com/api/v1/:appId/users/saveSettings \
+        email=new_email \
+        fullName=full_name \
+        title=job_title \
+        bio=user_info \
+        settings:=json_notification_settings \
+        picture=picture_href \
+        picturePublicId=picture_public_id
+
+Body parameters:
+   1. email - New user email.
+   2. fullName - New user full name.
+   3. title - User's job title.
+   4. bio - Information about user.
+   5. settings - Notification settings. This is json object that has the next schema:
+
+      .. code-block:: javascript
+
+         settings: {
+            notifications: {
+              email: { type: Boolean, default: true }
+            },
+            notifyOn: {
+              newProblem: { type: Boolean, default: true },
+              newIdea: { type: Boolean, default: true },
+              ownPostNewSolution: { type: Boolean, default: true },
+              ownPostNewComment: { type: Boolean, default: true }
+            },
+            sort: {
+              home: {type: String, default: 'popular', enum: ['popular', 'newest']},
+              profile: {type: String, default: 'popular', enum: ['popular', 'newest']},
+              dashboard: {type: String, default: 'popular', enum: ['popular', 'newest']},
+              'post-details': {type: String, default: 'popular', enum: ['popular', 'newest']}
+            },
+         }
+   6. User's picture address.
+   7. Picture public Id.
+
+
+Example request:
+
+.. code-block:: bash
+
+
+   http POST https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/saveSettings \
+        Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 \
+        email="new_email@yourcompany.com" \
+        fullName="John Doe" \
+        title="Node.js developer" \
+        bio="Here is information about user" \
+        settings:='{ "notifications": { "email": true }, "notifyOn": { "newProblem": false, "newIdea": true, "ownPostNewSolution": true, "ownPostNewComment": false }, "sort": { "home": "popular", "profile": "popular", "dashboard": "newest", "post-details": "newest" } }' \
+        picture="http://res.cloudinary.com/7adf6ngw/image/upload/sample.jpg" \
+        picturePublicId="123456"
+
+
+
+Successful response:
+
+If all above steps were done correctly you should get response like this:
+
+.. code-block:: bash
+
+   HTTP/1.1 204 No Content
+
+
+
+If there were errors in settings validation response will be like this:
+
+.. code-block:: bash
+
+   HTTP/1.1 400 Bad Request
+
+
+.. code-block:: javascript
+
+  {
+      "errors": [
+          {
+              "msg": "It looks like email address is not valid.",
+              "param": "email",
+              "value": "me5@notyourcompany"
+          },
+          {
+              "msg": "Email is not company email",
+              "param": "email",
+              "value": "me5@notyourcompany"
+          }
+      ]
+  }
+
+
+
+Change picture
+====================
+
+Definition:
+
+.. code-block:: bash
+
+   POST https://getspeakup.com/api/v1/:appId/users/changePicture \
+	file@~/path_to_image
+
+Body parameters:
+   1. file - Uploading image.
+
+
+Example request:
+
+.. code-block:: bash
+
+   http -f POST https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/changePicture \
+	 Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 \
+	 file@~/images/your_avatar.jpg
+
+
+Successful response:
+
+If all above steps were done correctly you should get response like this:
+
+.. code-block:: bash
+
+   HTTP/1.1 200 OK
+
+
+.. code-block:: javascript
+
+  {
+      "height": 273,
+      "thumbnailUrl": "https://res.cloudinary.com/speakup/image/upload/c_fill,g_face,h_180,w_180/kiezh3uksp6zw1ombzwb",
+      "url": "http://res.cloudinary.com/speakup/image/upload/v1406727634/kiezh3uksp6zw1ombzwb.jpg",
+      "width": 184
+  }
+
+
+
+
+Remove picture
+====================
+
+Definition:
+
+.. code-block:: bash
+
+   DELETE https://getspeakup.com/api/v1/:appId/users/removePicture
+
+
+Example request:
+
+.. code-block:: bash
+
+   http DELETE https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/removePicture \
+         	Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+
+
+Successful response:
+
+If all above steps were done correctly response should be like this (contains path to default image):
+
+.. code-block:: bash
+
+   HTTP/1.1 200 OK
+
+
+.. code-block:: javascript
+
+  {
+      "picture": "http://getspeakup.com/assets/images/2-frontend/profile-image.svg"
+  }
+

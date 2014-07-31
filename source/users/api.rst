@@ -87,7 +87,7 @@ Definition:
 
 .. code-block:: bash
 
-   POST https://getspeakup.com/api/v1/:appId/users/updateDecisionMaker \
+   PUT https://getspeakup.com/api/v1/:appId/users/updateDecisionMaker \
         id=decision_maker_id
 
 Body parameters:
@@ -98,7 +98,7 @@ Example request:
 
 .. code-block:: bash
 
-   http POST https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/updateDecisionMaker \
+   http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/updateDecisionMaker \
         Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 \
         id="53d2ba3dd9f854b7bb77cc98"
 
@@ -121,7 +121,7 @@ Definition:
 
 .. code-block:: bash
 
-   POST https://getspeakup.com/api/v1/:appId/users/upgradeToManager \
+   PUT https://getspeakup.com/api/v1/:appId/users/upgradeToManager \
         token=generated_token
 
 Body parameters:
@@ -132,7 +132,7 @@ Example request:
 
 .. code-block:: bash
 
-   http POST https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/upgradeToManager \
+   http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/upgradeToManager \
         Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 \
         token="tok_14LZVn2VjFqKat8xCdtihCmt"
 
@@ -155,7 +155,7 @@ Definition:
 
 .. code-block:: bash
 
-   POST https://getspeakup.com/api/v1/:appId/users/saveSettings \
+   PUT https://getspeakup.com/api/v1/:appId/users/saveSettings \
         email=new_email \
         fullName=full_name \
         title=job_title \
@@ -199,7 +199,7 @@ Example request:
 .. code-block:: bash
 
 
-   http POST https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/saveSettings \
+   http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/saveSettings \
         Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 \
         email="new_email@yourcompany.com" \
         fullName="John Doe" \
@@ -230,20 +230,15 @@ If there were errors in settings validation response will be like this:
 
 .. code-block:: javascript
 
-  {
+    {
       "errors": [
           {
-              "msg": "It looks like email address is not valid.",
-              "param": "email",
-              "value": "me5@notyourcompany"
-          },
-          {
-              "msg": "Email is not company email",
-              "param": "email",
-              "value": "me5@notyourcompany"
+              "field": "email",
+              "message": "Email is not company email."
           }
       ]
-  }
+    }
+
 
 
 
@@ -298,14 +293,14 @@ Definition:
 
 .. code-block:: bash
 
-   DELETE https://getspeakup.com/api/v1/:appId/users/removePicture
+   PUT https://getspeakup.com/api/v1/:appId/users/removePicture
 
 
 Example request:
 
 .. code-block:: bash
 
-   http DELETE https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/removePicture \
+   http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/removePicture \
          	Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 
 

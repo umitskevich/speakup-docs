@@ -115,7 +115,7 @@
 <div class="section" id="update-decision-maker">
 <h1>Update decision maker<a class="headerlink" href="#update-decision-maker" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/:appId/users/updateDecisionMaker <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/:appId/users/updateDecisionMaker <span class="se">\</span>
      <span class="nv">id</span><span class="o">=</span>decision_maker_id
 </pre></div>
 </div>
@@ -127,7 +127,7 @@
 </dd>
 </dl>
 <p>Example request:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/updateDecisionMaker <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/updateDecisionMaker <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
      <span class="nv">id</span><span class="o">=</span><span class="s2">&quot;53d2ba3dd9f854b7bb77cc98&quot;</span>
 </pre></div>
@@ -141,7 +141,7 @@
 <div class="section" id="upgrade-to-manager">
 <h1>Upgrade to manager<a class="headerlink" href="#upgrade-to-manager" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/:appId/users/upgradeToManager <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/:appId/users/upgradeToManager <span class="se">\</span>
      <span class="nv">token</span><span class="o">=</span>generated_token
 </pre></div>
 </div>
@@ -153,7 +153,7 @@
 </dd>
 </dl>
 <p>Example request:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/upgradeToManager <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/upgradeToManager <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
      <span class="nv">token</span><span class="o">=</span><span class="s2">&quot;tok_14LZVn2VjFqKat8xCdtihCmt&quot;</span>
 </pre></div>
@@ -167,7 +167,7 @@
 <div class="section" id="save-user-settings">
 <h1>Save user settings<a class="headerlink" href="#save-user-settings" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/:appId/users/saveSettings <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/:appId/users/saveSettings <span class="se">\</span>
      <span class="nv">email</span><span class="o">=</span>new_email <span class="se">\</span>
      <span class="nv">fullName</span><span class="o">=</span>full_name <span class="se">\</span>
      <span class="nv">title</span><span class="o">=</span>job_title <span class="se">\</span>
@@ -217,7 +217,7 @@
 </dd>
 </dl>
 <p>Example request:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/saveSettings <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/saveSettings <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
      <span class="nv">email</span><span class="o">=</span><span class="s2">&quot;new_email@yourcompany.com&quot;</span> <span class="se">\</span>
      <span class="nv">fullName</span><span class="o">=</span><span class="s2">&quot;John Doe&quot;</span> <span class="se">\</span>
@@ -238,18 +238,12 @@
 </pre></div>
 </div>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
-    <span class="s2">&quot;errors&quot;</span><span class="o">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="s2">&quot;msg&quot;</span><span class="o">:</span> <span class="s2">&quot;It looks like email address is not valid.&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;param&quot;</span><span class="o">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;me5@notyourcompany&quot;</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">&quot;msg&quot;</span><span class="o">:</span> <span class="s2">&quot;Email is not company email&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;param&quot;</span><span class="o">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;me5@notyourcompany&quot;</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
+  <span class="s2">&quot;errors&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;field&quot;</span><span class="o">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;Email is not company email.&quot;</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -291,11 +285,11 @@
 <div class="section" id="remove-picture">
 <h1>Remove picture<a class="headerlink" href="#remove-picture" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>DELETE https://getspeakup.com/api/v1/:appId/users/removePicture
+<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/:appId/users/removePicture
 </pre></div>
 </div>
 <p>Example request:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http DELETE https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/removePicture <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/removePicture <span class="se">\</span>
              Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 </pre></div>
 </div>

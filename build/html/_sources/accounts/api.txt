@@ -57,14 +57,15 @@ If there were errors in password validation response will be like this:
 
 .. code-block:: javascript
 
-   {
-       "errors": [
-           {
-               "msg": "Invalid current password",
-               "param": "existingPassword"
-           }
-       ]
-   }
+  {
+     "errors": [
+         {
+             "field": "existingPassword",
+             "message": "Invalid current password"
+         }
+     ]
+  }
+
 
 
 Forgot password
@@ -122,7 +123,7 @@ Definition:
 
 .. code-block:: bash
 
-   POST https://getspeakup.com/api/v1/accounts/changeActiveApp \
+   PUT https://getspeakup.com/api/v1/accounts/changeActiveApp \
         appId=appId_to_login
 
 Body parameters:
@@ -132,7 +133,7 @@ Example request:
 
 .. code-block:: bash
 
-   http POST https://getspeakup.com/api/v1/accounts/changeActiveApp \
+   http PUT https://getspeakup.com/api/v1/accounts/changeActiveApp \
         Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 \
         appId="53d2c3515c15b4a7bda023fe"
 

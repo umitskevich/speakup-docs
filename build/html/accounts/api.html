@@ -91,12 +91,12 @@
 </pre></div>
 </div>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
-    <span class="s2">&quot;errors&quot;</span><span class="o">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="s2">&quot;msg&quot;</span><span class="o">:</span> <span class="s2">&quot;Invalid current password&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;param&quot;</span><span class="o">:</span> <span class="s2">&quot;existingPassword&quot;</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
+   <span class="s2">&quot;errors&quot;</span><span class="o">:</span> <span class="p">[</span>
+       <span class="p">{</span>
+           <span class="s2">&quot;field&quot;</span><span class="o">:</span> <span class="s2">&quot;existingPassword&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;Invalid current password&quot;</span>
+       <span class="p">}</span>
+   <span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -138,7 +138,7 @@
 <div class="section" id="change-active-application">
 <h1>Change active application<a class="headerlink" href="#change-active-application" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/accounts/changeActiveApp <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/accounts/changeActiveApp <span class="se">\</span>
      <span class="nv">appId</span><span class="o">=</span>appId_to_login
 </pre></div>
 </div>
@@ -150,7 +150,7 @@
 </dd>
 </dl>
 <p>Example request:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/accounts/changeActiveApp <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/accounts/changeActiveApp <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
      <span class="nv">appId</span><span class="o">=</span><span class="s2">&quot;53d2c3515c15b4a7bda023fe&quot;</span>
 </pre></div>

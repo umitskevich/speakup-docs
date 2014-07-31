@@ -55,11 +55,11 @@
   <div class="section" id="retrieve-current-application">
 <h1>Retrieve current application<a class="headerlink" href="#retrieve-current-application" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>GET https://getspeakup.com/api/v1/application/:id
+<div class="highlight-bash"><div class="highlight"><pre>GET https://getspeakup.com/api/v1/applications/:id
 </pre></div>
 </div>
 <p>Example request:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/application/53aaa7181f0d592c49b7833a <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/applications/53aaa7181f0d592c49b7833a <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 </pre></div>
 </div>
@@ -69,7 +69,7 @@
 <div class="section" id="update-application-company-name">
 <h1>Update application (company) name<a class="headerlink" href="#update-application-company-name" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/application/updateCompanyName/:id <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/applications/:id/updateCompanyName <span class="se">\</span>
      <span class="nv">companyName</span><span class="o">=</span>new_name
 </pre></div>
 </div>
@@ -81,7 +81,7 @@
 </dd>
 </dl>
 <p>Example request:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/application/updateCompanyName/53aaa7181f0d592c49b7833a <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/applications/53aaa7181f0d592c49b7833a/updateCompanyName <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
      <span class="nv">companyName</span><span class="o">=</span><span class="s2">&quot;New demo name&quot;</span>
 </pre></div>

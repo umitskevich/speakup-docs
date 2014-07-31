@@ -6,13 +6,13 @@ Definition:
 
 .. code-block:: bash
 
-  GET https://getspeakup.com/api/v1/application/:id
+  GET https://getspeakup.com/api/v1/applications/:id
 
 Example request:
 
 .. code-block:: bash
 
-  http GET https://getspeakup.com/api/v1/application/53aaa7181f0d592c49b7833a \
+  http GET https://getspeakup.com/api/v1/applications/53aaa7181f0d592c49b7833a \
        Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 
 Example response:
@@ -28,7 +28,7 @@ Definition:
 
 .. code-block:: bash
 
-   POST https://getspeakup.com/api/v1/application/updateCompanyName/:id \
+   PUT https://getspeakup.com/api/v1/applications/:id/updateCompanyName \
         companyName=new_name
 
 Body parameters:
@@ -39,7 +39,7 @@ Example request:
 
 .. code-block:: bash
 
-   http POST https://getspeakup.com/api/v1/application/updateCompanyName/53aaa7181f0d592c49b7833a \
+   http PUT https://getspeakup.com/api/v1/applications/53aaa7181f0d592c49b7833a/updateCompanyName \
         Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 \
         companyName="New demo name"
 

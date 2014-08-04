@@ -52,9 +52,9 @@ Definition:
 
 Query string parameters:
    1. sort - Sorting field for users (can take the next values: 'fullName', 'statistic.problems', 'statistic.ideas', 'statistic.solutions', 'statistic.comments').
-   2. order - Ordering direction (ascending as 1, descending as -1)
+   2. order - Ordering direction (ascending as 1, descending as -1, ascending by default)
    3. limit - Amount of users per page
-   4. page - Page of users list according to limit
+   4. page - Page from user list according to limit (10 by default)
    5. text - Value of search criteria (search by 'fullName' field)
 
 

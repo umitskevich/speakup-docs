@@ -32,17 +32,15 @@ Definition:
    GET https://getspeakup.com/api/v1/:appId/invites
 
 Query string parameters:
-   1. sort - Sorting field for invitation ('email' by default).
-   2. order - Ordering direction (ascending as 1, descending as -1, ascending by default)
-   3. limit - Amount of invitations per page (10 by default)
-   4. page - Page from invitation list according to limit
+   1. limit - Amount of invitations per page (10 by default)
+   2. page - Page from invitation list according to limit
 
 
 Example request:
 
 .. code-block:: bash
 
-  http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/invites sort==email order==-1 limit==10 page==1 \
+  http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/invites limit==10 page==1 \
        Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 
 

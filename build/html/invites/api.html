@@ -75,15 +75,13 @@
 <dl class="docutils">
 <dt>Query string parameters:</dt>
 <dd><ol class="first last arabic simple">
-<li>sort - Sorting field for invitation (&#8216;email&#8217; by default).</li>
-<li>order - Ordering direction (ascending as 1, descending as -1, ascending by default)</li>
 <li>limit - Amount of invitations per page (10 by default)</li>
 <li>page - Page from invitation list according to limit</li>
 </ol>
 </dd>
 </dl>
 <p>Example request:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/invites <span class="nv">sort</span><span class="o">==</span>email <span class="nv">order</span><span class="o">==</span>-1 <span class="nv">limit</span><span class="o">==</span>10 <span class="nv">page</span><span class="o">==</span>1 <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/invites <span class="nv">limit</span><span class="o">==</span>10 <span class="nv">page</span><span class="o">==</span>1 <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 </pre></div>
 </div>

@@ -168,8 +168,8 @@ Definition:
         title=job_title \
         bio=user_info \
         settings:=json_notification_settings \
-        picture=picture_href \
-        picturePublicId=picture_public_id
+        picture=picture_href
+
 
 Body parameters:
    1. email - New user email.
@@ -198,7 +198,7 @@ Body parameters:
             },
          }
    6. User's picture address.
-   7. Picture public Id.
+
 
 
 Example request:
@@ -213,8 +213,8 @@ Example request:
         title="Node.js developer" \
         bio="Here is information about user" \
         settings:='{ "notifications": { "email": true }, "notifyOn": { "newProblem": false, "newIdea": true, "ownPostNewSolution": true, "ownPostNewComment": false }, "sort": { "home": "popular", "profile": "popular", "dashboard": "newest", "post-details": "newest" } }' \
-        picture="http://res.cloudinary.com/7adf6ngw/image/upload/sample.jpg" \
-        picturePublicId="123456"
+        picture="http://res.cloudinary.com/7adf6ngw/image/upload/sample.jpg"
+
 
 
 

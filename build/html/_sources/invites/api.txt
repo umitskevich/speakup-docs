@@ -112,27 +112,26 @@ If all above steps were done correctly you should see response that will represe
 
 
 
-Delete invitations
-====================
+
+
+Resend invitation
+===================
 
 Definition:
 
 .. code-block:: bash
 
-   DELETE https://getspeakup.com/api/v1/:appId/invites/deleteInvites \
-          ids:=[first_id, second_id]
+   PUT https://getspeakup.com/api/v1/:appId/invites/:id/resend
 
-Body parameters:
-   1. ids - Id list of invitations for deleting
 
 
 Example request:
 
 .. code-block:: bash
 
-  http DELETE https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/invites/deleteInvites \
-       Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 \
-       ids:='["53d661fefdbd65721f48906a", "53d661fefdbd65721f48906c"]'
+  http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/invites/53d66c7e15aca6cc1f457f35/resend \
+       Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+
 
 Example response:
 
@@ -141,5 +140,45 @@ If all above steps were done correctly you should see response like this:
 .. code-block:: bash
 
    HTTP/1.1 204 No Content
+
+
+
+
+
+Delete invitation
+===================
+
+Definition:
+
+.. code-block:: bash
+
+   PUT https://getspeakup.com/api/v1/:appId/invites/:id/delete
+
+
+
+Example request:
+
+.. code-block:: bash
+
+  http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/invites/53d66c7e15aca6cc1f457f35/delete \
+       Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+
+
+Example response:
+
+If all above steps were done correctly you should see response like this:
+
+.. code-block:: bash
+
+   HTTP/1.1 204 No Content
+
+
+If invitation with such Id does not exist response will be like this:
+
+.. code-block:: bash
+
+   HTTP/1.1 404 Not Found
+
+
 
 

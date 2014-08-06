@@ -51,18 +51,20 @@ Definition:
    GET https://getspeakup.com/api/v1/:appId/users
 
 Query string parameters:
-   1. sort - Sorting field for users (can take the next values: 'fullName', 'statistic.problems', 'statistic.ideas', 'statistic.solutions', 'statistic.comments').
-   2. order - Ordering direction (ascending as 1, descending as -1, ascending by default)
-   3. limit - Amount of users per page
-   4. page - Page from user list according to limit (10 by default)
-   5. text - Value of search criteria (search by 'fullName' field)
+   1. sort - Sorting field for users. It consists of two parts separated by colon, the first part is field name, the second one is order direction.
+      Sorting can be performed by multiple fields separated by comma, in this case the first criteria has higher priority.
+      Examples: ('fullName:1', 'statistic.ideas:-1', 'rolesCount:-1,fullName:1').
+   2. limit - Amount of users per page (10 by default).
+   3. page - Page from user list according to limit (1 by default).
+   4. role - User role for filtering.
+   5. text - Value for searching criteria (searching by 'fullName' field).
 
 
 Example request:
 
 .. code-block:: bash
 
-  http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users sort==statistic.ideas order==-1 limit==10 page==1 text==john \
+  http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users sort=='rolesCount:-1,fullName:1' limit==10 page==1 text=='jo' \
        Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 
 
@@ -80,36 +82,41 @@ Example response:
 
 
 
-Update decision maker
-=====================
+
+
+
+Delete user by id
+===================
 
 Definition:
 
 .. code-block:: bash
 
-   PUT https://getspeakup.com/api/v1/:appId/users/updateDecisionMaker \
-        id=decision_maker_id
-
-Body parameters:
-   1. id - Id of user that will be updated as Decision Maker
-
+   PUT https://getspeakup.com/api/v1/:appId/users/:id/delete
 
 Example request:
 
 .. code-block:: bash
 
-   http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/updateDecisionMaker \
-        Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 \
-        id="53d2ba3dd9f854b7bb77cc98"
+  http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/53aaa7181f0d592c49b7833c/delete \
+    Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 
+Example response:
 
-Successful response:
 
 If all above steps were done correctly you should get response like this:
 
 .. code-block:: bash
 
    HTTP/1.1 204 No Content
+
+
+If user with such Id does not exist response will be like this:
+
+.. code-block:: bash
+
+   HTTP/1.1 404 Not Found
+
 
 
 
@@ -121,7 +128,7 @@ Definition:
 
 .. code-block:: bash
 
-   PUT https://getspeakup.com/api/v1/:appId/users/upgradeToManager \
+   PUT https://getspeakup.com/api/v1/:appId/users/:id/upgradeToManager \
         token=generated_token
 
 Body parameters:
@@ -132,7 +139,7 @@ Example request:
 
 .. code-block:: bash
 
-   http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/upgradeToManager \
+   http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/53aaa7181f0d592c49b7833c/upgradeToManager \
         Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 \
         token="tok_14LZVn2VjFqKat8xCdtihCmt"
 
@@ -155,7 +162,7 @@ Definition:
 
 .. code-block:: bash
 
-   PUT https://getspeakup.com/api/v1/:appId/users/saveSettings \
+   PUT https://getspeakup.com/api/v1/:appId/users/:id \
         email=new_email \
         fullName=full_name \
         title=job_title \
@@ -199,7 +206,7 @@ Example request:
 .. code-block:: bash
 
 
-   http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/saveSettings \
+   http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/53aaa7181f0d592c49b7833c \
         Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 \
         email="new_email@yourcompany.com" \
         fullName="John Doe" \
@@ -249,7 +256,7 @@ Definition:
 
 .. code-block:: bash
 
-   POST https://getspeakup.com/api/v1/:appId/users/changePicture \
+   POST https://getspeakup.com/api/v1/:appId/users/:id/changePicture \
 	file@~/path_to_image
 
 Body parameters:
@@ -260,7 +267,7 @@ Example request:
 
 .. code-block:: bash
 
-   http -f POST https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/changePicture \
+   http -f POST https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/53aaa7181f0d592c49b7833c/changePicture \
 	 Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 \
 	 file@~/images/your_avatar.jpg
 
@@ -293,14 +300,14 @@ Definition:
 
 .. code-block:: bash
 
-   PUT https://getspeakup.com/api/v1/:appId/users/removePicture
+   PUT https://getspeakup.com/api/v1/:appId/users/:id/removePicture
 
 
 Example request:
 
 .. code-block:: bash
 
-   http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/removePicture \
+   http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/53aaa7181f0d592c49b7833c/removePicture \
          	Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 
 

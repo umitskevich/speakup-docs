@@ -69,21 +69,21 @@
 <div class="section" id="update-application-company-name">
 <h1>Update application (company) name<a class="headerlink" href="#update-application-company-name" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/applications/:id/updateCompanyName <span class="se">\</span>
-     <span class="nv">companyName</span><span class="o">=</span>new_name
+<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/applications/:id <span class="se">\</span>
+     <span class="nv">name</span><span class="o">=</span>new_name
 </pre></div>
 </div>
 <dl class="docutils">
 <dt>Body parameters:</dt>
 <dd><ol class="first last arabic simple">
-<li>companyName - New name for application</li>
+<li>name - New name for application</li>
 </ol>
 </dd>
 </dl>
 <p>Example request:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/applications/53aaa7181f0d592c49b7833a/updateCompanyName <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/applications/53aaa7181f0d592c49b7833a <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
-     <span class="nv">companyName</span><span class="o">=</span><span class="s2">&quot;New demo name&quot;</span>
+     <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;New demo name&quot;</span>
 </pre></div>
 </div>
 <p>Successful response:</p>
@@ -100,9 +100,8 @@
     <span class="s2">&quot;errors&quot;</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="s2">&quot;msg&quot;</span><span class="o">:</span> <span class="s2">&quot;The company name is required and should be 2 - 30 characters&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;param&quot;</span><span class="o">:</span> <span class="s2">&quot;companyName&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
-        <span class="p">},</span>
+            <span class="s2">&quot;param&quot;</span><span class="o">:</span> <span class="s2">&quot;name&quot;</span>
+        <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">}</span>
 </pre></div>

@@ -69,13 +69,13 @@
 <div class="section" id="change-password">
 <h1>Change password<a class="headerlink" href="#change-password" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/accounts/changePassword <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/accounts/:id/createPassword <span class="se">\</span>
      <span class="nv">newPassword</span><span class="o">=</span>new_password <span class="se">\</span>
      <span class="nv">existingPassword</span><span class="o">=</span>old_password
 </pre></div>
 </div>
 <p>Example request:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/accounts/changePassword <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/accounts/535565a95ca75754723fe8e3/changePassword <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
      <span class="nv">newPassword</span><span class="o">=</span><span class="s2">&quot;qwerty&quot;</span> <span class="se">\</span>
      <span class="nv">existingPassword</span><span class="o">=</span><span class="s2">&quot;123456&quot;</span>
@@ -104,34 +104,17 @@
 <div class="section" id="forgot-password">
 <h1>Forgot password<a class="headerlink" href="#forgot-password" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/accounts/forgotPassword <span class="se">\</span>
-     <span class="nv">email</span><span class="o">=</span>your_email
+<div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/accounts/:id/forgotPassword
 </pre></div>
 </div>
 <p>Example request:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/accounts/forgotPassword <span class="se">\</span>
-     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
-     <span class="nv">email</span><span class="o">=</span><span class="s2">&quot;user@yourcompany.com&quot;</span>
+<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/accounts/535565a95ca75754723fe8e3/forgotPassword <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 </pre></div>
 </div>
 <p>Successful response:</p>
 <p>If all above steps were done correctly you should see response like this:</p>
 <div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
-</pre></div>
-</div>
-<p>If there were errors in email validation response will be like this:</p>
-<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 400 Bad Request
-</pre></div>
-</div>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s2">&quot;errors&quot;</span><span class="o">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-          <span class="s2">&quot;msg&quot;</span><span class="o">:</span> <span class="s2">&quot;It looks like email address is not valid.&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;param&quot;</span><span class="o">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;user@yourcompany&quot;</span>
-      <span class="p">}</span>
-  <span class="p">]</span>
-<span class="p">}</span>
 </pre></div>
 </div>
 </div>

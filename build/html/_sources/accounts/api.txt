@@ -27,7 +27,7 @@ Definition:
 
 .. code-block:: bash
 
-   POST https://getspeakup.com/api/v1/accounts/changePassword \
+   POST https://getspeakup.com/api/v1/accounts/:id/createPassword \
         newPassword=new_password \
         existingPassword=old_password
 
@@ -35,7 +35,7 @@ Example request:
 
 .. code-block:: bash
 
-   http POST https://getspeakup.com/api/v1/accounts/changePassword \
+   http POST https://getspeakup.com/api/v1/accounts/535565a95ca75754723fe8e3/changePassword \
         Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 \
         newPassword="qwerty" \
         existingPassword="123456"
@@ -75,16 +75,15 @@ Definition:
 
 .. code-block:: bash
 
-   POST https://getspeakup.com/api/v1/accounts/forgotPassword \
-        email=your_email
+   POST https://getspeakup.com/api/v1/accounts/:id/forgotPassword
 
 Example request:
 
 .. code-block:: bash
 
-   http POST https://getspeakup.com/api/v1/accounts/forgotPassword \
-        Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 \
-        email="user@yourcompany.com"
+   http POST https://getspeakup.com/api/v1/accounts/535565a95ca75754723fe8e3/forgotPassword \
+        Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+
 
 Successful response:
 
@@ -94,25 +93,6 @@ If all above steps were done correctly you should see response like this:
 
    HTTP/1.1 200 OK
 
-
-If there were errors in email validation response will be like this:
-
-.. code-block:: bash
-
-   HTTP/1.1 400 Bad Request
-
-
-.. code-block:: javascript
-
-  {
-    "errors": [
-        {
-            "msg": "It looks like email address is not valid.",
-            "param": "email",
-            "value": "user@yourcompany"
-        }
-    ]
-  }
 
 
 

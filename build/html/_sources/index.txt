@@ -22,6 +22,6 @@ Table of contents:
    posts/index
    applications/index
    invites/index
-   billings/index
+   billing/index
 
 

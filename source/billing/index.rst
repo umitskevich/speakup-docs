@@ -6,5 +6,5 @@ Billings
    :titlesonly:
 
 
-   ../billings/api
+   ../billing/api
 

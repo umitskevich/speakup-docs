@@ -149,6 +149,40 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="disconnect-facebook">
+<h1>Disconnect Facebook<a class="headerlink" href="#disconnect-facebook" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/accounts/:id/facebook/remove
+</pre></div>
+</div>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/accounts/535565a95ca75754723fe8e3/facebook/remove <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly you should see response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 204 No Content
+</pre></div>
+</div>
+</div>
+<div class="section" id="disconnect-linkedin">
+<h1>Disconnect LinkedIn<a class="headerlink" href="#disconnect-linkedin" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/accounts/:id/linkedin/remove
+</pre></div>
+</div>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/accounts/535565a95ca75754723fe8e3/linkedin/remove <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly you should see response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 204 No Content
+</pre></div>
+</div>
+</div>
 
 
           </div>
@@ -164,6 +198,8 @@
 <li><a class="reference internal" href="#change-password">Change password</a></li>
 <li><a class="reference internal" href="#forgot-password">Forgot password</a></li>
 <li><a class="reference internal" href="#change-active-application">Change active application</a></li>
+<li><a class="reference internal" href="#disconnect-facebook">Disconnect Facebook</a></li>
+<li><a class="reference internal" href="#disconnect-linkedin">Disconnect LinkedIn</a></li>
 </ul>
 
   <h4>Previous topic</h4>

@@ -131,3 +131,61 @@ If all above steps were done correctly you should see response like this:
     "redirect": "https://getspeakup.com"
   }
 
+
+
+Disconnect Facebook
+====================
+
+Definition:
+
+.. code-block:: bash
+
+   PUT https://getspeakup.com/api/v1/accounts/:id/facebook/remove
+
+
+Example request:
+
+.. code-block:: bash
+
+   http PUT https://getspeakup.com/api/v1/accounts/535565a95ca75754723fe8e3/facebook/remove \
+        Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+
+
+Successful response:
+
+If all above steps were done correctly you should see response like this:
+
+.. code-block:: bash
+
+   HTTP/1.1 204 No Content
+
+
+
+
+Disconnect LinkedIn
+====================
+
+Definition:
+
+.. code-block:: bash
+
+   PUT https://getspeakup.com/api/v1/accounts/:id/linkedin/remove
+
+
+Example request:
+
+.. code-block:: bash
+
+   http PUT https://getspeakup.com/api/v1/accounts/535565a95ca75754723fe8e3/linkedin/remove \
+        Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+
+
+Successful response:
+
+If all above steps were done correctly you should see response like this:
+
+.. code-block:: bash
+
+   HTTP/1.1 204 No Content
+
+

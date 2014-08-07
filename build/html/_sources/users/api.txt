@@ -120,7 +120,6 @@ If user with such Id does not exist response will be like this:
 
 
 
-
 Upgrade to manager
 ====================
 
@@ -151,7 +150,6 @@ If all above steps were done correctly you should get response like this:
 .. code-block:: bash
 
    HTTP/1.1 200 OK
-
 
 
 
@@ -292,6 +290,41 @@ If all above steps were done correctly you should get response like this:
 
 
 
+Download facebook picture
+=========================
+
+Definition:
+
+.. code-block:: bash
+
+   PUT https://getspeakup.com/api/v1/:appId/users/:id/downloadFacebookPicture
+
+
+Example request:
+
+.. code-block:: bash
+
+   http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/53aaa7181f0d592c49b7833c/downloadFacebookPicture \
+	 Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+
+
+
+Successful response:
+
+If all above steps were done correctly you should get response like this:
+
+.. code-block:: bash
+
+   HTTP/1.1 200 OK
+
+
+.. code-block:: javascript
+
+  {
+      "picture": "http://graph.facebook.com/accountFacebookId/picture?type=large"
+  }
+
+
 
 Remove picture
 ====================
@@ -326,3 +359,31 @@ If all above steps were done correctly response should be like this (contains pa
       "picture": "http://getspeakup.com/assets/images/2-frontend/profile-image.svg"
   }
 
+
+
+
+Request manager access
+======================
+
+Definition:
+
+.. code-block:: bash
+
+   PUT https://getspeakup.com/api/v1/:appId/users/:id/requestManagerAccess
+
+
+Example request:
+
+.. code-block:: bash
+
+   http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/53aaa7181f0d592c49b7833c/requestManagerAccess \
+         	Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+
+
+Successful response:
+
+If all above steps were done correctly response should be like this (contains path to default image):
+
+.. code-block:: bash
+
+   HTTP/1.1 200 OK

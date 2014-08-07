@@ -275,6 +275,28 @@ Examples: (&#8216;fullName:1&#8217;, &#8216;statistic.ideas:-1&#8217;, &#8216;ro
 </pre></div>
 </div>
 </div>
+<div class="section" id="download-facebook-picture">
+<h1>Download facebook picture<a class="headerlink" href="#download-facebook-picture" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/:appId/users/:id/downloadFacebookPicture
+</pre></div>
+</div>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/53aaa7181f0d592c49b7833c/downloadFacebookPicture <span class="se">\</span>
+      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly you should get response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;picture&quot;</span><span class="o">:</span> <span class="s2">&quot;http://graph.facebook.com/accountFacebookId/picture?type=large&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="remove-picture">
 <h1>Remove picture<a class="headerlink" href="#remove-picture" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
@@ -297,6 +319,23 @@ Examples: (&#8216;fullName:1&#8217;, &#8216;statistic.ideas:-1&#8217;, &#8216;ro
 </pre></div>
 </div>
 </div>
+<div class="section" id="request-manager-access">
+<h1>Request manager access<a class="headerlink" href="#request-manager-access" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/:appId/users/:id/requestManagerAccess
+</pre></div>
+</div>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/53aaa7181f0d592c49b7833c/requestManagerAccess <span class="se">\</span>
+             Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly response should be like this (contains path to default image):</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
+</pre></div>
+</div>
+</div>
 
 
           </div>
@@ -315,7 +354,9 @@ Examples: (&#8216;fullName:1&#8217;, &#8216;statistic.ideas:-1&#8217;, &#8216;ro
 <li><a class="reference internal" href="#upgrade-to-manager">Upgrade to manager</a></li>
 <li><a class="reference internal" href="#save-user-settings">Save user settings</a></li>
 <li><a class="reference internal" href="#change-picture">Change picture</a></li>
+<li><a class="reference internal" href="#download-facebook-picture">Download facebook picture</a></li>
 <li><a class="reference internal" href="#remove-picture">Remove picture</a></li>
+<li><a class="reference internal" href="#request-manager-access">Request manager access</a></li>
 </ul>
 
   <h4>Previous topic</h4>

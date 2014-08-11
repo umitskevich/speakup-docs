@@ -66,7 +66,7 @@ Example response:
 
   {
     "pagesCount": 2,
-    "results": [PostObject], //see PostObject definition below
+    "results": [PostObject], // see PostObject definition below
     "totalCount": 23
   }
 

@@ -66,6 +66,38 @@
 <p>Example response:</p>
 <p><a class="reference internal" href="invite_object.html#invite-object"><em>Invite object</em></a>.</p>
 </div>
+<div class="section" id="get-invitation-list">
+<h1>Get invitation list<a class="headerlink" href="#get-invitation-list" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<div class="highlight-bash"><div class="highlight"><pre>GET https://getspeakup.com/api/v1/:appId/invites
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Query string parameters:</dt>
+<dd><ol class="first last arabic simple">
+<li>limit - Amount of invitations per page (10 by default)</li>
+<li>page - Page from invitation list according to limit</li>
+</ol>
+</dd>
+</dl>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/invites <span class="nv">limit</span><span class="o">==</span>10 <span class="nv">page</span><span class="o">==</span>1 <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+</pre></div>
+</div>
+<p>Example response:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;pagesCount&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;results&quot;</span><span class="o">:</span> <span class="p">[</span><span class="nx">InviteObject</span><span class="p">]</span> <span class="o">*</span><span class="p">,</span> <span class="c1">// see definition below</span>
+    <span class="s2">&quot;totalCount&quot;</span><span class="o">:</span> <span class="mi">3</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><cite>*</cite> - Array of <a class="reference internal" href="invite_object.html#invite-object"><em>Invite objects</em></a>.</p>
+</div>
 <div class="section" id="send-invitations">
 <h1>Send invitations<a class="headerlink" href="#send-invitations" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
@@ -106,29 +138,41 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="delete-invitations">
-<h1>Delete invitations<a class="headerlink" href="#delete-invitations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="resend-invitation">
+<h1>Resend invitation<a class="headerlink" href="#resend-invitation" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/:appId/invites/deleteInvites <span class="se">\</span>
-     ids:<span class="o">=[</span>first_id, second_id<span class="o">]</span>
+<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/:appId/invites/:id/resend
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Body parameters:</dt>
-<dd><ol class="first last arabic simple">
-<li>ids - Id list of invitations for deleting</li>
-</ol>
-</dd>
-</dl>
 <p>Example request:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/invites/deleteInvites <span class="se">\</span>
-     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
-     ids:<span class="o">=</span><span class="s1">&#39;[&quot;53d661fefdbd65721f48906a&quot;, &quot;53d661fefdbd65721f48906c&quot;]&#39;</span>
+<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/invites/53d66c7e15aca6cc1f457f35/resend <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 </pre></div>
 </div>
 <p>Example response:</p>
 <p>If all above steps were done correctly you should see response like this:</p>
 <div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 204 No Content
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-invitation">
+<h1>Delete invitation<a class="headerlink" href="#delete-invitation" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/:appId/invites/:id/delete
+</pre></div>
+</div>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/invites/53d66c7e15aca6cc1f457f35/delete <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+</pre></div>
+</div>
+<p>Example response:</p>
+<p>If all above steps were done correctly you should see response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 204 No Content
+</pre></div>
+</div>
+<p>If invitation with such Id does not exist response will be like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 404 Not Found
 </pre></div>
 </div>
 </div>
@@ -144,8 +188,10 @@
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Get by Id</a></li>
+<li><a class="reference internal" href="#get-invitation-list">Get invitation list</a></li>
 <li><a class="reference internal" href="#send-invitations">Send invitations</a></li>
-<li><a class="reference internal" href="#delete-invitations">Delete invitations</a></li>
+<li><a class="reference internal" href="#resend-invitation">Resend invitation</a></li>
+<li><a class="reference internal" href="#delete-invitation">Delete invitation</a></li>
 </ul>
 
   <h4>Previous topic</h4>

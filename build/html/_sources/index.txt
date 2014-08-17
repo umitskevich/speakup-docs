@@ -20,6 +20,7 @@ Table of contents:
    accounts/index
    users/index
    posts/index
+   badges/index
    applications/index
    invites/index
    billing/index

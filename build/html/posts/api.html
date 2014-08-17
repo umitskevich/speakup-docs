@@ -26,7 +26,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
     <link rel="up" title="Posts" href="index.html" />
-    <link rel="next" title="Applications" href="../applications/index.html" />
+    <link rel="next" title="Badges" href="../badges/index.html" />
     <link rel="prev" title="The Post object" href="post_object.html" /> 
   </head>
   <body>
@@ -37,7 +37,7 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../applications/index.html" title="Applications"
+          <a href="../badges/index.html" title="Badges"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="post_object.html" title="The Post object"
@@ -79,13 +79,20 @@
 <td>return all types of posts</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">decision</span></tt></td>
-<td>Query posts by decision, valid values are: open, amended, denied, approved.
-If specified <tt class="docutils literal"><span class="pre">types</span></tt> will be <tt class="docutils literal"><span class="pre">idea</span></tt> and <tt class="docutils literal"><span class="pre">solution</span></tt>.</td>
-<td>none</td>
+<td>Query posts by decision, valid values are: all, open, amended, denied, approved.</td>
+<td>all</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">parentId</span></tt></td>
 <td>Filter by parent post id, if specified valid <tt class="docutils literal"><span class="pre">types</span></tt> only <tt class="docutils literal"><span class="pre">solution</span></tt> and <tt class="docutils literal"><span class="pre">comment</span></tt>,
 because <tt class="docutils literal"><span class="pre">problem</span></tt> and <tt class="docutils literal"><span class="pre">idea</span></tt> does not have parents</td>
+<td>none</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">userId</span></tt></td>
+<td>Filter by user, who created a post</td>
+<td>none</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">groupId</span></tt></td>
+<td>Filter by post group</td>
 <td>none</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">page</span></tt></td>
@@ -122,6 +129,31 @@ http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts?sort<span 
 <p>Return count of open, approved, amended, denied posts</p>
 <p>Definition:</p>
 <p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/posts/stats</span></tt></p>
+<p>Query string parameters:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">widths:</th><td class="field-body"><p class="first">10 30 10
+:header-rows: 1</p>
+<ul class="last simple">
+<li><ul class="first">
+<li>Name</li>
+<li>Description</li>
+<li>Default</li>
+</ul>
+</li>
+<li><ul class="first">
+<li><tt class="docutils literal"><span class="pre">groupId</span></tt></li>
+<li>Filter statistic for specified group</li>
+<li>none</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <p>Example requests:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts/stats <span class="se">\</span>
  Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
@@ -172,8 +204,8 @@ http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts?sort<span 
   <p class="topless"><a href="post_object.html"
                         title="previous chapter">The <tt class="docutils literal"><span class="pre">Post</span></tt> object</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../applications/index.html"
-                        title="next chapter">Applications</a></p>
+  <p class="topless"><a href="../badges/index.html"
+                        title="next chapter">Badges</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -199,7 +231,7 @@ http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts?sort<span 
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../applications/index.html" title="Applications"
+          <a href="../badges/index.html" title="Badges"
              >next</a> |</li>
         <li class="right" >
           <a href="post_object.html" title="The Post object"

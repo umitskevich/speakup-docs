@@ -25,13 +25,20 @@ Query string parameters:
     - return all types of posts
 
   * - ``decision``
-    - Query posts by decision, valid values are: open, amended, denied, approved.
-      If specified ``types`` will be ``idea`` and ``solution``.
-    - none
+    - Query posts by decision, valid values are: all, open, amended, denied, approved.
+    - all
 
   * - ``parentId``
     - Filter by parent post id, if specified valid ``types`` only ``solution`` and ``comment``,
       because ``problem`` and ``idea`` does not have parents
+    - none
+
+  * - ``userId``
+    - Filter by user, who created a post
+    - none
+
+  * - ``groupId``
+    - Filter by post group
     - none
 
   * - ``page``
@@ -73,6 +80,20 @@ Return count of open, approved, amended, denied posts
 Definition:
 
 ``GET https://getspeakup.com/api/v1/:appId/posts/stats``
+
+Query string parameters:
+
+.. list-table::
+:widths: 10 30 10
+  :header-rows: 1
+
+  * - Name
+    - Description
+    - Default
+
+  * - ``groupId``
+    - Filter statistic for specified group
+    - none
 
 Example requests:
 

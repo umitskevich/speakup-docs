@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The Badge object &mdash; Speakup 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="Badges" href="index.html" />
+    <link rel="next" title="Get badge by id" href="api.html" />
+    <link rel="prev" title="Badges" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="api.html" title="Get badge by id"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Badges"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Badges</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-badge-object">
+<span id="badge-object"></span><h1>The <tt class="docutils literal"><span class="pre">Badge</span></tt> object<a class="headerlink" href="#the-badge-object" title="Permalink to this headline">¶</a></h1>
+<p>Badges types:</p>
+<ol class="arabic simple">
+<li>Connector (1, 10, 100, 1000 invites)</li>
+<li>Decision Maker (1, 5, 50, 150 approved posts)</li>
+<li>Innovator (1, 5, 50, 150 approved posts by manager)</li>
+<li>Opinionator (10, 100, 1000, 10000 votes/comments)</li>
+<li>Postulator (1, 10, 100, 1000 posts)</li>
+<li>Thought Leader (10, 100, 1000, 10000 votes on your posts)</li>
+</ol>
+<p>Badge levels:</p>
+<ol class="arabic simple">
+<li>Cooper (bronze)</li>
+<li>Aluminium (silver)</li>
+<li>Magnesium (gold)</li>
+<li>Carbon Fiber (?)</li>
+</ol>
+<div class="section" id="opinionator-badge-example">
+<h2>Opinionator badge example<a class="headerlink" href="#opinionator-badge-example" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nx">id</span> <span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+  <span class="nx">type</span> <span class="o">:</span> <span class="p">{</span> <span class="nx">id</span> <span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">name</span> <span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="p">},</span>
+  <span class="nx">level</span> <span class="o">:</span> <span class="nx">BaseBadgeService</span><span class="p">.</span><span class="nx">levels</span><span class="p">.</span><span class="nx">cooper</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+  <span class="nx">description</span> <span class="o">:</span> <span class="s1">&#39;Opinionator badge bronze level&#39;</span><span class="p">,</span>
+  <span class="nx">requirement</span> <span class="o">:</span> <span class="p">{</span>
+    <span class="nx">vote</span> <span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nx">comment</span> <span class="o">:</span> <span class="mi">10</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+    <a href="/docs/index.html"><img src="/docs/_static/logo-white-landing.png" /></a>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">The <tt class="docutils literal"><span class="pre">Badge</span></tt> object</a><ul>
+<li><a class="reference internal" href="#opinionator-badge-example">Opinionator badge example</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Badges</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="api.html"
+                        title="next chapter">Get badge by id</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="api.html" title="Get badge by id"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Badges"
+             >previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Badges</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2014, Speakup.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

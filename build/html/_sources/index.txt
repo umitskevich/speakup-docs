@@ -21,6 +21,7 @@ Table of contents:
    users/index
    posts/index
    votes/index
+   inline-comments/index
    badges/index
    applications/index
    invites/index

@@ -203,7 +203,7 @@ Body parameters:
     - Post content as html string
 
   * - ``parentId``
-    - Post parentId (for solutions and comments only)
+    - Id of parent post (for solutions and comments only)
 
   * - ``type``
     - Post type (``'problem'``, ``'solution'``, ``'idea'``, ``'comment'``)
@@ -230,7 +230,7 @@ Example requests:
         type="idea" \
         parentType=null \
         groupId="5416bca3743a8d452ba42014" \
-        isAnon==false
+        isAnon:=false
 
 
 Successful response:

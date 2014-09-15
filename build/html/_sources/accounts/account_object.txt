@@ -1,6 +1,6 @@
 .. _account_object:
 
-The ``Account`` object
+``Account`` object
 ======================
 
 .. list-table::

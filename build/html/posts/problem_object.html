@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Problem &mdash; Speakup 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="Posts" href="index.html" />
+    <link rel="next" title="Solution" href="solution_object.html" />
+    <link rel="prev" title="The Post object" href="post_object.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="solution_object.html" title="Solution"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="post_object.html" title="The Post object"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Posts</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="problem">
+<span id="problem-object"></span><h1><tt class="docutils literal"><span class="pre">Problem</span></tt><a class="headerlink" href="#problem" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">_id</span></tt></td>
+<td>Id of the Post object</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">appId</span></tt></td>
+<td>Id of application to which the problem belongs to</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">commentCount</span></tt></td>
+<td>Count of comments for the problem</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">content</span></tt></td>
+<td>Text content of the problem as html string</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">createdOn</span></tt></td>
+<td>Date when problem was created</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">updatedOn</span></tt></td>
+<td>Date when problem was updated</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">decision</span></tt></td>
+<td><p class="first">Decision state object:</p>
+<div class="last line-block">
+<div class="line"><tt class="docutils literal"><span class="pre">comment</span></tt> - text comment for decision,</div>
+<div class="line"><tt class="docutils literal"><span class="pre">decidedOn</span></tt> - date when decision was made,</div>
+<div class="line"><tt class="docutils literal"><span class="pre">decider</span></tt> - post decider info,</div>
+<div class="line"><tt class="docutils literal"><span class="pre">status</span></tt> - decision status, can take the next values: <tt class="docutils literal"><span class="pre">'open'</span></tt>, <tt class="docutils literal"><span class="pre">'approved'</span></tt>, <tt class="docutils literal"><span class="pre">'amended'</span></tt>, <tt class="docutils literal"><span class="pre">'denied'</span></tt></div>
+<div class="line"><br /></div>
+<div class="line"><cite>Note: if decision was not made for corresponding solution then ``status`</cite> property will be available only`.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">flags</span></tt></td>
+<td><p class="first">Array of flags for the problem. Objects have the next schema:</p>
+<div class="last line-block">
+<div class="line"><tt class="docutils literal"><span class="pre">_id</span></tt> - flag Id</div>
+<div class="line"><tt class="docutils literal"><span class="pre">appId</span></tt> - application Id</div>
+<div class="line"><tt class="docutils literal"><span class="pre">entityId</span></tt> - Id of post that was flagged</div>
+<div class="line"><tt class="docutils literal"><span class="pre">userId</span></tt> - Id of user that flagged the post</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">solutionCount</span></tt></td>
+<td>Count of solutions for the problem</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">subscribers</span></tt></td>
+<td>Array of subscribers. <tt class="docutils literal"><span class="pre">_id</span></tt> - user id</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">problem</span></tt></td>
+<td><p class="first">A problem that solution was created for</p>
+<div class="last line-block">
+<div class="line"><tt class="docutils literal"><span class="pre">_id</span></tt> - problem Id</div>
+<div class="line"><tt class="docutils literal"><span class="pre">title</span></tt> - problem title</div>
+<div class="line"><tt class="docutils literal"><span class="pre">content</span></tt> - problem text content</div>
+<div class="line"><tt class="docutils literal"><span class="pre">open</span></tt> - problem state</div>
+<div class="line"><tt class="docutils literal"><span class="pre">createdOn</span></tt> - Date when problem was created</div>
+<div class="line"><tt class="docutils literal"><span class="pre">updatedOn</span></tt> - Date when problem was updated</div>
+<div class="line"><tt class="docutils literal"><span class="pre">user</span></tt> - user that created the problem</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">title</span></tt></td>
+<td>Problem title</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">type</span></tt></td>
+<td>Post type (<tt class="docutils literal"><span class="pre">'problem'</span></tt>)</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">user</span></tt></td>
+<td>User that created the problem</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">voteCount</span></tt></td>
+<td>Count of votes for the problem</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">voteValue</span></tt></td>
+<td>Summary votes value for the problem</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">votes</span></tt></td>
+<td><p class="first">Array of votes. Objects have the next schema:</p>
+<div class="last line-block">
+<div class="line"><tt class="docutils literal"><span class="pre">_id</span></tt> - Id of voted user</div>
+<div class="line"><tt class="docutils literal"><span class="pre">value</span></tt> - vote value</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="problem-post-example">
+<h2>Problem post example<a class="headerlink" href="#problem-post-example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="s2">&quot;5355c8bcb117090e18b14013&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;appId&quot;</span> <span class="o">:</span> <span class="s2">&quot;5354bf975ca75754723fe8b6&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;commentCount&quot;</span> <span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">&quot;content&quot;</span> <span class="o">:</span> <span class="s2">&quot;&lt;p&gt;Test problem&lt;/p&gt;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;createdOn&quot;</span> <span class="o">:</span> <span class="s2">&quot;2014-04-22T01:41:14.500Z&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;updatedOn&quot;</span> <span class="o">:</span> <span class="s2">&quot;2014-04-22T01:41:16.500Z&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;decision&quot;</span> <span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;status&quot;</span> <span class="o">:</span> <span class="s2">&quot;open&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;flags&quot;</span><span class="o">:</span> <span class="p">[</span>
+             <span class="p">{</span>
+                <span class="s2">&quot;_id&quot;</span><span class="o">:</span> <span class="s2">&quot;5412d593c18cc3a129e4b839&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;appId&quot;</span><span class="o">:</span> <span class="s2">&quot;5359faae8243bf3d6b3079ae&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;entityId&quot;</span><span class="o">:</span> <span class="s2">&quot;5355c8bcb117090e18b14013&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;userId&quot;</span><span class="o">:</span> <span class="s2">&quot;5412bc61b581c78e215a1393&quot;</span>
+             <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;solutionCount&quot;</span> <span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">&quot;subscribers&quot;</span> <span class="o">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="s2">&quot;535582b35ca75754723fe8f6&quot;</span>
+      <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;title&quot;</span> <span class="o">:</span> <span class="s2">&quot;After I posted a comment to an existing problem, I couldn&#39;t quite tell if it posted it or not until I scrolled down.&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;type&quot;</span> <span class="o">:</span> <span class="s2">&quot;problem&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;user&quot;</span> <span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="s2">&quot;535582b35ca75754723fe8f6&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;fullName&quot;</span> <span class="o">:</span> <span class="s2">&quot;Ben Gillenwater&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;picture&quot;</span> <span class="o">:</span> <span class="s2">&quot;https://res.cloudinary.com/speakup/image/upload/c_fill,h_180,w_180/xouak1iuk935tzzsdl8c&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;voteCount&quot;</span> <span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">&quot;voteValue&quot;</span> <span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">&quot;votes&quot;</span> <span class="o">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="s2">&quot;535582b35ca75754723fe8f6&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="mi">1</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+    <a href="/docs/index.html"><img src="/docs/_static/logo-white-landing.png" /></a>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">Problem</span></tt></a><ul>
+<li><a class="reference internal" href="#problem-post-example">Problem post example</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="post_object.html"
+                        title="previous chapter">The <tt class="docutils literal"><span class="pre">Post</span></tt> object</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="solution_object.html"
+                        title="next chapter"><tt class="docutils literal"><span class="pre">Solution</span></tt></a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="solution_object.html" title="Solution"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="post_object.html" title="The Post object"
+             >previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Posts</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2014, Speakup.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

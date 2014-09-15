@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Comment &mdash; Speakup 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="Posts" href="index.html" />
+    <link rel="next" title="List all posts" href="api.html" />
+    <link rel="prev" title="Idea" href="idea_object.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="api.html" title="List all posts"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="idea_object.html" title="Idea"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Posts</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="comment">
+<span id="comment-object"></span><h1><tt class="docutils literal"><span class="pre">Comment</span></tt><a class="headerlink" href="#comment" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">_id</span></tt></td>
+<td>Id of the Post object</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">appId</span></tt></td>
+<td>Id of application to which the comment belongs to</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">content</span></tt></td>
+<td>Text content of the comment as html string</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">createdOn</span></tt></td>
+<td>Date when comment was created</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">updatedOn</span></tt></td>
+<td>Date when comment was updated</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">inlineComments</span></tt></td>
+<td><p class="first">Array of inline comments. <cite>Inline comment can be posted for Solutions and Comments only.</cite> Objects have the next schema:</p>
+<div class="last line-block">
+<div class="line"><tt class="docutils literal"><span class="pre">_id</span></tt> - inline comment Id</div>
+<div class="line"><tt class="docutils literal"><span class="pre">content</span></tt> - inline comment text content</div>
+<div class="line"><tt class="docutils literal"><span class="pre">createdOn</span></tt> - date when inline comment was created</div>
+<div class="line"><tt class="docutils literal"><span class="pre">updatedOn</span></tt> - date when inline comment was updated</div>
+<div class="line"><tt class="docutils literal"><span class="pre">user</span></tt> - user that created inline comment</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">flags</span></tt></td>
+<td><p class="first">Array of flags for the solution. Objects have the next schema:</p>
+<div class="last line-block">
+<div class="line"><tt class="docutils literal"><span class="pre">_id</span></tt> - flag Id</div>
+<div class="line"><tt class="docutils literal"><span class="pre">appId</span></tt> - application Id</div>
+<div class="line"><tt class="docutils literal"><span class="pre">entityId</span></tt> - Id of post that was flagged</div>
+<div class="line"><tt class="docutils literal"><span class="pre">userId</span></tt> - Id of user that flagged the post</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">subscribers</span></tt></td>
+<td>Array of subscribers. <tt class="docutils literal"><span class="pre">_id</span></tt> - user id</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">problem</span> <span class="pre">/</span> <span class="pre">idea</span></tt></td>
+<td><p class="first">A problem or idea that comment was created for</p>
+<div class="last line-block">
+<div class="line"><tt class="docutils literal"><span class="pre">_id</span></tt> - idea Id</div>
+<div class="line"><tt class="docutils literal"><span class="pre">title</span></tt> - idea title</div>
+<div class="line"><tt class="docutils literal"><span class="pre">content</span></tt> - idea text content as html string</div>
+<div class="line"><tt class="docutils literal"><span class="pre">open</span></tt> - idea state</div>
+<div class="line"><tt class="docutils literal"><span class="pre">createdOn</span></tt> - Date when idea was created</div>
+<div class="line"><tt class="docutils literal"><span class="pre">updatedOn</span></tt> - Date when idea was updated</div>
+<div class="line"><tt class="docutils literal"><span class="pre">user</span></tt> - user that created the idea</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">type</span></tt></td>
+<td>Post type (<tt class="docutils literal"><span class="pre">'comment'</span></tt>)</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">user</span></tt></td>
+<td>User that created the comment</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">voteCount</span></tt></td>
+<td>Count of votes for the comment</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">voteValue</span></tt></td>
+<td>Summary votes value for the comment</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">votes</span></tt></td>
+<td><p class="first">Array of votes. Objects have the next schema:</p>
+<div class="last line-block">
+<div class="line"><tt class="docutils literal"><span class="pre">_id</span></tt> - Id of voted user</div>
+<div class="line"><tt class="docutils literal"><span class="pre">value</span></tt> - vote value</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="comment-post-example">
+<h2>Comment post example<a class="headerlink" href="#comment-post-example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="s2">&quot;535574c15ca75754723fe8ee&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;appId&quot;</span> <span class="o">:</span> <span class="s2">&quot;5354bf975ca75754723fe8b6&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;content&quot;</span> <span class="o">:</span> <span class="s2">&quot;&lt;p&gt;Keith and I discussed this. I am for it, Keith is against it.&lt;/p&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;createdOn&quot;</span> <span class="o">:</span> <span class="s2">&quot;2014-09-12T11:21:27.805Z&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;updatedOn&quot;</span> <span class="o">:</span> <span class="s2">&quot;2014-09-12T11:21:29.805Z&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;inlineComments&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;_id&quot;</span><span class="o">:</span> <span class="s2">&quot;5412d773c18cc3a129e4b83b&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;content&quot;</span><span class="o">:</span> <span class="s2">&quot;Test inline comment text&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;createdOn&quot;</span><span class="o">:</span> <span class="s2">&quot;2014-09-12T11:22:27.805Z&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;updatedOn&quot;</span><span class="o">:</span> <span class="s2">&quot;2014-09-12T11:22:35.807Z&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;user&quot;</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;_id&quot;</span><span class="o">:</span> <span class="s2">&quot;5412bc61b581c78e215a1393&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;fullName&quot;</span><span class="o">:</span> <span class="s2">&quot;Somebody&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;picture&quot;</span><span class="o">:</span> <span class="s2">&quot;https://staging.getspeakup.com/images/profile-image.png&quot;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;flags&quot;</span><span class="o">:</span> <span class="p">[</span>
+               <span class="p">{</span>
+                  <span class="s2">&quot;_id&quot;</span><span class="o">:</span> <span class="s2">&quot;5412d593c18cc3a129e4b839&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;appId&quot;</span><span class="o">:</span> <span class="s2">&quot;5359faae8243bf3d6b3079ae&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;entityId&quot;</span><span class="o">:</span> <span class="s2">&quot;535574c15ca75754723fe8ee&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;userId&quot;</span><span class="o">:</span> <span class="s2">&quot;5412bc61b581c78e215a1393&quot;</span>
+               <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;subscribers&quot;</span> <span class="o">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="s2">&quot;5354bf975ca75754723fe8b7&quot;</span>
+              <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;idea&quot;</span> <span class="o">:</span> <span class="p">{</span>
+              <span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="s2">&quot;535570b95ca75754723fe8ea&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;title&quot;</span> <span class="o">:</span> <span class="s2">&quot;Emails frequency adjustment&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;content&quot;</span> <span class="o">:</span> <span class="s2">&quot;&lt;p&gt;Besides on/off switch, it&#39;s be great to have a config whether emails are sent out immediately, a digest once a day, or a weekly digest&lt;/p&gt;&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;createdOn&quot;</span> <span class="o">:</span> <span class="s2">&quot;2014-09-12T11:20:27.805Z&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;updatedOn&quot;</span> <span class="o">:</span> <span class="s2">&quot;2014-09-12T11:20:35.807Z&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;user&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                  <span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="s2">&quot;5354d1785ca75754723fe8ca&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;fullName&quot;</span> <span class="o">:</span> <span class="s2">&quot;tomislav.capan&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;picture&quot;</span> <span class="o">:</span> <span class="s2">&quot;https://res.cloudinary.com/speakup/image/upload/c_fill,h_180,w_180/ivd7o1fdcrfg2h1dkjqw&quot;</span>
+              <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;type&quot;</span> <span class="o">:</span> <span class="s2">&quot;comment&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;user&quot;</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="s2">&quot;5354bf975ca75754723fe8b7&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;fullName&quot;</span> <span class="o">:</span> <span class="s2">&quot;Ray Gillenwater&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;picture&quot;</span> <span class="o">:</span> <span class="s2">&quot;https://res.cloudinary.com/speakup/image/upload/c_fill,h_180,w_180/f9yyq9ji9b1o9tu9pep6&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;voteCount&quot;</span> <span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;voteValue&quot;</span> <span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;votes&quot;</span> <span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="s2">&quot;5354bf975ca75754723fe8b7&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="mi">1</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+    <a href="/docs/index.html"><img src="/docs/_static/logo-white-landing.png" /></a>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">Comment</span></tt></a><ul>
+<li><a class="reference internal" href="#comment-post-example">Comment post example</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="idea_object.html"
+                        title="previous chapter"><tt class="docutils literal"><span class="pre">Idea</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="api.html"
+                        title="next chapter">List all posts</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="api.html" title="List all posts"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="idea_object.html" title="Idea"
+             >previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Posts</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2014, Speakup.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

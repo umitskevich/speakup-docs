@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>List all posts &mdash; Speakup 0.0.1 documentation</title>
+    <title>Get post by id &mdash; Speakup 0.0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -27,7 +27,7 @@
     <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
     <link rel="up" title="Posts" href="index.html" />
     <link rel="next" title="Badges" href="../badges/index.html" />
-    <link rel="prev" title="The Post object" href="post_object.html" /> 
+    <link rel="prev" title="Comment" href="comment_object.html" /> 
   </head>
   <body>
     <div class="related">
@@ -40,7 +40,7 @@
           <a href="../badges/index.html" title="Badges"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="post_object.html" title="The Post object"
+          <a href="comment_object.html" title="Comment"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">Posts</a> &raquo;</li> 
@@ -52,8 +52,20 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="list-all-posts">
-<h1>List all posts<a class="headerlink" href="#list-all-posts" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="get-post-by-id">
+<h1>Get post by id<a class="headerlink" href="#get-post-by-id" title="Permalink to this headline">¶</a></h1>
+<p>Returns <a class="reference internal" href="post_object.html#post-object"><em>post</em></a> by its id</p>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/posts/:id</span></tt></p>
+<p>Example requests:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts/5416d3a8abcc72ad356950d6 <span class="se">\</span>
+ Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+</pre></div>
+</div>
+<p>Example response:  Returns <a class="reference internal" href="post_object.html#post-object"><em>Post Object</em></a>.</p>
+</div>
+<div class="section" id="list-posts">
+<h1>List posts<a class="headerlink" href="#list-posts" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
 <p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/posts</span></tt></p>
 <p>Query string parameters:</p>
@@ -72,27 +84,31 @@
 <tbody valign="top">
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">sort</span></tt></td>
 <td>Sort order for the posts list. Can be <tt class="docutils literal"><span class="pre">popular</span></tt> or <tt class="docutils literal"><span class="pre">newest</span></tt>.</td>
-<td><tt class="docutils literal"><span class="pre">popular</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">'popular'</span></tt></td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">types</span></tt></td>
-<td>Comma separated list of the <a class="reference internal" href="post_object.html#post-object"><em>Post types</em></a>.</td>
+<td>Comma separated list of the <a class="reference internal" href="post_object.html#post-object"><em>post types</em></a>.</td>
 <td>return all types of posts</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">decision</span></tt></td>
-<td>Query posts by decision, valid values are: all, open, amended, denied, approved.</td>
-<td>all</td>
+<td><div class="first last line-block">
+<div class="line">Filter posts by decision, valid values are: <tt class="docutils literal"><span class="pre">all</span></tt>, <tt class="docutils literal"><span class="pre">open</span></tt>, <tt class="docutils literal"><span class="pre">approved</span></tt>, <tt class="docutils literal"><span class="pre">amended</span></tt>, <tt class="docutils literal"><span class="pre">denied</span></tt>.</div>
+<div class="line">In this case <cite>types</cite> - parameter is ignored since decision is specified.</div>
+</div>
+</td>
+<td><tt class="docutils literal"><span class="pre">'all'</span></tt></td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">parentId</span></tt></td>
-<td>Filter by parent post id, if specified valid <tt class="docutils literal"><span class="pre">types</span></tt> only <tt class="docutils literal"><span class="pre">solution</span></tt> and <tt class="docutils literal"><span class="pre">comment</span></tt>,
-because <tt class="docutils literal"><span class="pre">problem</span></tt> and <tt class="docutils literal"><span class="pre">idea</span></tt> does not have parents</td>
+<td>Filter posts by parent post id. If parentId is specified then valid <cite>types</cite> are <tt class="docutils literal"><span class="pre">solution</span></tt> and <tt class="docutils literal"><span class="pre">comment</span></tt> only,
+because <tt class="docutils literal"><span class="pre">problem</span></tt> and <tt class="docutils literal"><span class="pre">idea</span></tt> do not have parents.</td>
 <td>none</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">userId</span></tt></td>
-<td>Filter by user, who created a post</td>
+<td>Filter by user who created a post.</td>
 <td>none</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">groupId</span></tt></td>
-<td>Filter by post group</td>
+<td>Filter by post group.</td>
 <td>none</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">page</span></tt></td>
@@ -109,20 +125,70 @@ because <tt class="docutils literal"><span class="pre">problem</span></tt> and <
 <div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts <span class="se">\</span>
  Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 
-&lt;* below api call is identical, just with default query parameters /*&gt;
-http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts?sort<span class="o">=</span>popular&amp;types<span class="o">=</span>solution,idea,problem,comment&amp;page<span class="o">=</span>1&amp;limit<span class="o">=</span>15 <span class="se">\</span>
+
+&lt;* below api call is identical, just with default query parameters <span class="o">(</span>httpie style<span class="o">)</span> /*&gt;
+
+http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts <span class="nv">sort</span><span class="o">==</span><span class="s1">&#39;popular&#39;</span> <span class="nv">types</span><span class="o">==</span><span class="s1">&#39;solution,idea,problem,comment&#39;</span> <span class="nv">page</span><span class="o">==</span>1 <span class="nv">limit</span><span class="o">==</span>15 <span class="se">\</span>
  Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 </pre></div>
 </div>
 <p>Example response:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
   <span class="s2">&quot;pagesCount&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-  <span class="s2">&quot;results&quot;</span><span class="o">:</span> <span class="p">[</span><span class="nx">PostObject</span><span class="p">],</span> <span class="c1">// see PostObject definition below</span>
+  <span class="s2">&quot;results&quot;</span><span class="o">:</span> <span class="p">[</span><span class="nx">PostObject</span><span class="p">],</span> <span class="c1">// * see PostObject definition below</span>
   <span class="s2">&quot;totalCount&quot;</span><span class="o">:</span> <span class="mi">23</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><a class="reference internal" href="post_object.html#post-object"><em>PostObject</em></a>.</p>
+<ul class="simple">
+<li><a class="reference internal" href="post_object.html#post-object"><em>PostObject</em></a>.</li>
+</ul>
+<p>Notes:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Decision</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">all</span></tt></td>
+<td><div class="first last line-block">
+<div class="line">If user is a manager then <tt class="docutils literal"><span class="pre">'all'</span></tt> feed will contain problems, ideas and solutions that require a decision  (solution which parent problem status is open).</div>
+<div class="line">If user is an ordinary employee then <tt class="docutils literal"><span class="pre">'all'</span></tt> feed will contain ideas and problems only.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">open</span></tt></td>
+<td><div class="first last line-block">
+<div class="line">If user is a manager then <tt class="docutils literal"><span class="pre">'open'</span></tt> feed will contain posts that require a decision from him only.</div>
+<div class="line">If user is an ordinary employee then <tt class="docutils literal"><span class="pre">'open'</span></tt> feed will contain posts from all his groups and company that require a decision.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">approved</span></tt></td>
+<td><div class="first last line-block">
+<div class="line"><tt class="docutils literal"><span class="pre">'approved'</span></tt> feed will contain all approved solutions and ideas.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">amended</span></tt></td>
+<td><div class="first last line-block">
+<div class="line"><tt class="docutils literal"><span class="pre">'amended'</span></tt> feed will contain all amended solutions and ideas.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">denied</span></tt></td>
+<td><div class="first last line-block">
+<div class="line"><tt class="docutils literal"><span class="pre">'denied'</span></tt> feed will contain all denied solutions and ideas.</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="get-posts-stats">
 <h1>Get posts stats<a class="headerlink" href="#get-posts-stats" title="Permalink to this headline">¶</a></h1>
@@ -130,38 +196,38 @@ http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts?sort<span 
 <p>Definition:</p>
 <p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/posts/stats</span></tt></p>
 <p>Query string parameters:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="50%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Default</th>
+</tr>
+</thead>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">widths:</th><td class="field-body"><p class="first">10 30 10
-:header-rows: 1</p>
-<ul class="last simple">
-<li><ul class="first">
-<li>Name</li>
-<li>Description</li>
-<li>Default</li>
-</ul>
-</li>
-<li><ul class="first">
-<li><tt class="docutils literal"><span class="pre">groupId</span></tt></li>
-<li>Filter statistic for specified group</li>
-<li>none</li>
-</ul>
-</li>
-</ul>
-</td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">groupId</span></tt></td>
+<td>Filter statistic for specified group</td>
+<td>none</td>
 </tr>
 </tbody>
 </table>
 <p>Example requests:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts/stats <span class="se">\</span>
  Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+
+
+http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts/stats <span class="nv">groupId</span><span class="o">==</span><span class="s1">&#39;5416bca3743a8d452ba42014&#39;</span> <span class="se">\</span>
+ Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 </pre></div>
 </div>
 <p>Example response:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
    <span class="s2">&quot;postMetrics&quot;</span><span class="o">:</span> <span class="p">{</span>
+       <span class="s2">&quot;all&quot;</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
        <span class="s2">&quot;amended&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
        <span class="s2">&quot;approved&quot;</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
        <span class="s2">&quot;denied&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -170,19 +236,254 @@ http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts?sort<span 
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>Notes:  Statistic will be counted accordingly to specified decision described in <cite>List posts</cite> notes above.</p>
 </div>
-<div class="section" id="get-post-by-id">
-<h1>Get post by id<a class="headerlink" href="#get-post-by-id" title="Permalink to this headline">¶</a></h1>
-<p>Return <a class="reference internal" href="post_object.html#post-object"><em>post</em></a> by id</p>
+<div class="section" id="create-a-post">
+<h1>Create a post<a class="headerlink" href="#create-a-post" title="Permalink to this headline">¶</a></h1>
+<p>Creates <a class="reference internal" href="post_object.html#post-object"><em>post</em></a></p>
 <p>Definition:</p>
-<p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/posts/:id</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">POST</span> <span class="pre">https://getspeakup.com/api/v1/:appId/posts</span></tt></p>
+<p>Body parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">title</span></tt></td>
+<td>Post title as string</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">content</span></tt></td>
+<td>Post content as html string</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">parentId</span></tt></td>
+<td>Post parentId (for solutions and comments only)</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">type</span></tt></td>
+<td>Post type (<tt class="docutils literal"><span class="pre">'problem'</span></tt>, <tt class="docutils literal"><span class="pre">'solution'</span></tt>, <tt class="docutils literal"><span class="pre">'idea'</span></tt>, <tt class="docutils literal"><span class="pre">'comment'</span></tt>)</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">parentType</span></tt></td>
+<td>Post type (<tt class="docutils literal"><span class="pre">'problem'</span></tt> for solution or comment, <tt class="docutils literal"><span class="pre">'idea'</span></tt> for comment)</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">groupId</span></tt></td>
+<td>Post group id. For company post groupId is null.</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">isAnon</span></tt></td>
+<td>Boolean value for anonymous posting.</td>
+</tr>
+</tbody>
+</table>
 <p>Example requests:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts/53aaa7191f0d592c49b7833e <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
+     <span class="nv">title</span><span class="o">=</span><span class="s2">&quot;Test post title using Api&quot;</span> <span class="se">\</span>
+     <span class="nv">content</span><span class="o">=</span><span class="s2">&quot;&lt;p&gt;Test post content using Api&lt;/p&gt;&quot;</span> <span class="se">\</span>
+     <span class="nv">parentId</span><span class="o">=</span>null <span class="se">\</span>
+     <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;idea&quot;</span> <span class="se">\</span>
+     <span class="nv">parentType</span><span class="o">=</span>null <span class="se">\</span>
+     <span class="nv">groupId</span><span class="o">=</span><span class="s2">&quot;5416bca3743a8d452ba42014&quot;</span> <span class="se">\</span>
+     <span class="nv">isAnon</span><span class="o">==</span><span class="nb">false</span>
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly you should see response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;_id&quot;</span><span class="o">:</span> <span class="s2">&quot;5416d1b1abcc72ad356950d5&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;groupId&quot;</span><span class="o">:</span> <span class="s2">&quot;5416bca3743a8d452ba42014&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="edit-a-post">
+<h1>Edit a post<a class="headerlink" href="#edit-a-post" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">PUT</span> <span class="pre">https://getspeakup.com/api/v1/:appId/posts/:id</span></tt></p>
+<p>Body parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">title</span></tt></td>
+<td>Post title as string</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">content</span></tt></td>
+<td>Post content as html string</td>
+</tr>
+</tbody>
+</table>
+<p>Example requests:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts/5416d3a8abcc72ad356950d6 <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
+     <span class="nv">title</span><span class="o">=</span><span class="s2">&quot;New post title using Api&quot;</span> <span class="se">\</span>
+     <span class="nv">content</span><span class="o">=</span><span class="s2">&quot;&lt;p&gt;New post content using Api&lt;/p&gt;&quot;</span>
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly you should see response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;_id&quot;</span><span class="o">:</span> <span class="s2">&quot;5416d3a8abcc72ad356950d6&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="is-post-owner">
+<h1>Is post owner<a class="headerlink" href="#is-post-owner" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/posts/:id/isowner</span></tt></p>
+<p>Example requests:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts/5416d3a8abcc72ad356950d6/isowner <span class="se">\</span>
  Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 </pre></div>
 </div>
 <p>Example response:</p>
-<p>return <a class="reference internal" href="post_object.html#post-object"><em>Post Object</em></a>.</p>
+<p>If all above steps were done correctly you should see response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+   <span class="s2">&quot;isOwner&quot;</span><span class="o">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="decide">
+<h1>Decide<a class="headerlink" href="#decide" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">PUT</span> <span class="pre">https://getspeakup.com/api/v1/:appId/posts/:id/decide</span></tt></p>
+<p>Body parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">action</span></tt></td>
+<td>Decision for post (<tt class="docutils literal"><span class="pre">'approved'</span></tt>, <tt class="docutils literal"><span class="pre">'amended'</span></tt>, <tt class="docutils literal"><span class="pre">'denied'</span></tt>)</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">comment</span></tt></td>
+<td>Comment for decision as html string</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">solutionId</span></tt></td>
+<td>Id of deciding solution (for solutions only)</td>
+</tr>
+</tbody>
+</table>
+<p>Example requests:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts/5416f6d5b5e794e43c23e761/decide <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
+     <span class="nv">action</span><span class="o">=</span><span class="s2">&quot;amended&quot;</span> <span class="se">\</span>
+     <span class="nv">comment</span><span class="o">=</span><span class="s2">&quot;&lt;p&gt;Decision test comment&lt;/p&gt;&quot;</span> <span class="se">\</span>
+     <span class="nv">solutionId</span><span class="o">=</span><span class="s2">&quot;5416f6d5b5e794e43c23e761&quot;</span>
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly you should see response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">&quot;_id&quot;</span><span class="o">:</span> <span class="s2">&quot;5416f6d5b5e794e43c23e761&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="share-a-post">
+<h1>Share a post<a class="headerlink" href="#share-a-post" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">POST</span> <span class="pre">https://getspeakup.com/api/v1/:appId/posts/:id/share</span></tt></p>
+<p>Body parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">emails</span></tt></td>
+<td>Array of emails for sharing</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">message</span></tt></td>
+<td>Custom message text for sharing</td>
+</tr>
+</tbody>
+</table>
+<p>Example requests:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts/5416f6d5b5e794e43c23e761/share <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
+     emails:<span class="o">=</span><span class="s1">&#39;[&quot;somebody@somecompany.com&quot;, &quot;somebodyelse@somecompany.com&quot;]&#39;</span> <span class="se">\</span>
+     <span class="nv">message</span><span class="o">=</span><span class="s2">&quot;Look at this post&quot;</span>
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly you should see response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
+</pre></div>
+</div>
+</div>
+<div class="section" id="flag-a-post">
+<h1>Flag a post<a class="headerlink" href="#flag-a-post" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">POST</span> <span class="pre">https://getspeakup.com/api/v1/:appId/posts/:id/flag</span></tt></p>
+<p>Body parameters:</p>
+<p><cite>There are no body parameters in this request</cite></p>
+<p>Example requests:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts/5416f6d5b5e794e43c23e761/flag <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly you should see response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">&quot;isDeleted&quot;</span><span class="o">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="remove-a-post">
+<h1>Remove a post<a class="headerlink" href="#remove-a-post" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">PUT</span> <span class="pre">https://getspeakup.com/api/v1/:appId/posts/:id/delete</span></tt></p>
+<p>Example requests:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts/5416d3a8abcc72ad356950d6/delete <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly you should see response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
+</pre></div>
+</div>
+<p>Note:  Parent post removes with all its children</p>
 </div>
 
 
@@ -195,14 +496,21 @@ http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts?sort<span 
 
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">List all posts</a></li>
+<li><a class="reference internal" href="#">Get post by id</a></li>
+<li><a class="reference internal" href="#list-posts">List posts</a></li>
 <li><a class="reference internal" href="#get-posts-stats">Get posts stats</a></li>
-<li><a class="reference internal" href="#get-post-by-id">Get post by id</a></li>
+<li><a class="reference internal" href="#create-a-post">Create a post</a></li>
+<li><a class="reference internal" href="#edit-a-post">Edit a post</a></li>
+<li><a class="reference internal" href="#is-post-owner">Is post owner</a></li>
+<li><a class="reference internal" href="#decide">Decide</a></li>
+<li><a class="reference internal" href="#share-a-post">Share a post</a></li>
+<li><a class="reference internal" href="#flag-a-post">Flag a post</a></li>
+<li><a class="reference internal" href="#remove-a-post">Remove a post</a></li>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="post_object.html"
-                        title="previous chapter">The <tt class="docutils literal"><span class="pre">Post</span></tt> object</a></p>
+  <p class="topless"><a href="comment_object.html"
+                        title="previous chapter"><tt class="docutils literal"><span class="pre">Comment</span></tt></a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="../badges/index.html"
                         title="next chapter">Badges</a></p>
@@ -234,7 +542,7 @@ http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts?sort<span 
           <a href="../badges/index.html" title="Badges"
              >next</a> |</li>
         <li class="right" >
-          <a href="post_object.html" title="The Post object"
+          <a href="comment_object.html" title="Comment"
              >previous</a> |</li>
         <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
           <li><a href="index.html" >Posts</a> &raquo;</li> 

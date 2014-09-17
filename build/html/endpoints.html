@@ -58,6 +58,18 @@
 <tt class="docutils literal"><span class="pre">appId</span></tt> is an id of the current user application.</p>
 <p>Every third party client (mobile app for example) should store current active application id on their side.
 The list of user applications can be obtained from user account.</p>
+<p>Most of unsuccessful responses are represented as array of errors:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">&quot;errors&quot;</span><span class="o">:</span> <span class="p">[</span>
+     <span class="p">{</span>
+       <span class="s2">&quot;param&quot;</span><span class="o">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;msg&quot;</span><span class="o">:</span> <span class="s2">&quot;Email is not company email.&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;code&quot;</span><span class="o">:</span> <span class="mi">400</span>
+     <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 
 

@@ -24,7 +24,9 @@ Table of contents:
    inline-comments/index
    badges/index
    applications/index
+   groups/index
    invites/index
    billing/index
+   search/index
 
 

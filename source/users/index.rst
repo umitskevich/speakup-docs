@@ -8,6 +8,7 @@ Users
    :titlesonly:
 
 
-   ../users/api
    ../users/user_object
+   ../users/api
+
 

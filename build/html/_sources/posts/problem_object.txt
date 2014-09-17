@@ -55,17 +55,6 @@
   * - ``subscribers``
     - Array of subscribers. ``_id`` - user id
 
-  * - ``problem``
-    - A problem that solution was created for
-
-      | ``_id`` - problem Id
-      | ``title`` - problem title
-      | ``content`` - problem text content
-      | ``open`` - problem state
-      | ``createdOn`` - Date when problem was created
-      | ``updatedOn`` - Date when problem was updated
-      | ``user`` - user that created the problem
-
   * - ``title``
     - Problem title
 

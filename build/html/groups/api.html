@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Get group by Id &mdash; Speakup 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="Groups" href="index.html" />
+    <link rel="next" title="Invites" href="../invites/index.html" />
+    <link rel="prev" title="Group object" href="group_object.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../invites/index.html" title="Invites"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="group_object.html" title="Group object"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Groups</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="get-group-by-id">
+<h1>Get group by Id<a class="headerlink" href="#get-group-by-id" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/groups/:id</span></tt></p>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/groups/5416bca3743a8d452ba42014 <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+</pre></div>
+</div>
+<p>Example response:</p>
+<p>Returns <a class="reference internal" href="group_object.html#group-object"><em>Group object</em></a>.</p>
+</div>
+<div class="section" id="get-group-list">
+<h1>Get group list<a class="headerlink" href="#get-group-list" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/groups</span></tt></p>
+<p>Query string parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="60%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">page</span></tt></td>
+<td>Page from group list</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">limit</span></tt></td>
+<td>Amount of records per page to return</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/groups <span class="nv">limit</span><span class="o">==</span>15 <span class="nv">page</span><span class="o">==</span>1 <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+</pre></div>
+</div>
+<p>Example response:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;pagesCount&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;results&quot;</span><span class="o">:</span> <span class="p">[</span><span class="nx">GroupsObject</span><span class="p">]</span> <span class="o">*</span><span class="p">,</span> <span class="c1">// see definition below</span>
+    <span class="s2">&quot;totalCount&quot;</span><span class="o">:</span> <span class="mi">4</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><cite>*</cite> - Array of <a class="reference internal" href="group_object.html#group-object"><em>group objects</em></a>.</p>
+</div>
+<div class="section" id="create-a-group">
+<h1>Create a group<a class="headerlink" href="#create-a-group" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">POST</span> <span class="pre">https://getspeakup.com/api/v1/:appId/groups</span></tt></p>
+<p>Body parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">name</span></tt></td>
+<td>Group name</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">isAllowAnonymous</span></tt></td>
+<td>Boolean value for anonymous posting inside the group</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">users</span></tt></td>
+<td>Array of group members (user ids)</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">managerId</span></tt></td>
+<td>Group manager Id (user id)</td>
+</tr>
+</tbody>
+</table>
+<p>Example requests:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/groups <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
+     <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;New test group name&quot;</span> <span class="se">\</span>
+     isAllowAnonymous:<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+     users:<span class="o">=</span><span class="s1">&#39;[&quot;5412bc61b581c78e215a1393&quot;, &quot;5412bc81b581c78e215a1398&quot;]&#39;</span> <span class="se">\</span>
+     <span class="nv">managerId</span><span class="o">=</span><span class="s2">&quot;5412bc81b581c78e215a1398&quot;</span>
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly you should see response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
+</pre></div>
+</div>
+</div>
+<div class="section" id="edit-a-group">
+<h1>Edit a group<a class="headerlink" href="#edit-a-group" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">PUT</span> <span class="pre">https://getspeakup.com/api/v1/:appId/groups/:id</span></tt></p>
+<p>Body parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">name</span></tt></td>
+<td>Group name</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">isAllowAnonymous</span></tt></td>
+<td>Boolean value for anonymous posting inside the group</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">users</span></tt></td>
+<td>Array of group members (user ids)</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">managerId</span></tt></td>
+<td>Group manager Id (user id)</td>
+</tr>
+</tbody>
+</table>
+<p>Example requests:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/groups/5416bca3743a8d452ba42014 <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
+     <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;Updated test group name&quot;</span> <span class="se">\</span>
+     isAllowAnonymous:<span class="o">=</span><span class="nb">false</span> <span class="se">\</span>
+     users:<span class="o">=</span><span class="s1">&#39;[&quot;5412bc61b581c78e215a1393&quot;, &quot;5412bc81b581c78e215a1398&quot;]&#39;</span> <span class="se">\</span>
+     <span class="nv">managerId</span><span class="o">=</span><span class="s2">&quot;5412bc61b581c78e215a1393&quot;</span>
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly you should see response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
+</pre></div>
+</div>
+</div>
+<div class="section" id="remove-a-group">
+<h1>Remove a group<a class="headerlink" href="#remove-a-group" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">PUT</span> <span class="pre">https://getspeakup.com/api/v1/:appId/groups/:id/delete</span></tt></p>
+<p>Example requests:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/groups/5416bca3743a8d452ba42014/delete <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly you should see response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+    <a href="/docs/index.html"><img src="/docs/_static/logo-white-landing.png" /></a>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Get group by Id</a></li>
+<li><a class="reference internal" href="#get-group-list">Get group list</a></li>
+<li><a class="reference internal" href="#create-a-group">Create a group</a></li>
+<li><a class="reference internal" href="#edit-a-group">Edit a group</a></li>
+<li><a class="reference internal" href="#remove-a-group">Remove a group</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="group_object.html"
+                        title="previous chapter"><tt class="docutils literal"><span class="pre">Group</span></tt> object</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../invites/index.html"
+                        title="next chapter">Invites</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../invites/index.html" title="Invites"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="group_object.html" title="Group object"
+             >previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Groups</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2014, Speakup.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

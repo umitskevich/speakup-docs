@@ -4,9 +4,7 @@ Retrieve current application
 
 Definition:
 
-.. code-block:: bash
-
-  GET https://getspeakup.com/api/v1/applications/:id
+``GET https://getspeakup.com/api/v1/applications/:id``
 
 Example request:
 
@@ -17,22 +15,31 @@ Example request:
 
 Example response:
 
-:ref:`Application object <application_object>`.
+Returns :ref:`Application object <application_object>`.
 
 
 
-Update application (company) name
-=================================
+Update application
+===================
 
 Definition:
 
-.. code-block:: bash
-
-   PUT https://getspeakup.com/api/v1/applications/:id \
-        name=new_name
+``PUT https://getspeakup.com/api/v1/applications/:id``
 
 Body parameters:
-   1. name - New name for application
+
+.. list-table::
+  :widths: 20 20
+  :header-rows: 1
+
+  * - Name
+    - Description
+
+  * - ``name``
+    -  Application name
+
+  * - ``canPostAnonymously``
+    -  Boolean value for anonymous posting inside the company
 
 
 Example request:
@@ -41,8 +48,8 @@ Example request:
 
    http PUT https://getspeakup.com/api/v1/applications/53aaa7181f0d592c49b7833a \
         Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 \
-        name="New demo name"
-
+        name="New demo name" \
+        canPostAnonymously:=false
 
 
 Successful response:
@@ -75,4 +82,49 @@ If new name was invalid you should see response with errors:
 
 
 
+Update roles
+=============
 
+Definition:
+
+``PUT https://getspeakup.com/api/v1/applications/:id/updateRoles``
+
+Body parameters:
+
+.. list-table::
+  :widths: 20 20
+  :header-rows: 1
+
+  * - Name
+    - Description
+
+  * - ``users``
+    - Array of updated users *
+
+
+
+Example request:
+
+.. code-block:: bash
+
+   http PUT https://getspeakup.com/api/v1/applications/53aaa7181f0d592c49b7833a/updateRoles \
+        Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 \
+        users:='[ { "userId": "54195527471842c214145ef8", "roles": ["admin"] }, { "userId": "5419554a471842c214145efd", "roles": [] } ]'
+
+
+`*` - objects have the next schema:
+
+.. code-block:: javascript
+
+   {
+      userId: { type: String },
+      roles: [ { type: String } ],
+   }
+
+Successful response:
+
+If all above steps were done correctly you should see response like this:
+
+.. code-block:: bash
+
+   HTTP/1.1 200 OK

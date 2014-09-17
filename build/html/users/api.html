@@ -26,8 +26,8 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
     <link rel="up" title="Users" href="index.html" />
-    <link rel="next" title="The User object" href="user_object.html" />
-    <link rel="prev" title="Users" href="index.html" /> 
+    <link rel="next" title="Posts" href="../posts/index.html" />
+    <link rel="prev" title="User object" href="user_object.html" /> 
   </head>
   <body>
     <div class="related">
@@ -37,10 +37,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="user_object.html" title="The User object"
+          <a href="../posts/index.html" title="Posts"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Users"
+          <a href="user_object.html" title="User object"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">Users</a> &raquo;</li> 
@@ -55,52 +55,74 @@
   <div class="section" id="retrieve-current-user">
 <h1>Retrieve current user<a class="headerlink" href="#retrieve-current-user" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>GET https://getspeakup.com/api/v1/:appId/users/current
-</pre></div>
-</div>
+<p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/users/current</span></tt></p>
 <p>Example request:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/current <span class="se">\</span>
   Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 </pre></div>
 </div>
 <p>Example response:</p>
-<p><a class="reference internal" href="user_object.html#user-object"><em>User object</em></a>.</p>
+<p>Returns <a class="reference internal" href="user_object.html#user-object"><em>User object</em></a>.</p>
 </div>
-<div class="section" id="retrieve-user-by-id">
-<h1>Retrieve user by id<a class="headerlink" href="#retrieve-user-by-id" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="get-user-by-id">
+<h1>Get user by id<a class="headerlink" href="#get-user-by-id" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>GET https://getspeakup.com/api/v1/:appId/users/:id
-</pre></div>
-</div>
+<p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/users/:id</span></tt></p>
 <p>Example request:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/53aaa7181f0d592c49b7833c <span class="se">\</span>
   Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 </pre></div>
 </div>
 <p>Example response:</p>
-<p><a class="reference internal" href="user_object.html#user-object"><em>User object</em></a>.</p>
+<p>Returns <a class="reference internal" href="user_object.html#user-object"><em>User object</em></a>.</p>
 </div>
 <div class="section" id="get-user-list">
 <h1>Get user list<a class="headerlink" href="#get-user-list" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>GET https://getspeakup.com/api/v1/:appId/users
-</pre></div>
-</div>
-<dl class="docutils">
-<dt>Query string parameters:</dt>
-<dd><ol class="first last arabic simple">
-<li>sort - Sorting field for users. It consists of two parts separated by colon, the first part is field name, the second one is order direction.
-Sorting can be performed by multiple fields separated by comma, in this case the first criteria has higher priority.
-Examples: (&#8216;fullName:1&#8217;, &#8216;statistic.ideas:-1&#8217;, &#8216;rolesCount:-1,fullName:1&#8217;).</li>
-<li>limit - Amount of users per page (10 by default).</li>
-<li>page - Page from user list according to limit (1 by default).</li>
-<li>role - User role for filtering.</li>
-<li>text - Value for searching criteria (searching by &#8216;fullName&#8217; field).</li>
-</ol>
-</dd>
-</dl>
+<p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/users</span></tt></p>
+<p>Query string parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="60%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">sort</span></tt></td>
+<td>Sorting field for users. It consists of two parts separated by colon, the first part is field name, the second one is order direction.
+Sorting can be performed by multiple fields separated by comma, in this case the first criteria has higher priority.</td>
+<td><tt class="docutils literal"><span class="pre">'fullName:1'</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">role</span></tt></td>
+<td>User role for filtering.</td>
+<td>none</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">text</span></tt></td>
+<td>Value for searching criteria (searching by &#8216;fullName&#8217; field).</td>
+<td>none</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">groupId</span></tt></td>
+<td>Group id for filtering.</td>
+<td>none</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">page</span></tt></td>
+<td>Page number.</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">limit</span></tt></td>
+<td>Number of records to return.</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
 <p>Example request:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users <span class="nv">sort</span><span class="o">==</span><span class="s1">&#39;rolesCount:-1,fullName:1&#39;</span> <span class="nv">limit</span><span class="o">==</span>10 <span class="nv">page</span><span class="o">==</span>1 <span class="nv">text</span><span class="o">==</span><span class="s1">&#39;jo&#39;</span> <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users <span class="nv">sort</span><span class="o">==</span><span class="s1">&#39;rolesCount:-1,fullName:1&#39;</span> <span class="nv">limit</span><span class="o">==</span>15 <span class="nv">page</span><span class="o">==</span>1 <span class="nv">groupId</span><span class="o">==</span><span class="s1">&#39;541843caf50be1146f6e67ef&#39;</span> <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 </pre></div>
 </div>
@@ -114,41 +136,27 @@ Examples: (&#8216;fullName:1&#8217;, &#8216;statistic.ideas:-1&#8217;, &#8216;ro
 </div>
 <p><cite>*</cite> - Array of <a class="reference internal" href="user_object.html#user-object"><em>user objects</em></a>.</p>
 </div>
-<div class="section" id="delete-user-by-id">
-<h1>Delete user by id<a class="headerlink" href="#delete-user-by-id" title="Permalink to this headline">¶</a></h1>
-<p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/:appId/users/:id/delete
-</pre></div>
-</div>
-<p>Example request:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/53aaa7181f0d592c49b7833c/delete <span class="se">\</span>
-  Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
-</pre></div>
-</div>
-<p>Example response:</p>
-<p>If all above steps were done correctly you should get response like this:</p>
-<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 204 No Content
-</pre></div>
-</div>
-<p>If user with such Id does not exist response will be like this:</p>
-<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 404 Not Found
-</pre></div>
-</div>
-</div>
 <div class="section" id="upgrade-to-manager">
 <h1>Upgrade to manager<a class="headerlink" href="#upgrade-to-manager" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/:appId/users/:id/upgradeToManager <span class="se">\</span>
-     <span class="nv">token</span><span class="o">=</span>generated_token
-</pre></div>
-</div>
-<dl class="docutils">
-<dt>Body parameters:</dt>
-<dd><ol class="first last arabic simple">
-<li>token - Token that was generated by Stripe service from card number.</li>
-</ol>
-</dd>
-</dl>
+<p><tt class="docutils literal"><span class="pre">PUT</span> <span class="pre">https://getspeakup.com/api/v1/:appId/users/:id/upgradeToManager</span></tt></p>
+<p>Body parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">token</span></tt></td>
+<td>Generated token from credit card number by stripe service</td>
+</tr>
+</tbody>
+</table>
 <p>Example request:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/53aaa7181f0d592c49b7833c/upgradeToManager <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
@@ -164,52 +172,45 @@ Examples: (&#8216;fullName:1&#8217;, &#8216;statistic.ideas:-1&#8217;, &#8216;ro
 <div class="section" id="save-user-settings">
 <h1>Save user settings<a class="headerlink" href="#save-user-settings" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/:appId/users/:id <span class="se">\</span>
-     <span class="nv">email</span><span class="o">=</span>new_email <span class="se">\</span>
-     <span class="nv">fullName</span><span class="o">=</span>full_name <span class="se">\</span>
-     <span class="nv">title</span><span class="o">=</span>job_title <span class="se">\</span>
-     <span class="nv">bio</span><span class="o">=</span>user_info <span class="se">\</span>
-     settings:<span class="o">=</span>json_notification_settings <span class="se">\</span>
-     <span class="nv">picture</span><span class="o">=</span>picture_href
-</pre></div>
-</div>
-<dl class="docutils">
-<dt>Body parameters:</dt>
-<dd><ol class="first last arabic">
-<li><p class="first">email - New user email.</p>
-</li>
-<li><p class="first">fullName - New user full name.</p>
-</li>
-<li><p class="first">title - User&#8217;s job title.</p>
-</li>
-<li><p class="first">bio - Information about user.</p>
-</li>
-<li><p class="first">settings - Notification settings. This is json object that has the next schema:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">settings</span><span class="o">:</span> <span class="p">{</span>
-   <span class="nx">notifications</span><span class="o">:</span> <span class="p">{</span>
-     <span class="nx">email</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span> <span class="k">default</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}</span>
-   <span class="p">},</span>
-   <span class="nx">notifyOn</span><span class="o">:</span> <span class="p">{</span>
-     <span class="nx">newProblem</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span> <span class="k">default</span><span class="o">:</span> <span class="kc">true</span> <span class="p">},</span>
-     <span class="nx">newIdea</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span> <span class="k">default</span><span class="o">:</span> <span class="kc">true</span> <span class="p">},</span>
-     <span class="nx">ownPostNewSolution</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span> <span class="k">default</span><span class="o">:</span> <span class="kc">true</span> <span class="p">},</span>
-     <span class="nx">ownPostNewComment</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span> <span class="k">default</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}</span>
-   <span class="p">},</span>
-   <span class="nx">sort</span><span class="o">:</span> <span class="p">{</span>
-     <span class="nx">home</span><span class="o">:</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span> <span class="k">default</span><span class="o">:</span> <span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="kr">enum</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="s1">&#39;newest&#39;</span><span class="p">]},</span>
-     <span class="nx">profile</span><span class="o">:</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span> <span class="k">default</span><span class="o">:</span> <span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="kr">enum</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="s1">&#39;newest&#39;</span><span class="p">]},</span>
-     <span class="nx">dashboard</span><span class="o">:</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span> <span class="k">default</span><span class="o">:</span> <span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="kr">enum</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="s1">&#39;newest&#39;</span><span class="p">]},</span>
-     <span class="s1">&#39;post-details&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span> <span class="k">default</span><span class="o">:</span> <span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="kr">enum</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="s1">&#39;newest&#39;</span><span class="p">]}</span>
-   <span class="p">},</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">User&#8217;s picture address.</p>
-</li>
-</ol>
-</dd>
-</dl>
+<p><tt class="docutils literal"><span class="pre">PUT</span> <span class="pre">https://getspeakup.com/api/v1/:appId/users/:id</span></tt></p>
+<p>Body parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">email</span></tt></td>
+<td>User email.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">fullName</span></tt></td>
+<td>User full name.</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">title</span></tt></td>
+<td>User job title.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">bio</span></tt></td>
+<td>Information about user.</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">settings</span></tt></td>
+<td>Notification settings. *</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">roles</span></tt></td>
+<td>Array of roles to assign.</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">picture</span></tt></td>
+<td>User picture url.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">picturePublicId</span></tt></td>
+<td>Picture public Id.</td>
+</tr>
+</tbody>
+</table>
 <p>Example request:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/53aaa7181f0d592c49b7833c <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
@@ -217,8 +218,33 @@ Examples: (&#8216;fullName:1&#8217;, &#8216;statistic.ideas:-1&#8217;, &#8216;ro
      <span class="nv">fullName</span><span class="o">=</span><span class="s2">&quot;John Doe&quot;</span> <span class="se">\</span>
      <span class="nv">title</span><span class="o">=</span><span class="s2">&quot;Node.js developer&quot;</span> <span class="se">\</span>
      <span class="nv">bio</span><span class="o">=</span><span class="s2">&quot;Here is information about user&quot;</span> <span class="se">\</span>
-     settings:<span class="o">=</span><span class="s1">&#39;{ &quot;notifications&quot;: { &quot;email&quot;: true }, &quot;notifyOn&quot;: { &quot;newProblem&quot;: false, &quot;newIdea&quot;: true, &quot;ownPostNewSolution&quot;: true, &quot;ownPostNewComment&quot;: false }, &quot;sort&quot;: { &quot;home&quot;: &quot;popular&quot;, &quot;profile&quot;: &quot;popular&quot;, &quot;dashboard&quot;: &quot;newest&quot;, &quot;post-details&quot;: &quot;newest&quot; } }&#39;</span> <span class="se">\</span>
+     settings:<span class="o">=</span><span class="s1">&#39;{ &quot;notifications&quot;: { &quot;email&quot;: true }, &quot;notifyOn&quot;: { &quot;newProblem&quot;: false, &quot;newIdea&quot;: true, &quot;ownPostNewSolution&quot;: true, &quot;ownPostNewComment&quot;: false }, &quot;sort&quot;: { &quot;home&quot;: &quot;popular&quot;, &quot;profile&quot;: &quot;popular&quot;, &quot;dashboard&quot;: &quot;newest&quot;, &quot;post-details&quot;: &quot;newest&quot; }, &quot;postAnonymously&quot;: true }&#39;</span> <span class="se">\</span>
      <span class="nv">picture</span><span class="o">=</span><span class="s2">&quot;http://res.cloudinary.com/7adf6ngw/image/upload/sample.jpg&quot;</span>
+</pre></div>
+</div>
+<p><cite>*</cite> - This is json object with the next schema:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">settings</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">notifications</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">email</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">notifyOn</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">newProblem</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
+      <span class="nx">newIdea</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
+      <span class="nx">ownPostNewSolution</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
+      <span class="nx">ownPostNewComment</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
+      <span class="nx">ownPostNewVote</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
+      <span class="nx">postParticipatedActivity</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">sort</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">home</span><span class="o">:</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span> <span class="kr">enum</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="s1">&#39;newest&#39;</span><span class="p">]</span> <span class="p">},</span>
+      <span class="nx">profile</span><span class="o">:</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span> <span class="kr">enum</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="s1">&#39;newest&#39;</span><span class="p">]</span> <span class="p">},</span>
+      <span class="nx">dashboard</span><span class="o">:</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span> <span class="kr">enum</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="s1">&#39;newest&#39;</span><span class="p">]</span> <span class="p">},</span>
+      <span class="s1">&#39;post-details&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span> <span class="kr">enum</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="s1">&#39;newest&#39;</span><span class="p">]</span> <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">showOnboarding</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
+    <span class="nx">postAnonymously</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
+    <span class="nx">signedUpAsManager</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">}</span>
+<span class="p">},</span>
 </pre></div>
 </div>
 <p>Successful response:</p>
@@ -233,8 +259,8 @@ Examples: (&#8216;fullName:1&#8217;, &#8216;statistic.ideas:-1&#8217;, &#8216;ro
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
   <span class="s2">&quot;errors&quot;</span><span class="o">:</span> <span class="p">[</span>
       <span class="p">{</span>
-          <span class="s2">&quot;field&quot;</span><span class="o">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;Email is not company email.&quot;</span>
+          <span class="s2">&quot;param&quot;</span><span class="o">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;msg&quot;</span><span class="o">:</span> <span class="s2">&quot;Email is not company email.&quot;</span>
       <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span>
@@ -244,17 +270,24 @@ Examples: (&#8216;fullName:1&#8217;, &#8216;statistic.ideas:-1&#8217;, &#8216;ro
 <div class="section" id="change-picture">
 <h1>Change picture<a class="headerlink" href="#change-picture" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/:appId/users/:id/changePicture <span class="se">\</span>
-     file@~/path_to_image
-</pre></div>
-</div>
-<dl class="docutils">
-<dt>Body parameters:</dt>
-<dd><ol class="first last arabic simple">
-<li>file - Uploading image.</li>
-</ol>
-</dd>
-</dl>
+<p><tt class="docutils literal"><span class="pre">POST</span> <span class="pre">https://getspeakup.com/api/v1/:appId/users/:id/changePicture</span></tt></p>
+<p>Body parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">file</span></tt></td>
+<td>Uploading image.</td>
+</tr>
+</tbody>
+</table>
 <p>Example request:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http -f POST https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/53aaa7181f0d592c49b7833c/changePicture <span class="se">\</span>
       Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
@@ -278,9 +311,7 @@ Examples: (&#8216;fullName:1&#8217;, &#8216;statistic.ideas:-1&#8217;, &#8216;ro
 <div class="section" id="download-facebook-picture">
 <h1>Download facebook picture<a class="headerlink" href="#download-facebook-picture" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/:appId/users/:id/downloadFacebookPicture
-</pre></div>
-</div>
+<p><tt class="docutils literal"><span class="pre">PUT</span> <span class="pre">https://getspeakup.com/api/v1/:appId/users/:id/downloadFacebookPicture</span></tt></p>
 <p>Example request:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/53aaa7181f0d592c49b7833c/downloadFacebookPicture <span class="se">\</span>
       Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
@@ -300,9 +331,7 @@ Examples: (&#8216;fullName:1&#8217;, &#8216;statistic.ideas:-1&#8217;, &#8216;ro
 <div class="section" id="remove-picture">
 <h1>Remove picture<a class="headerlink" href="#remove-picture" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/:appId/users/:id/removePicture
-</pre></div>
-</div>
+<p><tt class="docutils literal"><span class="pre">PUT</span> <span class="pre">https://getspeakup.com/api/v1/:appId/users/:id/removePicture</span></tt></p>
 <p>Example request:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/53aaa7181f0d592c49b7833c/removePicture <span class="se">\</span>
              Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
@@ -314,7 +343,7 @@ Examples: (&#8216;fullName:1&#8217;, &#8216;statistic.ideas:-1&#8217;, &#8216;ro
 </pre></div>
 </div>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
-    <span class="s2">&quot;picture&quot;</span><span class="o">:</span> <span class="s2">&quot;http://getspeakup.com/assets/images/2-frontend/profile-image.svg&quot;</span>
+    <span class="s2">&quot;picture&quot;</span><span class="o">:</span> <span class="s2">&quot;http://yourcompany.getspeakup.com/assets/images/2-frontend/profile-image.svg&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -322,9 +351,7 @@ Examples: (&#8216;fullName:1&#8217;, &#8216;statistic.ideas:-1&#8217;, &#8216;ro
 <div class="section" id="request-manager-access">
 <h1>Request manager access<a class="headerlink" href="#request-manager-access" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/:appId/users/:id/requestManagerAccess
-</pre></div>
-</div>
+<p><tt class="docutils literal"><span class="pre">PUT</span> <span class="pre">https://getspeakup.com/api/v1/:appId/users/:id/requestManagerAccess</span></tt></p>
 <p>Example request:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/53aaa7181f0d592c49b7833c/requestManagerAccess <span class="se">\</span>
              Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
@@ -333,6 +360,25 @@ Examples: (&#8216;fullName:1&#8217;, &#8216;statistic.ideas:-1&#8217;, &#8216;ro
 <p>Successful response:</p>
 <p>If all above steps were done correctly response should be like this (contains path to default image):</p>
 <div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
+</pre></div>
+</div>
+</div>
+<div class="section" id="remove-a-user">
+<h1>Remove a user<a class="headerlink" href="#remove-a-user" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">PUT</span> <span class="pre">https://getspeakup.com/api/v1/:appId/users/:id/delete</span></tt></p>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/users/53aaa7181f0d592c49b7833c/delete <span class="se">\</span>
+  Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+</pre></div>
+</div>
+<p>Example response:</p>
+<p>If all above steps were done correctly you should get response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 204 No Content
+</pre></div>
+</div>
+<p>If user with such Id does not exist response will be like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 404 Not Found
 </pre></div>
 </div>
 </div>
@@ -348,23 +394,23 @@ Examples: (&#8216;fullName:1&#8217;, &#8216;statistic.ideas:-1&#8217;, &#8216;ro
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Retrieve current user</a></li>
-<li><a class="reference internal" href="#retrieve-user-by-id">Retrieve user by id</a></li>
+<li><a class="reference internal" href="#get-user-by-id">Get user by id</a></li>
 <li><a class="reference internal" href="#get-user-list">Get user list</a></li>
-<li><a class="reference internal" href="#delete-user-by-id">Delete user by id</a></li>
 <li><a class="reference internal" href="#upgrade-to-manager">Upgrade to manager</a></li>
 <li><a class="reference internal" href="#save-user-settings">Save user settings</a></li>
 <li><a class="reference internal" href="#change-picture">Change picture</a></li>
 <li><a class="reference internal" href="#download-facebook-picture">Download facebook picture</a></li>
 <li><a class="reference internal" href="#remove-picture">Remove picture</a></li>
 <li><a class="reference internal" href="#request-manager-access">Request manager access</a></li>
+<li><a class="reference internal" href="#remove-a-user">Remove a user</a></li>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">Users</a></p>
-  <h4>Next topic</h4>
   <p class="topless"><a href="user_object.html"
-                        title="next chapter">The <tt class="docutils literal"><span class="pre">User</span></tt> object</a></p>
+                        title="previous chapter"><tt class="docutils literal"><span class="pre">User</span></tt> object</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../posts/index.html"
+                        title="next chapter">Posts</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -390,10 +436,10 @@ Examples: (&#8216;fullName:1&#8217;, &#8216;statistic.ideas:-1&#8217;, &#8216;ro
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="user_object.html" title="The User object"
+          <a href="../posts/index.html" title="Posts"
              >next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Users"
+          <a href="user_object.html" title="User object"
              >previous</a> |</li>
         <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
           <li><a href="index.html" >Users</a> &raquo;</li> 

@@ -8,8 +8,9 @@ Invites
    :titlesonly:
 
 
-   ../invites/api
    ../invites/invite_object
+   ../invites/api
+
 
 
 

@@ -1,6 +1,6 @@
 .. _user_object:
 
-The ``User`` object
+``User`` object
 ===================
 
 Each user belong to particular Application.
@@ -15,34 +15,37 @@ User can have different bio, title, roles etc in different applications he belon
     - Description
 
   * - ``_id``
-    - The id of the User object
+    - Id of the User object
 
   * - ``appId``
-    - Id of application to which user belong
+    - Id of application which user belongs to
 
   * - ``accountId``
-    - Id of :ref:`User Account <account_object>`.
+    - Id of :ref:`user account <account_object>`.
 
   * - ``picture``
     - Url to the user picture
 
   * - ``fullName``
-    - full name of the user
+    - User full name
 
   * - ``email``
-    - Email address of the user
+    - User email address
 
   * - ``bio``
-    - Bio of user
+    - User info
 
   * - ``userName``
-    - Internal user name, used for mentions.
+    - Internal user name, used for mentions
+
+  * - ``groups``
+    - Associative array of groups where user participates
 
   * - ``settings``
-    - Notifications settings
+    - Notification settings
 
   * - ``statistic``
-    - User statistic according to his posts
+    - User statistic inside his company
 
   * - ``title``
     - User title
@@ -65,18 +68,53 @@ Example of user object
       "picture" : "https://getspeakup.com/assets/images/profile-image.png",
       "fullName" : "Andrew Orsich",
       "email" : "andrew@paralect.com",
-      "bio" : "",
+      "bio" : "Some info",
       "userName" : "andrew.orsich",
-      "settings" : {
-          "notifications" : {
-              "email" : true
-          },
-          "notifyOn" : {
-              "ownPostNewComment" : true,
-              "ownPostNewSolution" : true,
-              "newIdea" : true,
-              "newProblem" : true
-          }
+      "groups": {
+              "5416bca3743a8d452ba42014": {
+                  "_id": "5416bca3743a8d452ba42014",
+                  "isManager": false,
+                  "name": "Group A",
+                  "statistic": {
+                      "comments": 2,
+                      "ideas": 4,
+                      "problems": 1,
+                      "solutions": 0
+                  }
+              },
+              "541843caf50be1146f6e67ef": {
+                  "_id": "541843caf50be1146f6e67ef",
+                  "isManager": false,
+                  "name": "Group B",
+                  "statistic": {
+                      "comments": 0,
+                      "ideas": 1,
+                      "problems": 0,
+                      "solutions": 0
+                  }
+              }
+      },
+      "settings": {
+              "notifications": {
+                  "email": true
+              },
+              "notifyOn": {
+                  "newIdea": true,
+                  "newProblem": true,
+                  "ownPostNewComment": true,
+                  "ownPostNewSolution": true,
+                  "ownPostNewVote": true,
+                  "postParticipatedActivity": true
+              },
+              "postAnonymously": false,
+              "showOnboarding": false,
+              "signedUpAsManager": false,
+              "sort": {
+                  "dashboard": "popular",
+                  "home": "popular",
+                  "post-details": "popular",
+                  "profile": "popular"
+              }
       },
       "statistic": {
               "comments": 2,
@@ -84,10 +122,10 @@ Example of user object
               "problems": 0,
               "solutions": 1
       },
-      "title" : "",
+      "title" : ".NET / NodeJS developer",
       "roles" : [
           "admin",
-          "decisionMaker"
+          "manager"
       ],
       "createdOn" : "2014-06-25T10:40:24.817Z"
   }
@@ -98,5 +136,5 @@ Example of user object
 User roles
 ----------
 
- 1. admin - can send invites, update billing information
- 2. decisionMaker - can make decisions and see dashboard
+ 1. ``admin`` - can send invitations, update billing information
+ 2. ``manager`` - can make decisions and see dashboard

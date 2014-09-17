@@ -54,7 +54,6 @@
             
   <div class="section" id="get-post-by-id">
 <h1>Get post by id<a class="headerlink" href="#get-post-by-id" title="Permalink to this headline">¶</a></h1>
-<p>Returns <a class="reference internal" href="post_object.html#post-object"><em>post</em></a> by its id</p>
 <p>Definition:</p>
 <p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/posts/:id</span></tt></p>
 <p>Example requests:</p>
@@ -62,10 +61,11 @@
  Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 </pre></div>
 </div>
-<p>Example response:  Returns <a class="reference internal" href="post_object.html#post-object"><em>Post Object</em></a>.</p>
+<p>Example response:</p>
+<p>Returns <a class="reference internal" href="post_object.html#post-object"><em>Post Object</em></a>.</p>
 </div>
-<div class="section" id="list-posts">
-<h1>List posts<a class="headerlink" href="#list-posts" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="get-post-list">
+<h1>Get post list<a class="headerlink" href="#get-post-list" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
 <p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/posts</span></tt></p>
 <p>Query string parameters:</p>
@@ -112,7 +112,7 @@ because <tt class="docutils literal"><span class="pre">problem</span></tt> and <
 <td>none</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">page</span></tt></td>
-<td>Page number to return.</td>
+<td>Page number.</td>
 <td>1</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">limit</span></tt></td>
@@ -122,27 +122,19 @@ because <tt class="docutils literal"><span class="pre">problem</span></tt> and <
 </tbody>
 </table>
 <p>Example requests:</p>
-<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts <span class="se">\</span>
- Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
-
-
-&lt;* below api call is identical, just with default query parameters <span class="o">(</span>httpie style<span class="o">)</span> /*&gt;
-
-http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts <span class="nv">sort</span><span class="o">==</span><span class="s1">&#39;popular&#39;</span> <span class="nv">types</span><span class="o">==</span><span class="s1">&#39;solution,idea,problem,comment&#39;</span> <span class="nv">page</span><span class="o">==</span>1 <span class="nv">limit</span><span class="o">==</span>15 <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts <span class="nv">sort</span><span class="o">==</span><span class="s1">&#39;popular&#39;</span> <span class="nv">types</span><span class="o">==</span><span class="s1">&#39;solution,idea,problem,comment&#39;</span> <span class="nv">page</span><span class="o">==</span>1 <span class="nv">limit</span><span class="o">==</span>15 <span class="se">\</span>
  Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 </pre></div>
 </div>
 <p>Example response:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
   <span class="s2">&quot;pagesCount&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-  <span class="s2">&quot;results&quot;</span><span class="o">:</span> <span class="p">[</span><span class="nx">PostObject</span><span class="p">],</span> <span class="c1">// * see PostObject definition below</span>
+  <span class="s2">&quot;results&quot;</span><span class="o">:</span> <span class="p">[</span><span class="nx">PostObject</span><span class="p">],</span>  <span class="o">*</span> <span class="c1">//  see PostObject definition below</span>
   <span class="s2">&quot;totalCount&quot;</span><span class="o">:</span> <span class="mi">23</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><a class="reference internal" href="post_object.html#post-object"><em>PostObject</em></a>.</li>
-</ul>
+<p><cite>*</cite> - Array of <a class="reference internal" href="post_object.html#post-object"><em>post objects</em></a>.</p>
 <p>Notes:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -240,7 +232,6 @@ http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts/stats <spa
 </div>
 <div class="section" id="create-a-post">
 <h1>Create a post<a class="headerlink" href="#create-a-post" title="Permalink to this headline">¶</a></h1>
-<p>Creates <a class="reference internal" href="post_object.html#post-object"><em>post</em></a></p>
 <p>Definition:</p>
 <p><tt class="docutils literal"><span class="pre">POST</span> <span class="pre">https://getspeakup.com/api/v1/:appId/posts</span></tt></p>
 <p>Body parameters:</p>
@@ -497,7 +488,7 @@ http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts/stats <spa
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Get post by id</a></li>
-<li><a class="reference internal" href="#list-posts">List posts</a></li>
+<li><a class="reference internal" href="#get-post-list">Get post list</a></li>
 <li><a class="reference internal" href="#get-posts-stats">Get posts stats</a></li>
 <li><a class="reference internal" href="#create-a-post">Create a post</a></li>
 <li><a class="reference internal" href="#edit-a-post">Edit a post</a></li>

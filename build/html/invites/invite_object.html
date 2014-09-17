@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The Invite object &mdash; Speakup 0.0.1 documentation</title>
+    <title>Invite object &mdash; Speakup 0.0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
     <link rel="up" title="Invites" href="index.html" />
-    <link rel="next" title="Billings" href="../billing/index.html" />
-    <link rel="prev" title="Get by Id" href="api.html" /> 
+    <link rel="next" title="Get by Id" href="api.html" />
+    <link rel="prev" title="Invites" href="index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -37,10 +37,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../billing/index.html" title="Billings"
+          <a href="api.html" title="Get by Id"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="api.html" title="Get by Id"
+          <a href="index.html" title="Invites"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">Invites</a> &raquo;</li> 
@@ -52,8 +52,8 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="the-invite-object">
-<span id="invite-object"></span><h1>The <tt class="docutils literal"><span class="pre">Invite</span></tt> object<a class="headerlink" href="#the-invite-object" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="invite-object">
+<span id="id1"></span><h1><tt class="docutils literal"><span class="pre">Invite</span></tt> object<a class="headerlink" href="#invite-object" title="Permalink to this headline">¶</a></h1>
 <table border="1" class="docutils">
 <colgroup>
 <col width="50%" />
@@ -78,6 +78,12 @@
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">inviterId</span></tt></td>
 <td>Id of user that sent invitation</td>
 </tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">isNeedApproval</span></tt></td>
+<td>Boolean value for manager confirmation</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">signedUpAsManager</span></tt></td>
+<td>Boolean value that represents if user was invited as manager</td>
+</tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">token</span></tt></td>
 <td>Token for invite entity</td>
 </tr>
@@ -91,6 +97,8 @@
     <span class="s2">&quot;createdOn&quot;</span><span class="o">:</span> <span class="s2">&quot;2014-07-28T14:47:16.641Z&quot;</span><span class="p">,</span>
     <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="s2">&quot;sandra@yourcompany.com&quot;</span><span class="p">,</span>
     <span class="s2">&quot;inviterId&quot;</span><span class="o">:</span> <span class="s2">&quot;53d2646ac8f9d5169fb03206&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;isNeedApproval&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="s2">&quot;signedUpAsManager&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
     <span class="s2">&quot;token&quot;</span><span class="o">:</span> <span class="s2">&quot;228fb7ada78c6b390d54d67142099487714419e6a478a32eee7efe36210f5f5a79cd30002ca061c65c4508120363da9e&quot;</span>
 <span class="p">}</span>
 </pre></div>
@@ -108,18 +116,18 @@
 
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">The <tt class="docutils literal"><span class="pre">Invite</span></tt> object</a><ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">Invite</span></tt> object</a><ul>
 <li><a class="reference internal" href="#example-of-an-invite-object">Example of an invite object</a></li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="api.html"
-                        title="previous chapter">Get by Id</a></p>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Invites</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../billing/index.html"
-                        title="next chapter">Billings</a></p>
+  <p class="topless"><a href="api.html"
+                        title="next chapter">Get by Id</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -145,10 +153,10 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../billing/index.html" title="Billings"
+          <a href="api.html" title="Get by Id"
              >next</a> |</li>
         <li class="right" >
-          <a href="api.html" title="Get by Id"
+          <a href="index.html" title="Invites"
              >previous</a> |</li>
         <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
           <li><a href="index.html" >Invites</a> &raquo;</li> 

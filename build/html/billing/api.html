@@ -26,6 +26,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
     <link rel="up" title="Billings" href="index.html" />
+    <link rel="next" title="Search" href="../search/index.html" />
     <link rel="prev" title="Billings" href="index.html" /> 
   </head>
   <body>
@@ -35,6 +36,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../search/index.html" title="Search"
+             accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Billings"
              accesskey="P">previous</a> |</li>
@@ -51,9 +55,7 @@
   <div class="section" id="get-all-plans">
 <h1>Get all plans<a class="headerlink" href="#get-all-plans" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>GET https://getspeakup.com/api/v1/:appId/billing/plans
-</pre></div>
-</div>
+<p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/billing/plans</span></tt></p>
 <p>Example request:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/billing/plans <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
@@ -64,33 +66,70 @@
 <div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">[</span>
-  <span class="p">{</span>
-      <span class="s2">&quot;amount&quot;</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
-      <span class="s2">&quot;maxUsersCount&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">&quot;planId&quot;</span><span class="o">:</span> <span class="s2">&quot;6_user_month&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;metered&quot;</span>
-  <span class="p">}</span>
-<span class="p">]</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;applicationPlansOverride&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;5354bf975ca75754723fe8b6&quot;</span><span class="o">:</span> <span class="s2">&quot;free&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;5359faae8243bf3d6b3079ae&quot;</span><span class="o">:</span> <span class="s2">&quot;free&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;5377649abc92a0a319096ab1&quot;</span><span class="o">:</span> <span class="s2">&quot;free&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;53a9ae15cea12f8f4418c48b&quot;</span><span class="o">:</span> <span class="s2">&quot;free&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;53b6161edf54f56625c34dad&quot;</span><span class="o">:</span> <span class="s2">&quot;free&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;5400e52ab02dc9d03dd4aa5f&quot;</span><span class="o">:</span> <span class="s2">&quot;free&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;54015eb76637f1753ebbcaf0&quot;</span><span class="o">:</span> <span class="s2">&quot;free&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;basicPlan&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;amount&quot;</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+        <span class="s2">&quot;maxUsersCount&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">&quot;planId&quot;</span><span class="o">:</span> <span class="s2">&quot;6_user_month&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;metered&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;freePlan&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;amount&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;maxUsersCount&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">&quot;planId&quot;</span><span class="o">:</span> <span class="s2">&quot;free&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;static&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;plans&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;amount&quot;</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+            <span class="s2">&quot;maxUsersCount&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="s2">&quot;planId&quot;</span><span class="o">:</span> <span class="s2">&quot;6_user_month&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;metered&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;amount&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;maxUsersCount&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="s2">&quot;planId&quot;</span><span class="o">:</span> <span class="s2">&quot;free&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;static&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="change-plan">
-<h1>Change plan<a class="headerlink" href="#change-plan" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="change-a-plan">
+<h1>Change a plan<a class="headerlink" href="#change-a-plan" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/:appId/billing <span class="se">\</span>
-    <span class="nv">card</span><span class="o">=</span>generated_token <span class="se">\</span>
-    <span class="nv">selectedPlan</span><span class="o">=</span>selected_plan
-</pre></div>
-</div>
-<dl class="docutils">
-<dt>Body parameters:</dt>
-<dd><ol class="first last arabic simple">
-<li>card - Token that was generated by Stripe service from card number.</li>
-<li>selectedPlan - Selected plan for application.</li>
-</ol>
-</dd>
-</dl>
+<p><tt class="docutils literal"><span class="pre">PUT</span> <span class="pre">https://getspeakup.com/api/v1/:appId/billing</span></tt></p>
+<p>Body parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">card</span></tt></td>
+<td>Token that was generated by Stripe service from card number.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">selectedPlan</span></tt></td>
+<td>Selected plan for application.</td>
+</tr>
+</tbody>
+</table>
 <p>Example request:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/billing <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
@@ -111,7 +150,6 @@
         <span class="o">{</span>
             <span class="s2">&quot;msg&quot;</span>: <span class="s2">&quot;Please, select a plan&quot;</span>,
             <span class="s2">&quot;param&quot;</span>: <span class="s2">&quot;selectedPlan&quot;</span>,
-            <span class="s2">&quot;value&quot;</span>: <span class="s2">&quot;&quot;</span>
         <span class="o">}</span>
     <span class="o">]</span>
 <span class="o">}</span>
@@ -121,9 +159,7 @@
 <div class="section" id="downgrade-application">
 <h1>Downgrade application<a class="headerlink" href="#downgrade-application" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/:appId/billing/downgrade
-</pre></div>
-</div>
+<p><tt class="docutils literal"><span class="pre">PUT</span> <span class="pre">https://getspeakup.com/api/v1/:appId/billing/downgrade</span></tt></p>
 <p>Example request:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/billing/downgrade <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
@@ -147,13 +183,16 @@
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Get all plans</a></li>
-<li><a class="reference internal" href="#change-plan">Change plan</a></li>
+<li><a class="reference internal" href="#change-a-plan">Change a plan</a></li>
 <li><a class="reference internal" href="#downgrade-application">Downgrade application</a></li>
 </ul>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
                         title="previous chapter">Billings</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../search/index.html"
+                        title="next chapter">Search</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -178,6 +217,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="../search/index.html" title="Search"
+             >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Billings"
              >previous</a> |</li>

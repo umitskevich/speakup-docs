@@ -24,8 +24,10 @@
     - Email address of the account
 
   * - ``fullName``
-    - full name of the account
+    - Full name of the account
 
+  * - ``hasPassword``
+    - Boolean value that indicates if account has own password
 
 .. _example_account_object:
 
@@ -49,5 +51,6 @@ Example of an account object
     ],
     "createdOn" : "2014-05-17T12:27:33.103Z",
     "email" : "demo@getspeakup.com",
-    "fullName" : "Demo Account"
+    "fullName" : "Demo Account",
+    "hasPassword": true
   }

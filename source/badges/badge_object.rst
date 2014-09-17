@@ -1,6 +1,6 @@
 .. _badge_object:
 
-The ``Badge`` object
+``Badge`` object
 ===================
 
 Badges types:

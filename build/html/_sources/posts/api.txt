@@ -1,8 +1,6 @@
 Get post by id
 ==============
 
-Returns :ref:`post <post_object>` by its id
-
 Definition:
 
 ``GET https://getspeakup.com/api/v1/:appId/posts/:id``
@@ -14,12 +12,14 @@ Example requests:
    http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts/5416d3a8abcc72ad356950d6 \
     Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 
-Example response:  Returns :ref:`Post Object <post_object>`.
+Example response:
+
+Returns :ref:`Post Object <post_object>`.
 
 
 
 
-List posts
+Get post list
 ==============
 
 Definition:
@@ -63,7 +63,7 @@ Query string parameters:
     - none
 
   * - ``page``
-    - Page number to return.
+    - Page number.
     - 1
 
   * - ``limit``
@@ -74,12 +74,6 @@ Example requests:
 
 .. code-block:: bash
 
-   http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts \
-    Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
-
-
-   <* below api call is identical, just with default query parameters (httpie style) /*>
-
    http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/posts sort=='popular' types=='solution,idea,problem,comment' page==1 limit==15 \
     Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 
@@ -89,11 +83,11 @@ Example response:
 
   {
     "pagesCount": 2,
-    "results": [PostObject], // * see PostObject definition below
+    "results": [PostObject],  * //  see PostObject definition below
     "totalCount": 23
   }
 
-* :ref:`PostObject <post_object>`.
+`*` - Array of :ref:`post objects <post_object>`.
 
 
 Notes:
@@ -180,8 +174,6 @@ Notes:  Statistic will be counted accordingly to specified decision described in
 
 Create a post
 ==============
-
-Creates :ref:`post <post_object>`
 
 Definition:
 

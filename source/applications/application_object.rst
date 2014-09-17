@@ -1,6 +1,6 @@
 .. _application_object:
 
-The ``Application`` object
+``Application`` object
 ==========================
 
 .. list-table::
@@ -32,8 +32,11 @@ The ``Application`` object
   * - ``selectedPlan``
     - Selected plan for application
 
+  * - ``settings``
+    - Application settings
+
   * - ``status``
-    - Application status (can take the next values: "noManager", "subscribed", "cancelled")
+    - Application status (can take the next values: ``"noManager"``, ``"subscribed"``, ``"cancelled"``)
 
   * - ``subDomain``
     - Application subdomain
@@ -59,6 +62,9 @@ Example of an application object
       "name": "Your company name",
       "ownerAccountId": "53c7f8b2c924fa53a7a9f4cf",
       "selectedPlan": "6_user_month",
+      "settings": {
+          "canPostAnonymously": true
+      },
       "status": "subscribed",
       "subDomain": "yourcompany",
       "usersCount": 21

@@ -1,5 +1,5 @@
 
-Get an inline-comment by id
+Get inline-comment by id
 ========================
 
 Definition:

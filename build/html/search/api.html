@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Search &mdash; Speakup 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="Search" href="index.html" />
+    <link rel="prev" title="Search" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="index.html" title="Search"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Search</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="search">
+<h1>Search<a class="headerlink" href="#search" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/:appId/search</span></tt></p>
+<p>Query string parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">term</span></tt></td>
+<td>Search criteria</td>
+</tr>
+</tbody>
+</table>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/53aaa7181f0d592c49b7833a/search <span class="nv">term</span><span class="o">==</span><span class="s1">&#39;test post&#39;</span> <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly you should see response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;posts&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;comment&quot;</span><span class="o">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;idea&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;__v&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="s2">&quot;_id&quot;</span><span class="o">:</span> <span class="s2">&quot;5416d1b1abcc72ad356950d5&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;appId&quot;</span><span class="o">:</span> <span class="s2">&quot;5412bc60b581c78e215a138a&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;commentCount&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">&quot;content&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;p&gt;Test post content using Api&lt;/p&gt;&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;createdOn&quot;</span><span class="o">:</span> <span class="s2">&quot;2014-09-15T11:46:57.828Z&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;decision&quot;</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;comment&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;p&gt;ggrgrt&lt;/p&gt;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;decidedOn&quot;</span><span class="o">:</span> <span class="s2">&quot;2014-09-15T14:06:04.389Z&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;decider&quot;</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="s2">&quot;_id&quot;</span><span class="o">:</span> <span class="s2">&quot;5412bc61b581c78e215a1393&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;fullName&quot;</span><span class="o">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;picture&quot;</span><span class="o">:</span> <span class="s2">&quot;http://yourcompany.getspeakup/assets/images/2-frontend/profile-image.png&quot;</span>
+                    <span class="p">},</span>
+                    <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="s2">&quot;approved&quot;</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;flags&quot;</span><span class="o">:</span> <span class="p">[],</span>
+                <span class="s2">&quot;groupId&quot;</span><span class="o">:</span> <span class="s2">&quot;5416bca3743a8d452ba42014&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;groupName&quot;</span><span class="o">:</span> <span class="s2">&quot;Updated test group name&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;inlineComments&quot;</span><span class="o">:</span> <span class="p">[],</span>
+                <span class="s2">&quot;isAnon&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;isSpirit&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;solutionCount&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">&quot;subscribers&quot;</span><span class="o">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;_id&quot;</span><span class="o">:</span> <span class="s2">&quot;5412bc61b581c78e215a1393&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;Test post title using Api&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;idea&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;updatedOn&quot;</span><span class="o">:</span> <span class="s2">&quot;2014-09-15T11:46:57.828Z&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;user&quot;</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;_id&quot;</span><span class="o">:</span> <span class="s2">&quot;5412bc61b581c78e215a1393&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;fullName&quot;</span><span class="o">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;picture&quot;</span><span class="o">:</span> <span class="s2">&quot;http://yourcompany.getspeakup/assets/images/2-frontend/profile-image.png&quot;</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;voteCount&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="s2">&quot;voteValue&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="s2">&quot;votes&quot;</span><span class="o">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;_id&quot;</span><span class="o">:</span> <span class="s2">&quot;5412bc61b581c78e215a1393&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="mi">1</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;problem&quot;</span><span class="o">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;solution&quot;</span><span class="o">:</span> <span class="p">[]</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;users&quot;</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+    <a href="/docs/index.html"><img src="/docs/_static/logo-white-landing.png" /></a>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Search</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="index.html" title="Search"
+             >previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Search</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2014, Speakup.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

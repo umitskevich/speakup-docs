@@ -26,8 +26,8 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
     <link rel="up" title="Accounts" href="index.html" />
-    <link rel="next" title="The Account object" href="account_object.html" />
-    <link rel="prev" title="Accounts" href="index.html" /> 
+    <link rel="next" title="Users" href="../users/index.html" />
+    <link rel="prev" title="Account object" href="account_object.html" /> 
   </head>
   <body>
     <div class="related">
@@ -37,10 +37,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="account_object.html" title="The Account object"
+          <a href="../users/index.html" title="Users"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Accounts"
+          <a href="account_object.html" title="Account object"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">Accounts</a> &raquo;</li> 
@@ -55,29 +55,47 @@
   <div class="section" id="retrieve-current-account">
 <h1>Retrieve current account<a class="headerlink" href="#retrieve-current-account" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>GET https://getspeakup.com/api/v1/accounts/current
-</pre></div>
-</div>
+<p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/accounts/current</span></tt></p>
 <p>Example request:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/accounts/current <span class="se">\</span>
   Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 </pre></div>
 </div>
 <p>Example response:</p>
-<p><a class="reference internal" href="account_object.html#account-object"><em>Account object</em></a>.</p>
+<p>Returns <a class="reference internal" href="account_object.html#account-object"><em>account object</em></a>.</p>
 </div>
 <div class="section" id="change-password">
 <h1>Change password<a class="headerlink" href="#change-password" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/accounts/:id/createPassword <span class="se">\</span>
-     <span class="nv">newPassword</span><span class="o">=</span>new_password <span class="se">\</span>
-     <span class="nv">existingPassword</span><span class="o">=</span>old_password
-</pre></div>
-</div>
+<p><tt class="docutils literal"><span class="pre">POST</span> <span class="pre">https://getspeakup.com/api/v1/accounts/:id/changePassword</span></tt></p>
+<p>Body parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">newPassword</span></tt></td>
+<td>New account password</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">verifyPassword</span></tt></td>
+<td>Verified new account password</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">existingPassword</span></tt></td>
+<td>Existing account password</td>
+</tr>
+</tbody>
+</table>
 <p>Example request:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/accounts/535565a95ca75754723fe8e3/changePassword <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
      <span class="nv">newPassword</span><span class="o">=</span><span class="s2">&quot;qwerty&quot;</span> <span class="se">\</span>
+     <span class="nv">verifyPassword</span><span class="o">=</span><span class="s2">&quot;qwerty&quot;</span> <span class="se">\</span>
      <span class="nv">existingPassword</span><span class="o">=</span><span class="s2">&quot;123456&quot;</span>
 </pre></div>
 </div>
@@ -104,9 +122,7 @@
 <div class="section" id="forgot-password">
 <h1>Forgot password<a class="headerlink" href="#forgot-password" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>POST https://getspeakup.com/api/v1/accounts/:id/forgotPassword
-</pre></div>
-</div>
+<p><tt class="docutils literal"><span class="pre">POST</span> <span class="pre">https://getspeakup.com/api/v1/accounts/:id/forgotPassword</span></tt></p>
 <p>Example request:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/v1/accounts/535565a95ca75754723fe8e3/forgotPassword <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
@@ -121,17 +137,24 @@
 <div class="section" id="change-active-application">
 <h1>Change active application<a class="headerlink" href="#change-active-application" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/accounts/changeActiveApp <span class="se">\</span>
-     <span class="nv">appId</span><span class="o">=</span>appId_to_login
-</pre></div>
-</div>
-<dl class="docutils">
-<dt>Body parameters:</dt>
-<dd><ol class="first last arabic simple">
-<li>appId - Id of application that user would like to login</li>
-</ol>
-</dd>
-</dl>
+<p><tt class="docutils literal"><span class="pre">PUT</span> <span class="pre">https://getspeakup.com/api/v1/accounts/changeActiveApp</span></tt></p>
+<p>Body parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">appId</span></tt></td>
+<td>Id of application that user would like to login</td>
+</tr>
+</tbody>
+</table>
 <p>Example request:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/accounts/changeActiveApp <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
@@ -144,7 +167,7 @@
 </pre></div>
 </div>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s2">&quot;redirect&quot;</span><span class="o">:</span> <span class="s2">&quot;https://getspeakup.com&quot;</span>
+  <span class="s2">&quot;redirect&quot;</span><span class="o">:</span> <span class="s2">&quot;https://yourcompany.getspeakup.com&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -152,9 +175,7 @@
 <div class="section" id="disconnect-facebook">
 <h1>Disconnect Facebook<a class="headerlink" href="#disconnect-facebook" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/accounts/:id/facebook/remove
-</pre></div>
-</div>
+<p><tt class="docutils literal"><span class="pre">PUT</span> <span class="pre">https://getspeakup.com/api/v1/accounts/:id/facebook/remove</span></tt></p>
 <p>Example request:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/accounts/535565a95ca75754723fe8e3/facebook/remove <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
@@ -169,9 +190,7 @@
 <div class="section" id="disconnect-linkedin">
 <h1>Disconnect LinkedIn<a class="headerlink" href="#disconnect-linkedin" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/accounts/:id/linkedin/remove
-</pre></div>
-</div>
+<p><tt class="docutils literal"><span class="pre">PUT</span> <span class="pre">https://getspeakup.com/api/v1/accounts/:id/linkedin/remove</span></tt></p>
 <p>Example request:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/accounts/535565a95ca75754723fe8e3/linkedin/remove <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
@@ -203,11 +222,11 @@
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">Accounts</a></p>
-  <h4>Next topic</h4>
   <p class="topless"><a href="account_object.html"
-                        title="next chapter">The <tt class="docutils literal"><span class="pre">Account</span></tt> object</a></p>
+                        title="previous chapter"><tt class="docutils literal"><span class="pre">Account</span></tt> object</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../users/index.html"
+                        title="next chapter">Users</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -233,10 +252,10 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="account_object.html" title="The Account object"
+          <a href="../users/index.html" title="Users"
              >next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Accounts"
+          <a href="account_object.html" title="Account object"
              >previous</a> |</li>
         <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
           <li><a href="index.html" >Accounts</a> &raquo;</li> 

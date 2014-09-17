@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The Application object &mdash; Speakup 0.0.1 documentation</title>
+    <title>Application object &mdash; Speakup 0.0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
     <link rel="up" title="Applications" href="index.html" />
-    <link rel="next" title="Invites" href="../invites/index.html" />
-    <link rel="prev" title="Retrieve current application" href="api.html" /> 
+    <link rel="next" title="Retrieve current application" href="api.html" />
+    <link rel="prev" title="Applications" href="index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -37,10 +37,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../invites/index.html" title="Invites"
+          <a href="api.html" title="Retrieve current application"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="api.html" title="Retrieve current application"
+          <a href="index.html" title="Applications"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">Applications</a> &raquo;</li> 
@@ -52,8 +52,8 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="the-application-object">
-<span id="application-object"></span><h1>The <tt class="docutils literal"><span class="pre">Application</span></tt> object<a class="headerlink" href="#the-application-object" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="application-object">
+<span id="id1"></span><h1><tt class="docutils literal"><span class="pre">Application</span></tt> object<a class="headerlink" href="#application-object" title="Permalink to this headline">¶</a></h1>
 <table border="1" class="docutils">
 <colgroup>
 <col width="50%" />
@@ -87,13 +87,16 @@
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">selectedPlan</span></tt></td>
 <td>Selected plan for application</td>
 </tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">status</span></tt></td>
-<td>Application status (can take the next values: &#8220;noManager&#8221;, &#8220;subscribed&#8221;, &#8220;cancelled&#8221;)</td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">settings</span></tt></td>
+<td>Application settings</td>
 </tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">subDomain</span></tt></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">status</span></tt></td>
+<td>Application status (can take the next values: <tt class="docutils literal"><span class="pre">&quot;noManager&quot;</span></tt>, <tt class="docutils literal"><span class="pre">&quot;subscribed&quot;</span></tt>, <tt class="docutils literal"><span class="pre">&quot;cancelled&quot;</span></tt>)</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">subDomain</span></tt></td>
 <td>Application subdomain</td>
 </tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">usersCount</span></tt></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">usersCount</span></tt></td>
 <td>The number of active users of application</td>
 </tr>
 </tbody>
@@ -109,6 +112,9 @@
     <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Your company name&quot;</span><span class="p">,</span>
     <span class="s2">&quot;ownerAccountId&quot;</span><span class="o">:</span> <span class="s2">&quot;53c7f8b2c924fa53a7a9f4cf&quot;</span><span class="p">,</span>
     <span class="s2">&quot;selectedPlan&quot;</span><span class="o">:</span> <span class="s2">&quot;6_user_month&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;settings&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;canPostAnonymously&quot;</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
     <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="s2">&quot;subscribed&quot;</span><span class="p">,</span>
     <span class="s2">&quot;subDomain&quot;</span><span class="o">:</span> <span class="s2">&quot;yourcompany&quot;</span><span class="p">,</span>
     <span class="s2">&quot;usersCount&quot;</span><span class="o">:</span> <span class="mi">21</span>
@@ -128,18 +134,18 @@
 
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">The <tt class="docutils literal"><span class="pre">Application</span></tt> object</a><ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">Application</span></tt> object</a><ul>
 <li><a class="reference internal" href="#example-of-an-application-object">Example of an application object</a></li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="api.html"
-                        title="previous chapter">Retrieve current application</a></p>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Applications</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../invites/index.html"
-                        title="next chapter">Invites</a></p>
+  <p class="topless"><a href="api.html"
+                        title="next chapter">Retrieve current application</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -165,10 +171,10 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../invites/index.html" title="Invites"
+          <a href="api.html" title="Retrieve current application"
              >next</a> |</li>
         <li class="right" >
-          <a href="api.html" title="Retrieve current application"
+          <a href="index.html" title="Applications"
              >previous</a> |</li>
         <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
           <li><a href="index.html" >Applications</a> &raquo;</li> 

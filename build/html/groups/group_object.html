@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Group object &mdash; Speakup 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="Groups" href="index.html" />
+    <link rel="next" title="Get group by Id" href="api.html" />
+    <link rel="prev" title="Groups" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="api.html" title="Get group by Id"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Groups"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Groups</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="group-object">
+<span id="id1"></span><h1><tt class="docutils literal"><span class="pre">Group</span></tt> object<a class="headerlink" href="#group-object" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Field</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">_id</span></tt></td>
+<td>Id of the Group object</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">appId</span></tt></td>
+<td>Id of application that group belongs to</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">createdOn</span></tt></td>
+<td>Date when group was created</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">updatedOn</span></tt></td>
+<td>Date when group was updated</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">isAllowAnonymous</span></tt></td>
+<td>Boolean value for anonymous posting inside the group</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">managerId</span></tt></td>
+<td>Id of a group manager (user Id)</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">name</span></tt></td>
+<td>Name of the group</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">statistic</span></tt></td>
+<td>Statistic of the group</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">users</span></tt></td>
+<td>Array of group members (user ids)</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="example-of-a-group-object">
+<span id="example-account-object"></span><h2>Example of a group object<a class="headerlink" href="#example-of-a-group-object" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;_id&quot;</span><span class="o">:</span> <span class="s2">&quot;5416bca3743a8d452ba42014&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;appId&quot;</span><span class="o">:</span> <span class="s2">&quot;5412bc60b581c78e215a138a&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;createdOn&quot;</span><span class="o">:</span> <span class="s2">&quot;2014-09-15T10:17:07.569Z&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;updatedOn&quot;</span><span class="o">:</span> <span class="s2">&quot;2014-09-15T10:17:07.569Z&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;isAllowAnonymous&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">&quot;managerId&quot;</span><span class="o">:</span> <span class="s2">&quot;5412bc61b581c78e215a1393&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Group A&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;statistic&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;usersCount&quot;</span><span class="o">:</span> <span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;users&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">&quot;5412bc61b581c78e215a1393&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;5412bc81b581c78e215a1398&quot;</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+    <a href="/docs/index.html"><img src="/docs/_static/logo-white-landing.png" /></a>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">Group</span></tt> object</a><ul>
+<li><a class="reference internal" href="#example-of-a-group-object">Example of a group object</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Groups</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="api.html"
+                        title="next chapter">Get group by Id</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="api.html" title="Get group by Id"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Groups"
+             >previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Groups</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2014, Speakup.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

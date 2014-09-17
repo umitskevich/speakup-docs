@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The User object &mdash; Speakup 0.0.1 documentation</title>
+    <title>User object &mdash; Speakup 0.0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
     <link rel="up" title="Users" href="index.html" />
-    <link rel="next" title="Posts" href="../posts/index.html" />
-    <link rel="prev" title="Retrieve current user" href="api.html" /> 
+    <link rel="next" title="Retrieve current user" href="api.html" />
+    <link rel="prev" title="Users" href="index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -37,10 +37,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../posts/index.html" title="Posts"
+          <a href="api.html" title="Retrieve current user"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="api.html" title="Retrieve current user"
+          <a href="index.html" title="Users"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">Users</a> &raquo;</li> 
@@ -52,8 +52,8 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="the-user-object">
-<span id="user-object"></span><h1>The <tt class="docutils literal"><span class="pre">User</span></tt> object<a class="headerlink" href="#the-user-object" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="user-object">
+<span id="id1"></span><h1><tt class="docutils literal"><span class="pre">User</span></tt> object<a class="headerlink" href="#user-object" title="Permalink to this headline">¶</a></h1>
 <p>Each user belong to particular Application.
 User can have different bio, title, roles etc in different applications he belong to.</p>
 <table border="1" class="docutils">
@@ -68,42 +68,45 @@ User can have different bio, title, roles etc in different applications he belon
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">_id</span></tt></td>
-<td>The id of the User object</td>
+<td>Id of the User object</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">appId</span></tt></td>
-<td>Id of application to which user belong</td>
+<td>Id of application which user belongs to</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">accountId</span></tt></td>
-<td>Id of <a class="reference internal" href="../accounts/account_object.html#account-object"><em>User Account</em></a>.</td>
+<td>Id of <a class="reference internal" href="../accounts/account_object.html#account-object"><em>user account</em></a>.</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">picture</span></tt></td>
 <td>Url to the user picture</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">fullName</span></tt></td>
-<td>full name of the user</td>
+<td>User full name</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">email</span></tt></td>
-<td>Email address of the user</td>
+<td>User email address</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">bio</span></tt></td>
-<td>Bio of user</td>
+<td>User info</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">userName</span></tt></td>
-<td>Internal user name, used for mentions.</td>
+<td>Internal user name, used for mentions</td>
 </tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">settings</span></tt></td>
-<td>Notifications settings</td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">groups</span></tt></td>
+<td>Associative array of groups where user participates</td>
 </tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">statistic</span></tt></td>
-<td>User statistic according to his posts</td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">settings</span></tt></td>
+<td>Notification settings</td>
 </tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">title</span></tt></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">statistic</span></tt></td>
+<td>User statistic inside his company</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">title</span></tt></td>
 <td>User title</td>
 </tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">roles</span></tt></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">roles</span></tt></td>
 <td>Array of user <a class="reference internal" href="#user-roles"><em>roles</em></a>.</td>
 </tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">createdOn</span></tt></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">createdOn</span></tt></td>
 <td>Date when user was created (signed up)</td>
 </tr>
 </tbody>
@@ -117,18 +120,53 @@ User can have different bio, title, roles etc in different applications he belon
     <span class="s2">&quot;picture&quot;</span> <span class="o">:</span> <span class="s2">&quot;https://getspeakup.com/assets/images/profile-image.png&quot;</span><span class="p">,</span>
     <span class="s2">&quot;fullName&quot;</span> <span class="o">:</span> <span class="s2">&quot;Andrew Orsich&quot;</span><span class="p">,</span>
     <span class="s2">&quot;email&quot;</span> <span class="o">:</span> <span class="s2">&quot;andrew@paralect.com&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;bio&quot;</span> <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;bio&quot;</span> <span class="o">:</span> <span class="s2">&quot;Some info&quot;</span><span class="p">,</span>
     <span class="s2">&quot;userName&quot;</span> <span class="o">:</span> <span class="s2">&quot;andrew.orsich&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;settings&quot;</span> <span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;notifications&quot;</span> <span class="o">:</span> <span class="p">{</span>
-            <span class="s2">&quot;email&quot;</span> <span class="o">:</span> <span class="kc">true</span>
-        <span class="p">},</span>
-        <span class="s2">&quot;notifyOn&quot;</span> <span class="o">:</span> <span class="p">{</span>
-            <span class="s2">&quot;ownPostNewComment&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="s2">&quot;ownPostNewSolution&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="s2">&quot;newIdea&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="s2">&quot;newProblem&quot;</span> <span class="o">:</span> <span class="kc">true</span>
-        <span class="p">}</span>
+    <span class="s2">&quot;groups&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;5416bca3743a8d452ba42014&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;_id&quot;</span><span class="o">:</span> <span class="s2">&quot;5416bca3743a8d452ba42014&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;isManager&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Group A&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;statistic&quot;</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;comments&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s2">&quot;ideas&quot;</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+                    <span class="s2">&quot;problems&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s2">&quot;solutions&quot;</span><span class="o">:</span> <span class="mi">0</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;541843caf50be1146f6e67ef&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;_id&quot;</span><span class="o">:</span> <span class="s2">&quot;541843caf50be1146f6e67ef&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;isManager&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Group B&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;statistic&quot;</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;comments&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;ideas&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s2">&quot;problems&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;solutions&quot;</span><span class="o">:</span> <span class="mi">0</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;settings&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;notifications&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="kc">true</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;notifyOn&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;newIdea&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;newProblem&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;ownPostNewComment&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;ownPostNewSolution&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;ownPostNewVote&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;postParticipatedActivity&quot;</span><span class="o">:</span> <span class="kc">true</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;postAnonymously&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="s2">&quot;showOnboarding&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="s2">&quot;signedUpAsManager&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="s2">&quot;sort&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;dashboard&quot;</span><span class="o">:</span> <span class="s2">&quot;popular&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;home&quot;</span><span class="o">:</span> <span class="s2">&quot;popular&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;post-details&quot;</span><span class="o">:</span> <span class="s2">&quot;popular&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;profile&quot;</span><span class="o">:</span> <span class="s2">&quot;popular&quot;</span>
+            <span class="p">}</span>
     <span class="p">},</span>
     <span class="s2">&quot;statistic&quot;</span><span class="o">:</span> <span class="p">{</span>
             <span class="s2">&quot;comments&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -136,10 +174,10 @@ User can have different bio, title, roles etc in different applications he belon
             <span class="s2">&quot;problems&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
             <span class="s2">&quot;solutions&quot;</span><span class="o">:</span> <span class="mi">1</span>
     <span class="p">},</span>
-    <span class="s2">&quot;title&quot;</span> <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;title&quot;</span> <span class="o">:</span> <span class="s2">&quot;.NET / NodeJS developer&quot;</span><span class="p">,</span>
     <span class="s2">&quot;roles&quot;</span> <span class="o">:</span> <span class="p">[</span>
         <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;decisionMaker&quot;</span>
+        <span class="s2">&quot;manager&quot;</span>
     <span class="p">],</span>
     <span class="s2">&quot;createdOn&quot;</span> <span class="o">:</span> <span class="s2">&quot;2014-06-25T10:40:24.817Z&quot;</span>
 <span class="p">}</span>
@@ -147,11 +185,11 @@ User can have different bio, title, roles etc in different applications he belon
 </div>
 </div>
 <div class="section" id="user-roles">
-<span id="id1"></span><h2>User roles<a class="headerlink" href="#user-roles" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>User roles<a class="headerlink" href="#user-roles" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ol class="arabic simple">
-<li>admin - can send invites, update billing information</li>
-<li>decisionMaker - can make decisions and see dashboard</li>
+<li><tt class="docutils literal"><span class="pre">admin</span></tt> - can send invitations, update billing information</li>
+<li><tt class="docutils literal"><span class="pre">manager</span></tt> - can make decisions and see dashboard</li>
 </ol>
 </div></blockquote>
 </div>
@@ -167,7 +205,7 @@ User can have different bio, title, roles etc in different applications he belon
 
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">The <tt class="docutils literal"><span class="pre">User</span></tt> object</a><ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">User</span></tt> object</a><ul>
 <li><a class="reference internal" href="#example-of-user-object">Example of user object</a></li>
 <li><a class="reference internal" href="#user-roles">User roles</a></li>
 </ul>
@@ -175,11 +213,11 @@ User can have different bio, title, roles etc in different applications he belon
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="api.html"
-                        title="previous chapter">Retrieve current user</a></p>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Users</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../posts/index.html"
-                        title="next chapter">Posts</a></p>
+  <p class="topless"><a href="api.html"
+                        title="next chapter">Retrieve current user</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -205,10 +243,10 @@ User can have different bio, title, roles etc in different applications he belon
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../posts/index.html" title="Posts"
+          <a href="api.html" title="Retrieve current user"
              >next</a> |</li>
         <li class="right" >
-          <a href="api.html" title="Retrieve current user"
+          <a href="index.html" title="Users"
              >previous</a> |</li>
         <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
           <li><a href="index.html" >Users</a> &raquo;</li> 

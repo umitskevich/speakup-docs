@@ -4,9 +4,7 @@ Retrieve current account
 
 Definition:
 
-.. code-block:: bash
-
-   GET https://getspeakup.com/api/v1/accounts/current
+``GET https://getspeakup.com/api/v1/accounts/current``
 
 Example request:
 
@@ -17,7 +15,7 @@ Example request:
 
 Example response:
 
-:ref:`Account object <account_object>`.
+Returns :ref:`account object <account_object>`.
 
 
 Change password
@@ -25,11 +23,27 @@ Change password
 
 Definition:
 
-.. code-block:: bash
+``POST https://getspeakup.com/api/v1/accounts/:id/changePassword``
 
-   POST https://getspeakup.com/api/v1/accounts/:id/createPassword \
-        newPassword=new_password \
-        existingPassword=old_password
+Body parameters:
+
+
+.. list-table::
+  :widths: 20 20
+  :header-rows: 1
+
+  * - Name
+    - Description
+
+  * - ``newPassword``
+    - New account password
+
+  * - ``verifyPassword``
+    - Verified new account password
+
+  * - ``existingPassword``
+    - Existing account password
+
 
 Example request:
 
@@ -38,6 +52,7 @@ Example request:
    http POST https://getspeakup.com/api/v1/accounts/535565a95ca75754723fe8e3/changePassword \
         Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 \
         newPassword="qwerty" \
+        verifyPassword="qwerty" \
         existingPassword="123456"
 
 Successful response:
@@ -73,9 +88,7 @@ Forgot password
 
 Definition:
 
-.. code-block:: bash
-
-   POST https://getspeakup.com/api/v1/accounts/:id/forgotPassword
+``POST https://getspeakup.com/api/v1/accounts/:id/forgotPassword``
 
 Example request:
 
@@ -101,13 +114,19 @@ Change active application
 
 Definition:
 
-.. code-block:: bash
-
-   PUT https://getspeakup.com/api/v1/accounts/changeActiveApp \
-        appId=appId_to_login
+``PUT https://getspeakup.com/api/v1/accounts/changeActiveApp``
 
 Body parameters:
-   1. appId - Id of application that user would like to login
+
+.. list-table::
+  :widths: 20 20
+  :header-rows: 1
+
+  * - Name
+    - Description
+
+  * - ``appId``
+    - Id of application that user would like to login
 
 Example request:
 
@@ -128,7 +147,7 @@ If all above steps were done correctly you should see response like this:
 .. code-block:: javascript
 
   {
-    "redirect": "https://getspeakup.com"
+    "redirect": "https://yourcompany.getspeakup.com"
   }
 
 
@@ -138,9 +157,7 @@ Disconnect Facebook
 
 Definition:
 
-.. code-block:: bash
-
-   PUT https://getspeakup.com/api/v1/accounts/:id/facebook/remove
+``PUT https://getspeakup.com/api/v1/accounts/:id/facebook/remove``
 
 
 Example request:
@@ -167,9 +184,7 @@ Disconnect LinkedIn
 
 Definition:
 
-.. code-block:: bash
-
-   PUT https://getspeakup.com/api/v1/accounts/:id/linkedin/remove
+``PUT https://getspeakup.com/api/v1/accounts/:id/linkedin/remove``
 
 
 Example request:

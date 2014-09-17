@@ -20,9 +20,13 @@ Table of contents:
    accounts/index
    users/index
    posts/index
+   votes/index
+   inline-comments/index
    badges/index
    applications/index
+   groups/index
    invites/index
    billing/index
+   search/index
 
 

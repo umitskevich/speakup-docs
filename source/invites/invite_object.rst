@@ -1,6 +1,6 @@
 .. _invite_object:
 
-The ``Invite`` object
+``Invite`` object
 ==========================
 
 .. list-table::
@@ -23,6 +23,12 @@ The ``Invite`` object
   * - ``inviterId``
     - Id of user that sent invitation
 
+  * - ``isNeedApproval``
+    - Boolean value for manager confirmation
+
+  * - ``signedUpAsManager``
+    - Boolean value that represents if user was invited as manager
+
   * - ``token``
     - Token for invite entity
 
@@ -40,6 +46,8 @@ Example of an invite object
       "createdOn": "2014-07-28T14:47:16.641Z",
       "email": "sandra@yourcompany.com",
       "inviterId": "53d2646ac8f9d5169fb03206",
+      "isNeedApproval": false,
+      "signedUpAsManager": false,
       "token": "228fb7ada78c6b390d54d67142099487714419e6a478a32eee7efe36210f5f5a79cd30002ca061c65c4508120363da9e"
   }
 

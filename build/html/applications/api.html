@@ -26,8 +26,8 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
     <link rel="up" title="Applications" href="index.html" />
-    <link rel="next" title="The Application object" href="application_object.html" />
-    <link rel="prev" title="Applications" href="index.html" /> 
+    <link rel="next" title="Groups" href="../groups/index.html" />
+    <link rel="prev" title="Application object" href="application_object.html" /> 
   </head>
   <body>
     <div class="related">
@@ -37,10 +37,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="application_object.html" title="The Application object"
+          <a href="../groups/index.html" title="Groups"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Applications"
+          <a href="application_object.html" title="Application object"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">Applications</a> &raquo;</li> 
@@ -55,35 +55,44 @@
   <div class="section" id="retrieve-current-application">
 <h1>Retrieve current application<a class="headerlink" href="#retrieve-current-application" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>GET https://getspeakup.com/api/v1/applications/:id
-</pre></div>
-</div>
+<p><tt class="docutils literal"><span class="pre">GET</span> <span class="pre">https://getspeakup.com/api/v1/applications/:id</span></tt></p>
 <p>Example request:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http GET https://getspeakup.com/api/v1/applications/53aaa7181f0d592c49b7833a <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
 </pre></div>
 </div>
 <p>Example response:</p>
-<p><a class="reference internal" href="application_object.html#application-object"><em>Application object</em></a>.</p>
+<p>Returns <a class="reference internal" href="application_object.html#application-object"><em>Application object</em></a>.</p>
 </div>
-<div class="section" id="update-application-company-name">
-<h1>Update application (company) name<a class="headerlink" href="#update-application-company-name" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="update-application">
+<h1>Update application<a class="headerlink" href="#update-application" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
-<div class="highlight-bash"><div class="highlight"><pre>PUT https://getspeakup.com/api/v1/applications/:id <span class="se">\</span>
-     <span class="nv">name</span><span class="o">=</span>new_name
-</pre></div>
-</div>
-<dl class="docutils">
-<dt>Body parameters:</dt>
-<dd><ol class="first last arabic simple">
-<li>name - New name for application</li>
-</ol>
-</dd>
-</dl>
+<p><tt class="docutils literal"><span class="pre">PUT</span> <span class="pre">https://getspeakup.com/api/v1/applications/:id</span></tt></p>
+<p>Body parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">name</span></tt></td>
+<td>Application name</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">canPostAnonymously</span></tt></td>
+<td>Boolean value for anonymous posting inside the company</td>
+</tr>
+</tbody>
+</table>
 <p>Example request:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/applications/53aaa7181f0d592c49b7833a <span class="se">\</span>
      Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
-     <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;New demo name&quot;</span>
+     <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;New demo name&quot;</span> <span class="se">\</span>
+     canPostAnonymously:<span class="o">=</span><span class="nb">false</span>
 </pre></div>
 </div>
 <p>Successful response:</p>
@@ -107,6 +116,46 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="update-roles">
+<h1>Update roles<a class="headerlink" href="#update-roles" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">PUT</span> <span class="pre">https://getspeakup.com/api/v1/applications/:id/updateRoles</span></tt></p>
+<p>Body parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">users</span></tt></td>
+<td>Array of updated users *</td>
+</tr>
+</tbody>
+</table>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/applications/53aaa7181f0d592c49b7833a/updateRoles <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765 <span class="se">\</span>
+     users:<span class="o">=</span><span class="s1">&#39;[ { &quot;userId&quot;: &quot;54195527471842c214145ef8&quot;, &quot;roles&quot;: [&quot;admin&quot;] }, { &quot;userId&quot;: &quot;5419554a471842c214145efd&quot;, &quot;roles&quot;: [] } ]&#39;</span>
+</pre></div>
+</div>
+<p><cite>*</cite> - objects have the next schema:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+   <span class="nx">userId</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">String</span> <span class="p">},</span>
+   <span class="nx">roles</span><span class="o">:</span> <span class="p">[</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">String</span> <span class="p">}</span> <span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly you should see response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200 OK
+</pre></div>
+</div>
+</div>
 
 
           </div>
@@ -119,15 +168,16 @@
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Retrieve current application</a></li>
-<li><a class="reference internal" href="#update-application-company-name">Update application (company) name</a></li>
+<li><a class="reference internal" href="#update-application">Update application</a></li>
+<li><a class="reference internal" href="#update-roles">Update roles</a></li>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">Applications</a></p>
-  <h4>Next topic</h4>
   <p class="topless"><a href="application_object.html"
-                        title="next chapter">The <tt class="docutils literal"><span class="pre">Application</span></tt> object</a></p>
+                        title="previous chapter"><tt class="docutils literal"><span class="pre">Application</span></tt> object</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../groups/index.html"
+                        title="next chapter">Groups</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -153,10 +203,10 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="application_object.html" title="The Application object"
+          <a href="../groups/index.html" title="Groups"
              >next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Applications"
+          <a href="application_object.html" title="Application object"
              >previous</a> |</li>
         <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
           <li><a href="index.html" >Applications</a> &raquo;</li> 

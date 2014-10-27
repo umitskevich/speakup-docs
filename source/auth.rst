@@ -23,13 +23,13 @@ To make api calls you need to authorise current user. It can be done using follo
     password=123456
 
 
-User authorization via facebook social account
+User authorization via Facebook social account
 ----------------------------------------------
 
 Parameters:
 
 .. list-table::
-:widths: 10 30
+  :widths: 10 30
   :header-rows: 1
 
   * - Name
@@ -52,13 +52,13 @@ To make api calls you need to authorise current user. It can be done using follo
     password=074ead10-b21f-40bc-9ec6-4d7ec8d280b5
 
 
-User authorization via linkedin social account
+User authorization via LinkedIn social account
 ----------------------------------------------
 
 Parameters:
 
 .. list-table::
-:widths: 10 30
+  :widths: 10 30
   :header-rows: 1
 
     * - Name
@@ -68,7 +68,7 @@ Parameters:
     - Must be `linkedin`
 
   * - ``password``
-    - Linkedin Access Token returned by Oauth workflow
+    - LinkedIn Access Token returned by Oauth workflow
 
 To make api calls you need to authorise current user. It can be done using following method:
 
@@ -79,7 +79,6 @@ To make api calls you need to authorise current user. It can be done using follo
     client_secret=demo_client_secret \
     username=linkedin \
     password=074ead10-b21f-40bc-9ec6-4d7ec8d280b5
-
 
 
 Successful authorization response

@@ -160,7 +160,7 @@ Definition:
 Body parameters:
 
 .. list-table::
-:widths: 20 20
+  :widths: 20 20
   :header-rows: 1
 
   * - Name
@@ -234,7 +234,7 @@ Definition:
 Body parameters:
 
 .. list-table::
-:widths: 20 20
+  :widths: 20 20
   :header-rows: 1
 
   * - Name

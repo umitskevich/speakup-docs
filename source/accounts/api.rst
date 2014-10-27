@@ -150,10 +150,57 @@ If all above steps were done correctly you should see response like this:
     "redirect": "https://yourcompany.getspeakup.com"
   }
 
+Connect to Facebook
+===================
+
+Definition:
+
+``PUT https://getspeakup.com/api/v1/accounts/:id/facebook/connect``
+
+Body parameters:
+
+.. list-table::
+:widths: 20 20
+  :header-rows: 1
+
+  * - Name
+    - Description
+
+  * - ``id``
+    - Id return from oauth workflow
+
+  * - ``accessToken``
+    - AccessToken returned from oauth workflow
+
+  * - ``username``
+    - username returned from oauth workflow
+
+  * - ``email``
+    - Email returned from oauth workflow
+
+Example request:
+
+.. code-block:: bash
+
+   http PUT https://getspeakup.com/api/v1/accounts/535565a95ca75754723fe8e3/facebook/connect \
+        Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+          email="alex@gmail.com" \
+          accessToken="074ead10-b21f-40bc-9ec6-4d7as8d280b5" \
+          username="alex.p" \
+          id="10152187504109372"
+
+
+Successful response:
+
+If all above steps were done correctly you should see response like this:
+
+.. code-block:: bash
+
+   HTTP/1.1 200
 
 
 Disconnect Facebook
-====================
+===================
 
 Definition:
 
@@ -177,10 +224,57 @@ If all above steps were done correctly you should see response like this:
    HTTP/1.1 204 No Content
 
 
+Connect to LinkedIn
+===================
+
+Definition:
+
+``PUT https://getspeakup.com/api/v1/accounts/:id/linkedin/connect``
+
+Body parameters:
+
+.. list-table::
+:widths: 20 20
+  :header-rows: 1
+
+  * - Name
+    - Description
+
+  * - ``id``
+    - Id return from oauth workflow
+
+  * - ``accessToken``
+    - AccessToken returned from oauth workflow
+
+  * - ``tokenSecret``
+    - TokenSecret returned from oauth workflow
+
+  * - ``email``
+    - Email returned from oauth workflow
+
+Example request:
+
+.. code-block:: bash
+
+   http PUT https://getspeakup.com/api/v1/accounts/535565a95ca75754723fe8e3/linkedin/connect \
+        Authorization:Bearer\ 530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+          email="email@gmail.com" \
+          tokenSecret="3b1da35-1be6-1151-b5e3-4c7060572a20a" \
+          accessToken="074ead10-b21f-40bc-9ec6-4d7as8d280b5" \
+          id="2JZG_cHXtz"
+
+
+Successful response:
+
+If all above steps were done correctly you should see response like this:
+
+.. code-block:: bash
+
+   HTTP/1.1 200
 
 
 Disconnect LinkedIn
-====================
+===================
 
 Definition:
 

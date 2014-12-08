@@ -23,9 +23,96 @@ To make api calls you need to authorise current user. It can be done using follo
     password=123456
 
 
+User authorization via Facebook social account
+----------------------------------------------
+
+Parameters:
+
+.. list-table::
+  :widths: 10 30
+  :header-rows: 1
+
+  * - Name
+    - Description
+
+  * - ``username``
+    - Must be `facebook`
+
+  * - ``password``
+    - Facebook Access Token returned by Oauth workflow
+
+To make api calls you need to authorise current user. It can be done using following method:
+
+.. code-block:: bash
+
+  http POST https://getspeakup.com/api/oauth/token grant_type=password \
+    client_id=demo_client_id \
+    client_secret=demo_client_secret \
+    username=facebook \
+    password=074ead10-b21f-40bc-9ec6-4d7ec8d280b5
+
+
+User authorization via LinkedIn social account
+----------------------------------------------
+
+Parameters:
+
+.. list-table::
+  :widths: 10 30
+  :header-rows: 1
+
+    * - Name
+      - Description
+
+    * - ``username``
+    - Must be `linkedin`
+
+  * - ``password``
+    - LinkedIn Access Token returned by Oauth workflow
+
+To make api calls you need to authorise current user. It can be done using following method:
+
+.. code-block:: bash
+
+  http POST https://getspeakup.com/api/oauth/token grant_type=password \
+    client_id=demo_client_id \
+    client_secret=demo_client_secret \
+    username=linkedin \
+    password=074ead10-b21f-40bc-9ec6-4d7ec8d280b5
+
+
+User authorization via Google social account
+--------------------------------------------
+
+Parameters:
+
+.. list-table::
+:widths: 10 30
+  :header-rows: 1
+
+      * - Name
+        - Description
+
+      * - ``username``
+    - Must be `google`
+
+  * - ``password``
+    - Google Access Token returned by Oauth workflow
+
+To make api calls you need to authorise current user. It can be done using following method:
+
+.. code-block:: bash
+
+  http POST https://getspeakup.com/api/oauth/token grant_type=password \
+    client_id=demo_client_id \
+    client_secret=demo_client_secret \
+    username=google \
+    password=074ead10-b21f-40bc-9ec6-4d7ec8d280b5
+
+
 Successful authorization response
 ---------------------------------
-
+This response is returned for authorization via user login/password as well as social access token.
 If all above steps were done correctly you should see response like this:
 
 .. code-block:: javascript

@@ -218,33 +218,38 @@ Sorting can be performed by multiple fields separated by comma, in this case the
      <span class="nv">fullName</span><span class="o">=</span><span class="s2">&quot;John Doe&quot;</span> <span class="se">\</span>
      <span class="nv">title</span><span class="o">=</span><span class="s2">&quot;Node.js developer&quot;</span> <span class="se">\</span>
      <span class="nv">bio</span><span class="o">=</span><span class="s2">&quot;Here is information about user&quot;</span> <span class="se">\</span>
-     settings:<span class="o">=</span><span class="s1">&#39;{ &quot;notifications&quot;: { &quot;email&quot;: true }, &quot;notifyOn&quot;: { &quot;newProblem&quot;: false, &quot;newIdea&quot;: true, &quot;ownPostNewSolution&quot;: true, &quot;ownPostNewComment&quot;: false }, &quot;sort&quot;: { &quot;home&quot;: &quot;popular&quot;, &quot;profile&quot;: &quot;popular&quot;, &quot;dashboard&quot;: &quot;newest&quot;, &quot;post-details&quot;: &quot;newest&quot; }, &quot;postAnonymously&quot;: true }&#39;</span> <span class="se">\</span>
+     settings:<span class="o">=</span><span class="s1">&#39;{ &quot;notifications&quot;: { &quot;emailFrequency&quot;: &quot;onceEvery15Minutes&quot; }, &quot;notifyOn&quot;: { &quot;newProblem&quot;: true, &quot;newIdea&quot;: true, &quot;newSolution&quot;: true, &quot;newComment&quot;: false, &quot;ownPostNewVote&quot;: true }, &quot;postAnonymously&quot;: true }&#39;</span> <span class="se">\</span>
      <span class="nv">picture</span><span class="o">=</span><span class="s2">&quot;http://res.cloudinary.com/7adf6ngw/image/upload/sample.jpg&quot;</span>
 </pre></div>
 </div>
-<p><cite>*</cite> - This is json object with the next schema:</p>
+<p><cite>*</cite> - settings is json object with the next schema:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">settings</span><span class="o">:</span> <span class="p">{</span>
+
     <span class="nx">notifications</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">email</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">}</span>
+       <span class="nx">emailFrequency</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span> <span class="kr">enum</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;never&#39;</span><span class="p">,</span> <span class="s1">&#39;instantly&#39;</span><span class="p">,</span> <span class="s1">&#39;onceEvery15Minutes&#39;</span><span class="p">,</span> <span class="s1">&#39;oncePerDay&#39;</span><span class="p">]</span> <span class="p">},</span>
+       <span class="nx">oncePerDaySendAt</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Number</span> <span class="p">}</span> <span class="c1">// time for sending email with &#39;oncePerDay&#39; frequency in 24h format (16 by default)</span>
     <span class="p">},</span>
     <span class="nx">notifyOn</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">newProblem</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
-      <span class="nx">newIdea</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
-      <span class="nx">ownPostNewSolution</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
-      <span class="nx">ownPostNewComment</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
-      <span class="nx">ownPostNewVote</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
-      <span class="nx">postParticipatedActivity</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nx">sort</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">home</span><span class="o">:</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span> <span class="kr">enum</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="s1">&#39;newest&#39;</span><span class="p">]</span> <span class="p">},</span>
-      <span class="nx">profile</span><span class="o">:</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span> <span class="kr">enum</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="s1">&#39;newest&#39;</span><span class="p">]</span> <span class="p">},</span>
-      <span class="nx">dashboard</span><span class="o">:</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span> <span class="kr">enum</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="s1">&#39;newest&#39;</span><span class="p">]</span> <span class="p">},</span>
-      <span class="s1">&#39;post-details&#39;</span><span class="o">:</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span> <span class="kr">enum</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;popular&#39;</span><span class="p">,</span> <span class="s1">&#39;newest&#39;</span><span class="p">]</span> <span class="p">}</span>
+       <span class="nx">newProblem</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
+       <span class="nx">newIdea</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
+       <span class="nx">newSolution</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
+       <span class="nx">newComment</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
+       <span class="nx">ownPostNewVote</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">}</span>
     <span class="p">},</span>
     <span class="nx">showOnboarding</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
     <span class="nx">postAnonymously</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
-    <span class="nx">signedUpAsManager</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">}</span>
-<span class="p">},</span>
+    <span class="nx">signedUpAsManager</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
+    <span class="nx">signedUpOnTheirOwn</span><span class="o">:</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span> <span class="c1">// if user has signed up on his own using the sign up form this value is equal to &#39;true&#39;, if user has been invited it is equal to &#39;false&#39;.</span>
+    <span class="nx">gettingStarted</span><span class="o">:</span> <span class="p">{</span>
+       <span class="nx">completeProfile</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
+       <span class="nx">inviteCoworker</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
+       <span class="nx">createPost</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
+       <span class="nx">votePost</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
+       <span class="nx">commentPost</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
+       <span class="nx">inviteManager</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">soundsEnabled</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span> <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Successful response:</p>

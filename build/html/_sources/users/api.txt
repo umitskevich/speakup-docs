@@ -200,37 +200,42 @@ Example request:
         fullName="John Doe" \
         title="Node.js developer" \
         bio="Here is information about user" \
-        settings:='{ "notifications": { "email": true }, "notifyOn": { "newProblem": false, "newIdea": true, "ownPostNewSolution": true, "ownPostNewComment": false }, "sort": { "home": "popular", "profile": "popular", "dashboard": "newest", "post-details": "newest" }, "postAnonymously": true }' \
+        settings:='{ "notifications": { "emailFrequency": "onceEvery15Minutes" }, "notifyOn": { "newProblem": true, "newIdea": true, "newSolution": true, "newComment": false, "ownPostNewVote": true }, "postAnonymously": true }' \
         picture="http://res.cloudinary.com/7adf6ngw/image/upload/sample.jpg"
 
 
 
-`*` - This is json object with the next schema:
+`*` - settings is json object with the next schema:
 
 .. code-block:: javascript
 
      settings: {
+
          notifications: {
-           email: { type: Boolean }
+            emailFrequency: { type: String, enum: ['never', 'instantly', 'onceEvery15Minutes', 'oncePerDay'] },
+            oncePerDaySendAt: { type: Number } // time for sending email with 'oncePerDay' frequency in 24h format (16 by default)
          },
          notifyOn: {
-           newProblem: { type: Boolean },
-           newIdea: { type: Boolean },
-           ownPostNewSolution: { type: Boolean },
-           ownPostNewComment: { type: Boolean },
-           ownPostNewVote: { type: Boolean },
-           postParticipatedActivity: { type: Boolean }
-         },
-         sort: {
-           home: {type: String, enum: ['popular', 'newest'] },
-           profile: {type: String, enum: ['popular', 'newest'] },
-           dashboard: {type: String, enum: ['popular', 'newest'] },
-           'post-details': {type: String, enum: ['popular', 'newest'] }
+            newProblem: { type: Boolean },
+            newIdea: { type: Boolean },
+            newSolution: { type: Boolean },
+            newComment: { type: Boolean },
+            ownPostNewVote: { type: Boolean }
          },
          showOnboarding: { type: Boolean },
          postAnonymously: { type: Boolean },
-         signedUpAsManager: { type: Boolean }
-     },
+         signedUpAsManager: { type: Boolean },
+         signedUpOnTheirOwn: {type: Boolean }, // if user has signed up on his own using the sign up form this value is equal to 'true', if user has been invited it is equal to 'false'.
+         gettingStarted: {
+            completeProfile: { type: Boolean },
+            inviteCoworker: { type: Boolean },
+            createPost: { type: Boolean },
+            votePost: { type: Boolean },
+            commentPost: { type: Boolean },
+            inviteManager: { type: Boolean }
+         },
+         soundsEnabled: { type: Boolean }
+     }
 
 
 Successful response:

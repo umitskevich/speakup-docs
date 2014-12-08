@@ -8,7 +8,7 @@ User can have different bio, title, roles etc in different applications he belon
 
 
 .. list-table::
-  :widths: 10 40
+  :widths: 20 50
   :header-rows: 1
 
   * - Field
@@ -42,7 +42,7 @@ User can have different bio, title, roles etc in different applications he belon
     - Associative array of groups where user participates
 
   * - ``settings``
-    - Notification settings
+    - User notification settings and boolean values for onboarding
 
   * - ``statistic``
     - User statistic inside his company
@@ -94,27 +94,31 @@ Example of user object
                   }
               }
       },
-      "settings": {
-              "notifications": {
-                  "email": true
+      "settings" : {
+              "notifications" : {
+                  "oncePerDaySendAt" : 16, // time for sending email with 'oncePerDay' frequency in 24h format (16 by default)
+                  "emailFrequency" : "instantly"
               },
-              "notifyOn": {
-                  "newIdea": true,
-                  "newProblem": true,
-                  "ownPostNewComment": true,
-                  "ownPostNewSolution": true,
-                  "ownPostNewVote": true,
-                  "postParticipatedActivity": true
+              "notifyOn" : {
+                  "ownPostNewVote" : true,
+                  "newComment" : true,
+                  "newSolution" : true,
+                  "newIdea" : true,
+                  "newProblem" : true
               },
-              "postAnonymously": false,
-              "showOnboarding": false,
-              "signedUpAsManager": false,
-              "sort": {
-                  "dashboard": "popular",
-                  "home": "popular",
-                  "post-details": "popular",
-                  "profile": "popular"
-              }
+              "showOnboarding" : false,
+              "postAnonymously" : false,
+              "signedUpAsManager" : false,
+              "signedUpOnTheirOwn" : true, // if user has signed up on his own using the sign up form this value is equal to 'true', if user has been invited it is equal to 'false'.
+              "gettingStarted" : {
+                  "inviteManager" : false,
+                  "commentPost" : false,
+                  "votePost" : false,
+                  "createPost" : false,
+                  "inviteCoworker" : false,
+                  "completeProfile" : false
+              },
+              "soundsEnabled" : true
       },
       "statistic": {
               "comments": 2,

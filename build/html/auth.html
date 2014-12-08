@@ -69,9 +69,100 @@ and <tt class="docutils literal"><span class="pre">demo_client_secret</span></tt
 </pre></div>
 </div>
 </div>
+<div class="section" id="user-authorization-via-facebook-social-account">
+<h2>User authorization via Facebook social account<a class="headerlink" href="#user-authorization-via-facebook-social-account" title="Permalink to this headline">¶</a></h2>
+<p>Parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">username</span></tt></td>
+<td>Must be <cite>facebook</cite></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">password</span></tt></td>
+<td>Facebook Access Token returned by Oauth workflow</td>
+</tr>
+</tbody>
+</table>
+<p>To make api calls you need to authorise current user. It can be done using following method:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/oauth/token <span class="nv">grant_type</span><span class="o">=</span>password <span class="se">\</span>
+  <span class="nv">client_id</span><span class="o">=</span>demo_client_id <span class="se">\</span>
+  <span class="nv">client_secret</span><span class="o">=</span>demo_client_secret <span class="se">\</span>
+  <span class="nv">username</span><span class="o">=</span>facebook <span class="se">\</span>
+  <span class="nv">password</span><span class="o">=</span>074ead10-b21f-40bc-9ec6-4d7ec8d280b5
+</pre></div>
+</div>
+</div>
+<div class="section" id="user-authorization-via-linkedin-social-account">
+<h2>User authorization via LinkedIn social account<a class="headerlink" href="#user-authorization-via-linkedin-social-account" title="Permalink to this headline">¶</a></h2>
+<p>Parameters:</p>
+<p>To make api calls you need to authorise current user. It can be done using following method:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/oauth/token <span class="nv">grant_type</span><span class="o">=</span>password <span class="se">\</span>
+  <span class="nv">client_id</span><span class="o">=</span>demo_client_id <span class="se">\</span>
+  <span class="nv">client_secret</span><span class="o">=</span>demo_client_secret <span class="se">\</span>
+  <span class="nv">username</span><span class="o">=</span>linkedin <span class="se">\</span>
+  <span class="nv">password</span><span class="o">=</span>074ead10-b21f-40bc-9ec6-4d7ec8d280b5
+</pre></div>
+</div>
+</div>
+<div class="section" id="user-authorization-via-google-social-account">
+<h2>User authorization via Google social account<a class="headerlink" href="#user-authorization-via-google-social-account" title="Permalink to this headline">¶</a></h2>
+<p>Parameters:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">widths:</th><td class="field-body"><p class="first">10 30
+:header-rows: 1</p>
+<blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li><ul class="first">
+<li>Name</li>
+<li>Description</li>
+</ul>
+</li>
+<li><ul class="first">
+<li><tt class="docutils literal"><span class="pre">username</span></tt></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Must be <cite>google</cite></li>
+</ul>
+</div></blockquote>
+<ul class="last simple">
+<li><ul class="first">
+<li><tt class="docutils literal"><span class="pre">password</span></tt></li>
+<li>Google Access Token returned by Oauth workflow</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>To make api calls you need to authorise current user. It can be done using following method:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http POST https://getspeakup.com/api/oauth/token <span class="nv">grant_type</span><span class="o">=</span>password <span class="se">\</span>
+  <span class="nv">client_id</span><span class="o">=</span>demo_client_id <span class="se">\</span>
+  <span class="nv">client_secret</span><span class="o">=</span>demo_client_secret <span class="se">\</span>
+  <span class="nv">username</span><span class="o">=</span>google <span class="se">\</span>
+  <span class="nv">password</span><span class="o">=</span>074ead10-b21f-40bc-9ec6-4d7ec8d280b5
+</pre></div>
+</div>
+</div>
 <div class="section" id="successful-authorization-response">
 <h2>Successful authorization response<a class="headerlink" href="#successful-authorization-response" title="Permalink to this headline">¶</a></h2>
-<p>If all above steps were done correctly you should see response like this:</p>
+<p>This response is returned for authorization via user login/password as well as social access token.
+If all above steps were done correctly you should see response like this:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
   <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765&quot;</span><span class="p">,</span>
   <span class="s2">&quot;expires_in&quot;</span><span class="o">:</span> <span class="mi">3600</span><span class="p">,</span>
@@ -119,6 +210,9 @@ Where <tt class="docutils literal"><span class="pre">{{access_token}}</span></tt
 <li><a class="reference internal" href="#">Authentication</a><ul>
 <li><a class="reference internal" href="#third-party-app-authorization">Third party app authorization</a></li>
 <li><a class="reference internal" href="#user-authorization">User authorization</a></li>
+<li><a class="reference internal" href="#user-authorization-via-facebook-social-account">User authorization via Facebook social account</a></li>
+<li><a class="reference internal" href="#user-authorization-via-linkedin-social-account">User authorization via LinkedIn social account</a></li>
+<li><a class="reference internal" href="#user-authorization-via-google-social-account">User authorization via Google social account</a></li>
 <li><a class="reference internal" href="#successful-authorization-response">Successful authorization response</a></li>
 <li><a class="reference internal" href="#invalid-username-or-password-response">Invalid username or password response</a></li>
 <li><a class="reference internal" href="#invalid-client-id-or-client-secret-response">Invalid client_id or client_secret response</a></li>

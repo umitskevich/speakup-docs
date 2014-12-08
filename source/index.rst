@@ -28,5 +28,6 @@ Table of contents:
    invites/index
    billing/index
    search/index
+   notifications/index
 
 

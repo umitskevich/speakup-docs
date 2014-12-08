@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Notification object &mdash; Speakup 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Speakup 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="Notifications" href="index.html" />
+    <link rel="next" title="Get user notifications list" href="api.html" />
+    <link rel="prev" title="Notifications" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="api.html" title="Get user notifications list"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Notifications"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Notifications</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="notification-object">
+<span id="id1"></span><h1><tt class="docutils literal"><span class="pre">Notification</span></tt> object<a class="headerlink" href="#notification-object" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Field</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">_id</span></tt></td>
+<td>The id of Notification object</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">appId</span></tt></td>
+<td>Id of application that notification belongs to</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">userId</span></tt></td>
+<td>User Id that notification was created for</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">entityId</span></tt></td>
+<td>Id of an entity which related to notification (usually it is the <a class="reference internal" href="../posts/post_object.html#post-object"><em>post object</em></a>)</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">type</span></tt></td>
+<td>Notification type ( <tt class="docutils literal"><span class="pre">'new-problem'</span></tt>, <tt class="docutils literal"><span class="pre">'new-idea'</span></tt>, <tt class="docutils literal"><span class="pre">'new-solution'</span></tt>, <tt class="docutils literal"><span class="pre">'new-problem-comment'</span></tt>, <tt class="docutils literal"><span class="pre">'new-idea-comment'</span></tt>,
+<tt class="docutils literal"><span class="pre">'new-solution-inlineComment'</span></tt>, <tt class="docutils literal"><span class="pre">'new-problem-comment-inlineComment'</span></tt>, <tt class="docutils literal"><span class="pre">'new-idea-comment-inlineComment'</span></tt>, <tt class="docutils literal"><span class="pre">'new-vote'</span></tt>,
+<tt class="docutils literal"><span class="pre">'new-decision'</span></tt>, <tt class="docutils literal"><span class="pre">'new-mention'</span></tt>, <tt class="docutils literal"><span class="pre">'admin-rights-granted'</span></tt>, <tt class="docutils literal"><span class="pre">'admin-rights-revoked'</span></tt> )</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">data</span></tt></td>
+<td>Metadata that contains information about entity which related to notification</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">createdOn</span></tt></td>
+<td>Date when notification entity was created</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">state</span></tt></td>
+<td>Notification reading state (<tt class="docutils literal"><span class="pre">&quot;read&quot;</span></tt>, <tt class="docutils literal"><span class="pre">&quot;unread&quot;</span></tt>)</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="example-of-notification-object">
+<span id="example-invite-object"></span><h2>Example of notification object<a class="headerlink" href="#example-of-notification-object" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="s2">&quot;54820c475246175f95533b52&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;appId&quot;</span> <span class="o">:</span> <span class="s2">&quot;54820be95246175f95533b1c&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;userId&quot;</span> <span class="o">:</span> <span class="s2">&quot;54820c095246175f95533b44&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;entityId&quot;</span> <span class="o">:</span> <span class="s2">&quot;54820c475246175f95533b51&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;type&quot;</span> <span class="o">:</span> <span class="s2">&quot;new-problem&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data&quot;</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;post&quot;</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;shareUrl&quot;</span> <span class="o">:</span> <span class="s2">&quot;https://getspeakup.com/post/problem/54820c475246175f95533b51/details/solutions?share=true&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;viewUrl&quot;</span> <span class="o">:</span> <span class="s2">&quot;https://getspeakup.com/post/problem/54820c475246175f95533b51/details/solutions&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;user&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;title&quot;</span> <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;picture&quot;</span> <span class="o">:</span> <span class="s2">&quot;https://secure.gravatar.com/avatar/e1602610fef7a9e0ac19bf5a8af99c52?s=128&amp;r=PG&amp;d=identicon&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;fullName&quot;</span> <span class="o">:</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="s2">&quot;54820bea5246175f95533b3a&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;updatedOn&quot;</span> <span class="o">:</span> <span class="nx">ISODate</span><span class="p">(</span><span class="s2">&quot;2014-12-05T19:49:27.762Z&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;decision&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;status&quot;</span> <span class="o">:</span> <span class="s2">&quot;open&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;voteValue&quot;</span> <span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;groupName&quot;</span> <span class="o">:</span> <span class="s2">&quot;Cat&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span> <span class="o">:</span> <span class="s2">&quot;&lt;p&gt;&lt;span class=\&quot;rangySelectionBoundary\&quot;&gt;&amp;#65279;&lt;/span&gt;2&lt;/p&gt;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;title&quot;</span> <span class="o">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;type&quot;</span> <span class="o">:</span> <span class="s2">&quot;problem&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="s2">&quot;54820c475246175f95533b51&quot;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;createdOn&quot;</span> <span class="o">:</span> <span class="nx">ISODate</span><span class="p">(</span><span class="s2">&quot;2014-12-05T19:49:27.794Z&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;state&quot;</span> <span class="o">:</span> <span class="s2">&quot;unread&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+    <a href="/docs/index.html"><img src="/docs/_static/logo-white-landing.png" /></a>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">Notification</span></tt> object</a><ul>
+<li><a class="reference internal" href="#example-of-notification-object">Example of notification object</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Notifications</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="api.html"
+                        title="next chapter">Get user notifications list</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="api.html" title="Get user notifications list"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Notifications"
+             >previous</a> |</li>
+        <li><a href="../index.html">Speakup 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Notifications</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2014, Speakup.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

@@ -172,6 +172,51 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="connect-to-facebook">
+<h1>Connect to Facebook<a class="headerlink" href="#connect-to-facebook" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">PUT</span> <span class="pre">https://getspeakup.com/api/v1/accounts/:id/facebook/connect</span></tt></p>
+<p>Body parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">id</span></tt></td>
+<td>Id return from oauth workflow</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">accessToken</span></tt></td>
+<td>AccessToken returned from oauth workflow</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">username</span></tt></td>
+<td>username returned from oauth workflow</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">email</span></tt></td>
+<td>Email returned from oauth workflow</td>
+</tr>
+</tbody>
+</table>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/accounts/535565a95ca75754723fe8e3/facebook/connect <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+       <span class="nv">email</span><span class="o">=</span><span class="s2">&quot;alex@gmail.com&quot;</span> <span class="se">\</span>
+       <span class="nv">accessToken</span><span class="o">=</span><span class="s2">&quot;074ead10-b21f-40bc-9ec6-4d7as8d280b5&quot;</span> <span class="se">\</span>
+       <span class="nv">username</span><span class="o">=</span><span class="s2">&quot;alex.p&quot;</span> <span class="se">\</span>
+       <span class="nv">id</span><span class="o">=</span><span class="s2">&quot;10152187504109372&quot;</span>
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly you should see response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200
+</pre></div>
+</div>
+</div>
 <div class="section" id="disconnect-facebook">
 <h1>Disconnect Facebook<a class="headerlink" href="#disconnect-facebook" title="Permalink to this headline">¶</a></h1>
 <p>Definition:</p>
@@ -184,6 +229,51 @@
 <p>Successful response:</p>
 <p>If all above steps were done correctly you should see response like this:</p>
 <div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 204 No Content
+</pre></div>
+</div>
+</div>
+<div class="section" id="connect-to-linkedin">
+<h1>Connect to LinkedIn<a class="headerlink" href="#connect-to-linkedin" title="Permalink to this headline">¶</a></h1>
+<p>Definition:</p>
+<p><tt class="docutils literal"><span class="pre">PUT</span> <span class="pre">https://getspeakup.com/api/v1/accounts/:id/linkedin/connect</span></tt></p>
+<p>Body parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">id</span></tt></td>
+<td>Id return from oauth workflow</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">accessToken</span></tt></td>
+<td>AccessToken returned from oauth workflow</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">tokenSecret</span></tt></td>
+<td>TokenSecret returned from oauth workflow</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">email</span></tt></td>
+<td>Email returned from oauth workflow</td>
+</tr>
+</tbody>
+</table>
+<p>Example request:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http PUT https://getspeakup.com/api/v1/accounts/535565a95ca75754723fe8e3/linkedin/connect <span class="se">\</span>
+     Authorization:Bearer<span class="se">\ </span>530d7d04f10fa0d7a701762fa1a11078ad15dbd03dd21e1e87b9399fd4f9ce3d0296bd33443dd058a1b871cacac0e765
+       <span class="nv">email</span><span class="o">=</span><span class="s2">&quot;email@gmail.com&quot;</span> <span class="se">\</span>
+       <span class="nv">tokenSecret</span><span class="o">=</span><span class="s2">&quot;3b1da35-1be6-1151-b5e3-4c7060572a20a&quot;</span> <span class="se">\</span>
+       <span class="nv">accessToken</span><span class="o">=</span><span class="s2">&quot;074ead10-b21f-40bc-9ec6-4d7as8d280b5&quot;</span> <span class="se">\</span>
+       <span class="nv">id</span><span class="o">=</span><span class="s2">&quot;2JZG_cHXtz&quot;</span>
+</pre></div>
+</div>
+<p>Successful response:</p>
+<p>If all above steps were done correctly you should see response like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>HTTP/1.1 200
 </pre></div>
 </div>
 </div>
@@ -217,7 +307,9 @@
 <li><a class="reference internal" href="#change-password">Change password</a></li>
 <li><a class="reference internal" href="#forgot-password">Forgot password</a></li>
 <li><a class="reference internal" href="#change-active-application">Change active application</a></li>
+<li><a class="reference internal" href="#connect-to-facebook">Connect to Facebook</a></li>
 <li><a class="reference internal" href="#disconnect-facebook">Disconnect Facebook</a></li>
+<li><a class="reference internal" href="#connect-to-linkedin">Connect to LinkedIn</a></li>
 <li><a class="reference internal" href="#disconnect-linkedin">Disconnect LinkedIn</a></li>
 </ul>
 

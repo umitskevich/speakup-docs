@@ -58,8 +58,8 @@
 User can have different bio, title, roles etc in different applications he belong to.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col width="29%" />
+<col width="71%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Field</th>
@@ -95,7 +95,7 @@ User can have different bio, title, roles etc in different applications he belon
 <td>Associative array of groups where user participates</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">settings</span></tt></td>
-<td>Notification settings</td>
+<td>User notification settings and boolean values for onboarding</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">statistic</span></tt></td>
 <td>User statistic inside his company</td>
@@ -146,27 +146,31 @@ User can have different bio, title, roles etc in different applications he belon
                 <span class="p">}</span>
             <span class="p">}</span>
     <span class="p">},</span>
-    <span class="s2">&quot;settings&quot;</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s2">&quot;notifications&quot;</span><span class="o">:</span> <span class="p">{</span>
-                <span class="s2">&quot;email&quot;</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="s2">&quot;settings&quot;</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;notifications&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;oncePerDaySendAt&quot;</span> <span class="o">:</span> <span class="mi">16</span><span class="p">,</span> <span class="c1">// time for sending email with &#39;oncePerDay&#39; frequency in 24h format (16 by default)</span>
+                <span class="s2">&quot;emailFrequency&quot;</span> <span class="o">:</span> <span class="s2">&quot;instantly&quot;</span>
             <span class="p">},</span>
-            <span class="s2">&quot;notifyOn&quot;</span><span class="o">:</span> <span class="p">{</span>
-                <span class="s2">&quot;newIdea&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-                <span class="s2">&quot;newProblem&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-                <span class="s2">&quot;ownPostNewComment&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-                <span class="s2">&quot;ownPostNewSolution&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-                <span class="s2">&quot;ownPostNewVote&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-                <span class="s2">&quot;postParticipatedActivity&quot;</span><span class="o">:</span> <span class="kc">true</span>
+            <span class="s2">&quot;notifyOn&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;ownPostNewVote&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;newComment&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;newSolution&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;newIdea&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">&quot;newProblem&quot;</span> <span class="o">:</span> <span class="kc">true</span>
             <span class="p">},</span>
-            <span class="s2">&quot;postAnonymously&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-            <span class="s2">&quot;showOnboarding&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-            <span class="s2">&quot;signedUpAsManager&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-            <span class="s2">&quot;sort&quot;</span><span class="o">:</span> <span class="p">{</span>
-                <span class="s2">&quot;dashboard&quot;</span><span class="o">:</span> <span class="s2">&quot;popular&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;home&quot;</span><span class="o">:</span> <span class="s2">&quot;popular&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;post-details&quot;</span><span class="o">:</span> <span class="s2">&quot;popular&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;profile&quot;</span><span class="o">:</span> <span class="s2">&quot;popular&quot;</span>
-            <span class="p">}</span>
+            <span class="s2">&quot;showOnboarding&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="s2">&quot;postAnonymously&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="s2">&quot;signedUpAsManager&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="s2">&quot;signedUpOnTheirOwn&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// if user has signed up on his own using the sign up form this value is equal to &#39;true&#39;, if user has been invited it is equal to &#39;false&#39;.</span>
+            <span class="s2">&quot;gettingStarted&quot;</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;inviteManager&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;commentPost&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;votePost&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;createPost&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;inviteCoworker&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="s2">&quot;completeProfile&quot;</span> <span class="o">:</span> <span class="kc">false</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;soundsEnabled&quot;</span> <span class="o">:</span> <span class="kc">true</span>
     <span class="p">},</span>
     <span class="s2">&quot;statistic&quot;</span><span class="o">:</span> <span class="p">{</span>
             <span class="s2">&quot;comments&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>

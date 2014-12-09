@@ -41,7 +41,7 @@
 
 
   * - ``inlineComments``
-    - Array of inline comments. `Inline comment can be posted for Solutions and Comments only.` Objects have the next schema:
+    - Array of inline comments. `Inline comment can be posted for Solutions, Answers and Comments only.` Objects have the next schema:
 
       | ``_id`` - inline comment Id
       | ``content`` - inline comment text content
